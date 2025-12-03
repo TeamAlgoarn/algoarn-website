@@ -108,9 +108,6 @@ algoarn-website/
 ├── tsconfig.json
 └── package.json
 
-yaml
-Copy code
-
 ---
 
 ## 🧩 Key Pages
@@ -182,5 +179,6 @@ App will run on:
 arduino
 Copy code
 http://localhost:3000
+
 📜 License
 Private project. All rights reserved to Algoarn.
