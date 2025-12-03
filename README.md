@@ -25,6 +25,7 @@ Designed with a **dark + blue neon theme**, glassmorphism UI, and smooth Framer 
 
 ## 📂 Project Structure
 
+```bash
 algoarn-website/
 ├── public/
 │ ├── favicon.ico
@@ -107,7 +108,7 @@ algoarn-website/
 ├── postcss.config.mjs
 ├── tsconfig.json
 └── package.json
-
+```
 ---
 
 ## 🧩 Key Pages
