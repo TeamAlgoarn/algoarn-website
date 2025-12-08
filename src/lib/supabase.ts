@@ -1,23 +1,23 @@
 import { createClient } from '@supabase/supabase-js';
-
+ 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
+ 
 // Validate environment variables
 if (!supabaseUrl) {
   throw new Error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable');
 }
-
+ 
 if (!supabaseAnonKey) {
   throw new Error('Missing NEXT_PUBLIC_SUPABASE_ANON_KEY environment variable');
 }
-
+ 
 // Client-side (with RLS)
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
+ 
 // Server-side (bypasses RLS) - use in API routes only
-export const supabaseAdmin = supabaseServiceKey 
+export const supabaseAdmin = supabaseServiceKey
   ? createClient(supabaseUrl, supabaseServiceKey, {
       auth: {
         autoRefreshToken: false,
@@ -25,7 +25,7 @@ export const supabaseAdmin = supabaseServiceKey
       }
     })
   : null;
-
+ 
 // Type definitions
 export type Career = {
   id: string;
@@ -42,7 +42,7 @@ export type Career = {
   created_at: string;
   updated_at: string;
 };
-
+ 
 export type Application = {
   id: string;
   job_id: string;

@@ -73,42 +73,87 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
  
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setError(null);
+  // const handleSubmit = async (e: FormEvent) => {
+  //   e.preventDefault();
+  //   setError(null);
  
-    if (!form.name || !form.email || !form.message) {
-      setError("Please fill in Name, Email and Message.");
+  //   if (!form.name || !form.email || !form.message) {
+  //     setError("Please fill in Name, Email and Message.");
+  //     return;
+  //   }
+ 
+  //   try {
+  //     setStatus("submitting");
+ 
+  //     await fetch("/api/contact", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(form),
+  //     });
+ 
+  //     setStatus("success");
+  //     setForm({
+  //       name: "",
+  //       email: "",
+  //       phone: "",
+  //       organization: "",
+  //       institutionType: "university",
+  //       employees: "1-50",
+  //       topic: "suca-demo",
+  //       timeline: "1-month",
+  //       message: "",
+  //     });
+  //   } catch (err) {
+  //     setStatus("error");
+  //     setError("Something went wrong. Please try again or email us directly.");
+  //   }
+  // };
+ const handleSubmit = async (e: FormEvent) => {
+  e.preventDefault();
+  setError(null);
+
+  if (!form.name || !form.email || !form.message) {
+    setError("Please fill in Name, Email and Message.");
+    return;
+  }
+
+  try {
+    setStatus("submitting");
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      // we send the whole form; API will pick only needed fields
+      body: JSON.stringify(form),
+    });
+
+    const json = await res.json();
+
+    if (!res.ok) {
+      setStatus("error");
+      setError(json.error || "Something went wrong. Please try again.");
       return;
     }
- 
-    try {
-      setStatus("submitting");
- 
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
- 
-      setStatus("success");
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        organization: "",
-        institutionType: "university",
-        employees: "1-50",
-        topic: "suca-demo",
-        timeline: "1-month",
-        message: "",
-      });
-    } catch (err) {
-      setStatus("error");
-      setError("Something went wrong. Please try again or email us directly.");
-    }
-  };
- 
+
+    setStatus("success");
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      organization: "",
+      institutionType: "university",
+      employees: "1-50",
+      topic: "suca-demo",
+      timeline: "1-month",
+      message: "",
+    });
+  } catch (err) {
+    console.error(err);
+    setStatus("error");
+    setError("Something went wrong. Please try again or email us directly.");
+  }
+};
+
   const stats = [
     { value: "< 24h", label: "Average Response Time", icon: Clock },
     { value: "98%", label: "Client Satisfaction Rate", icon: Star },
