@@ -210,16 +210,16 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
             className="relative z-10 space-y-6 text-center md:text-left max-w-3xl"
           >
-            <p className="text-xs uppercase tracking-[0.25em] text-algoarnAqua/80">
+            <p className="text-xs uppercase tracking-[0.25em] text-white">
               Careers at Algoarn
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl text-white font-display font-bold">
               Build AI that{" "}
               <span className="text-algoarnAqua">
                 actually ships to institutions.
               </span>
             </h1>
-            <p className="text-sm md:text-base text-white/70 max-w-xl">
+            <p className="text-sm md:text-base text-white/90 max-w-xl">
               Join a compact, hands-on team working on SUCA, AI analytics, and
               custom AI solutions for universities, schools and businesses.
             </p>
@@ -233,7 +233,7 @@ export default function CareersPage() {
               <h2 className="text-2xl md:text-3xl font-bold">
                 Current Openings
               </h2>
-              <p className="text-sm text-white/60">
+              <p className="text-sm text-white/90">
                 Don&apos;t see a perfect fit? You can still reach out via the
                 contact page.
               </p>
@@ -251,24 +251,24 @@ export default function CareersPage() {
               >
                 <NeonCard className="p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
                   <div className="space-y-2">
-                    <h3 className="text-lg md:text-xl font-semibold">
+                    <h3 className="text-lg md:text-xl font-semibold text-white">
                       {job.title}
                     </h3>
-                    <div className="flex flex-wrap gap-3 text-xs text-white/60">
-                      <span className="px-3 py-1 rounded-full border border-white/15">
+                    <div className="flex flex-wrap gap-3 text-xs text-white">
+                      <span className="px-3 py-1 rounded-full border border-white">
                         {job.location}
                       </span>
-                      <span className="px-3 py-1 rounded-full border border-white/15">
+                      <span className="px-3 py-1 rounded-full border border-white">
                         {job.type}
                       </span>
-                      <span className="px-3 py-1 rounded-full border border-white/15">
+                      <span className="px-3 py-1 rounded-full border border-white">
                         {job.team}
                       </span>
                     </div>
-                    <p className="text-sm text-white/70 max-w-xl">
+                    <p className="text-sm text-white max-w-xl">
                       {job.short}
                     </p>
-                    <div className="flex flex-wrap gap-1.5 text-[11px] text-algoarnAqua/90">
+                    <div className="flex flex-wrap gap-1.5 text-[11px] text-white">
                       {job.tags.map((tag) => (
                         <span
                           key={tag}

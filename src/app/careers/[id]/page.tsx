@@ -104,9 +104,17 @@ export default function JobDetailPage() {
     <main className="pt-20 pb-24">
       <div className="max-w-4xl mx-auto px-4 space-y-10">
         <div className="space-y-3">
-          <Link href="/careers" className="text-xs text-algoarnAqua">
+          {/* <Link href="/careers" className="text-xs text-black">
             ← Back to all openings
-          </Link>
+          </Link> */}
+         <Link
+  href="/careers"
+  className="text-xs !text-black hover:!text-blue transition-colors"
+>
+  ← Back to all openings
+</Link>
+
+
           <h1 className="text-3xl md:text-4xl font-display font-bold">
             {job.title}
           </h1>
@@ -128,7 +136,7 @@ export default function JobDetailPage() {
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-3">
-              <h2 className="text-base md:text-lg font-semibold">
+              <h2 className="text-base md:text-lg font-semibold text-white">
                 Responsibilities
               </h2>
               <ul className="space-y-2 text-sm text-white/75">
@@ -138,7 +146,7 @@ export default function JobDetailPage() {
               </ul>
             </div>
             <div className="space-y-3">
-              <h2 className="text-base md:text-lg font-semibold">
+              <h2 className="text-base md:text-lg font-semibold text-white">
                 Requirements
               </h2>
               <ul className="space-y-2 text-sm text-white/75">

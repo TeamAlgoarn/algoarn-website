@@ -59,158 +59,100 @@ export default function HomePage() {
   return (
     <div className="space-y-20 md:space-y-24">
       {/* 1. HERO SECTION - FULL WIDTH EDGE TO EDGE */}
-      <SectionReveal className="relative min-h-[70vh] flex items-center justify-center  overflow-x-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-b border-algoarnAqua/30 hero-ai-bg w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] -mt-11"  >
-        {/* Glows - Extended to edges */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 -left-32 w-[800px] h-[800px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
-          <div className="absolute bottom-1/4 -right-32 w-[800px] h-[800px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-500/20 blur-3xl rounded-full animate-pulse-slow" />
+      {/* 1. HERO SECTION - LIKE ALGOARN.COM */}
+{/* <SectionReveal
+  className="relative min-h-[calc(100vh-96px)] flex items-center justify-center overflow-hidden w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] bg-black"
+> */}
+{/* <SectionReveal
+  className="relative min-h-[calc(100vh-96px)] flex justify-center overflow-hidden w-screen 
+  -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] bg-gradient-to-br from-[#eef2ff] via-[#f5f3ff] to-[#e0f2fe] pt-20 -mt-[31px]"
+> */}
+<SectionReveal
+  className="relative min-h-[calc(100vh-96px)] flex justify-center overflow-hidden w-screen 
+  -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
+  bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
+  pt-20 -mt-[31px]"
+>
+
+  {/* Soft Pastel Circles Like SUCA */}
+  {/* <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute -left-20 top-24 w-64 h-64 bg-[#c7d2fe]/60 rounded-full blur-3xl" />
+    <div className="absolute right-10 top-40 w-60 h-60 bg-[#e9d5ff]/60 rounded-full blur-3xl" />
+    <div className="absolute left-1/2 bottom-10 -translate-x-1/2 w-72 h-72 bg-[#fee2e2]/60 rounded-full blur-3xl" />
+  </div> */}
+    {/* Soft Pastel Circles Like SUCA */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute -left-20 top-24 w-64 h-64 bg-[#e8eeff]/50 rounded-full blur-3xl" />
+    <div className="absolute right-10 top-40 w-60 h-60 bg-[#f3e8ff]/50 rounded-full blur-3xl" />
+    <div className="absolute left-1/2 bottom-10 -translate-x-1/2 w-72 h-72 bg-[#ffeef2]/50 rounded-full blur-3xl" />
+  </div>
+
+
+  {/* Content */}
+  <div className="relative z-10 w-full">
+    <div className="max-w-3xl mx-auto px-6 pb-16 md:pb-20 text-center space-y-8">
+
+      {/* Heading */}
+      <FadeInUp delay={0.1}>
+        {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900">
+          Smart AI for Smarter{" "}
+          <span className="block md:inline text-indigo-600">
+            Institutions &amp; Businesses
+          </span>
+        </h1> */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-800">
+  Smart AI for Smarter{" "}
+  <span className="block md:inline text-indigo-500">
+    Institutions &amp; Businesses
+  </span>
+</h1>
+
+      </FadeInUp>
+
+      {/* Subtitle */}
+      <FadeInUp delay={0.2}>
+        <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+  At <span className="font-semibold text-indigo-600">ALGOARN</span>, we drive
+          
+          innovation through AI, enabling your businesses to unlock new
+          potential and redefine what&apos;s possible. Our AI-driven solutions
+          elevate experiences, reduce costs, and accelerate digital transformation.
+        </p>
+      </FadeInUp>
+
+      {/* CTA */}
+      <FadeInUp delay={0.3}>
+        <div className="flex justify-center pt-4">
+          <Link href="/contact" className="group">
+            <Button
+              size="lg"
+              className="px-10 py-4 text-base md:text-lg font-semibold 
+              bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg 
+              hover:from-indigo-600 hover:to-sky-600 transition-all"
+              style={{ borderRadius: "9999px" }}
+            >
+              <span className="flex items-center gap-2">
+                Contact Us
+               
+              </span>
+            </Button>
+          </Link>
         </div>
- 
-        {/* Particles */}
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
-          {floatingParticles.map((p, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-algoarnAqua rounded-full animate-float"
-              style={{
-                left: p.left,
-                top: p.top,
-                animationDelay: p.delay,
-                animationDuration: p.duration,
-              }}
-            />
-          ))}
-        </div>
- 
-        {/* Content - Full width with edge-to-edge background */}
-        <div className="relative z-10 w-full max-w-none px-6 space-y-8 py-12 md:py-16">
-          <div className="max-w-7xl mx-auto w-full">
-            {/* Badge */}
-            <FadeInUp delay={0.1}>
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm">
-                <div className="w-2 h-2 bg-algoarnAqua rounded-full animate-ping" />
-                <span className="text-xs md:text-sm font-medium text-algoarnAqua tracking-[0.2em] uppercase">
-                  Enterprise AI Solutions
-                </span>
-              </div>
-            </FadeInUp>
- 
-            {/* Main content grid */}
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center mt-8 w-full">
-              {/* Left column - Text content */}
-              <div className="space-y-8 w-full">
-                {/* Heading */}
-                <FadeInUp delay={0.2}>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
-                    Smart AI for{" "}
-                    <span className="text-algoarnAqua">
-                      Smarter Institutions &amp; Businesses
-                    </span>
-                  </h1>
-                </FadeInUp>
- 
-                {/* Subtitle */}
-                <FadeInUp delay={0.3}>
-                  <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl">
-                    Algoarn builds{" "}
-                    <span className="text-algoarnAqua font-semibold">
-                      privacy-first, outcome-driven AI
-                    </span>{" "}
-                    for universities, schools, PU colleges, and enterprises — unifying
-                    analytics, automation, and decision intelligence in one platform.
-                  </p>
-                </FadeInUp>
- 
-                {/* CTAs */}
-                <FadeInUp delay={0.4}>
-                  <div className="flex flex-col sm:flex-row gap-4 items-start pt-2">
-                    <Link href="/contact" className="group">
-                      <Button
-                        size="lg"
-                        className="px-8 py-4 text-sm md:text-base font-semibold bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90 transform hover:scale-105 transition-all shadow-xl shadow-algoarnAqua/30" style={{borderRadius:'2.5rem', width:'104%'}}
-                      >
-                        <span className="flex items-center gap-2">
-                          Contact Us
-                          <span className="group-hover:translate-x-1 transition-transform">
-                            →
-                          </span>
-                        </span>
-                      </Button>
-                    </Link>
-                     <Link href="/suca" className="group">
-                      <Button
-                        size="lg"
-                        className="px-8 py-4 text-sm md:text-base font-semibold bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90 transform hover:scale-105 transition-all shadow-xl shadow-algoarnAqua/30" style={{borderRadius:'2.5rem', width:'104%'}}
-                      >
-                        <span className="flex items-center gap-2">
-                         Explore Suca
-                          <span className="group-hover:translate-x-1 transition-transform">
-                            →
-                          </span>
-                        </span>
-                      </Button>
-                      </Link>
-                     
-                  </div>
-                </FadeInUp>
-              </div>
- 
-              {/* Right column - Metrics */}
-              <FadeInUp delay={0.5}>
-                <div className="grid grid-cols-1 gap-6 p-6 md:p-8 bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-algoarnAqua/20 w-full">
-                  {[
-                    {
-                      value: "99%",
-                      label: "Client Satisfaction",
-                      description: "Exceptional service delivery and support"
-                    },
-                    {
-                      value: "50+",
-                      label: "Institutions & Businesses",
-                      description: "Trusted by educational and corporate partners"
-                    },
-                    {
-                      value: "24/7",
-                      label: "AI-Powered Support",
-                      description: "Round-the-clock intelligent assistance"
-                    },
-                  ].map((metric, i) => (
-                    <motion.div
-                      key={metric.label}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.6 + i * 0.1,
-                        ease: "easeOut",
-                      }}
-                      className="text-left p-4 rounded-lg bg-slate-800/30 hover:bg-slate-800/50 transition-colors"
-                    >
-                      <div className="text-2xl md:text-3xl font-bold text-algoarnAqua mb-2">
-                        {metric.value}
-                      </div>
-                      <div className="text-lg font-semibold text-white mb-1">
-                        {metric.label}
-                      </div>
-                      <div className="text-sm text-white/60">
-                        {metric.description}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </FadeInUp>
-            </div>
-          </div>
-        </div>
-      </SectionReveal>
+      </FadeInUp>
+
+    </div>
+  </div>
+</SectionReveal>
+
+
  
       {/* 2. WHY ALGOARN */}
       <SectionReveal className="space-y-12">
+    
+
         <FadeInUp className="text-center space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold">Why Algoarn?</h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-black/70 max-w-2xl mx-auto">
             We combine deep AI expertise with practical delivery to help your
             institution move from data to real-world impact.
           </p>
@@ -279,16 +221,16 @@ export default function HomePage() {
       </SectionReveal>
  
       {/* 3. PREVIEW OF SUCA */}
-      <SectionReveal className="relative w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] overflow-x-hidden bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-y border-algoarnAqua/40">
+      {/* <SectionReveal className="relative w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] overflow-x-hidden bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-y border-algoarnAqua/40"> */}
   {/* Background Glow Effects - Extended beyond edges */}
-  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+  {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
     <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/15 blur-3xl rounded-full animate-pulse-slow" />
     <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/20 blur-3xl rounded-full animate-pulse-slow" />
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/15 blur-3xl rounded-full animate-pulse-slow" />
-  </div>
+  </div> */}
  
   {/* Particles */}
-  <div className="absolute inset-0 opacity-30 pointer-events-none">
+  {/* <div className="absolute inset-0 opacity-30 pointer-events-none">
     {floatingParticles.map((p, i) => (
       <div
         key={i}
@@ -301,14 +243,172 @@ export default function HomePage() {
         }}
  />
     ))}
+  </div> */}
+{/* 3. AI INNOVATIONS - SUCA */}
+      {/* AI INNOVATION – MATCHES “WHY ALGOARN?” STYLE */}
+{/* 2. AI INNOVATION – MATCHES “WHY ALGOARN?” STYLE */}
+{/* 3. AI INNOVATIONS - SUCA */}
+     <SectionReveal className="relative w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] overflow-hidden bg-gradient-to-b from-slate-50 to-white border-y border-slate-200">
+  {/* Subtle Accent Circles */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute top-1/4 -left-40 w-[800px] h-[800px] bg-indigo-100/40 blur-3xl rounded-full" />
+    <div className="absolute bottom-1/4 -right-40 w-[800px] h-[800px] bg-sky-100/40 blur-3xl rounded-full" />
   </div>
- 
+
   {/* Main Content Container */}
-  <div className="relative z-10 w-full max-w-none">
+  <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28">
+    {/* Section Title */}
+    <div className="text-center mb-16 md:mb-20">
+      <FadeInUp>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
+          AI Innovation
+        </h2>
+        <span className="inline-block px-4 py-2 mb-4 bg-indigo-50 border border-indigo-200 rounded-full text-sm font-semibold text-indigo-700">
+          Meet Suca
+        </span>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          AI-Powered Academic Intelligence Platform
+        </p>
+      </FadeInUp>
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-start">
+      {/* LEFT COLUMN - Text Content */}
+      <FadeInUp className="space-y-8">
+        <div className="space-y-6">
+          {/* Opening Hook - LEFT SIDE */}
+          <div className="space-y-3 text-lg md:text-xl text-slate-600 leading-relaxed italic border-l-4 border-indigo-500 pl-6 bg-indigo-50/50 py-4 rounded-r-lg">
+            <p>Behind every mark lies a <span className="font-semibold text-slate-900">pattern</span>.</p>
+            <p>Behind every improvement lies <span className="font-semibold text-slate-900">data</span>.</p>
+            <p>Behind every success lies <span className="font-semibold text-slate-900">guidance</span>.</p>
+          </div>
+
+          {/* Main Heading */}
+          <h3 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+            Transform Education with{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-600">
+              Intelligent Insights
+            </span>
+          </h3>
+
+          {/* Body Text */}
+          <div className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed">
+            {/* <p>
+              Every student learns differently. Every classroom hides untapped potential.
+              Every insight you don't see is a <span className="font-semibold text-slate-900">missed opportunity</span>.
+            </p> */}
+            <p className="font-semibold text-lg text-slate-900">
+              SUCA turns invisible patterns into powerful academic intelligence.
+            </p>
+            <p>
+              Powered by advanced AI, SUCA <span className="font-semibold">reads between the marks</span>,
+              uncovers learning behaviours, predicts outcomes, and helps institutions
+              guide every student with <span className="font-semibold text-indigo-700">clarity and confidence</span>.
+            </p>
+          </div>
+
+          {/* Key Value Props */}
+          <div className="bg-gradient-to-br from-indigo-50 via-sky-50 to-purple-50 rounded-2xl p-6 border-2 border-indigo-100 shadow-sm">
+            <p className="text-base text-slate-700 mb-4 font-medium">
+              <span className="font-bold text-slate-900">Not just analytics</span> — it's understanding.{" "}<br/>
+              <span className="font-bold text-slate-900">Not just an LMS</span> — it's education reimagined.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                "✓ Nurture growth",
+                "✓ Reduce skill gaps",
+                "✓ Elevate results",
+              ].map((benefit) => (
+                <div key={benefit} className="flex items-center gap-2 text-indigo-700 font-semibold text-sm">
+                  <span>{benefit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="pt-4">
+            <Link href="/suca" className="group">
+              <Button
+                size="lg"
+                className="px-10 py-5 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-600 to-sky-600 text-white shadow-xl hover:shadow-2xl hover:from-indigo-700 hover:to-sky-700 transform hover:scale-105 transition-all"
+                style={{ borderRadius: '9999px' }}
+              >
+                <span className="flex items-center gap-2">
+                  Explore SUCA
+                  
+                </span>
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </FadeInUp>
+
+      {/* RIGHT COLUMN - Visual Card with Stats */}
+      <FadeInUp delay={0.2} className="space-y-8">
+        {/* Opening Hook - RIGHT SIDE */}
+        <div className="space-y-3 text-lg md:text-xl text-slate-600 leading-relaxed italic border-l-4 border-indigo-500 pl-6 bg-indigo-50/50 py-4 rounded-r-lg">
+          <p>Every student learns  <span className="font-semibold text-slate-900"> differently</span>.</p>
+          <p>Every classroom hides untapped . <span className="font-semibold text-slate-900">potential</span>.</p>
+          <p>Every insight you don't see is a missed <span className="font-semibold text-slate-900">opportunity</span>.</p>
+        </div>
+
+        {/* Visual Card */}
+        <div className="relative">
+          {/* Decorative Elements */}
+          <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-indigo-400 to-sky-400 rounded-full blur-2xl opacity-20" />
+          <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-2xl opacity-20" />
+
+          <div className="relative bg-gradient-to-br from-white to-indigo-50 rounded-3xl border-2 border-indigo-200 p-8 md:p-10 shadow-2xl shadow-indigo-500/10 hover:shadow-indigo-500/20 transition-all duration-500">
+            <div className="space-y-8 text-center">
+              {/* AI Brain Icon */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-sky-500 rounded-full blur-xl opacity-30" />
+                <div className="relative text-6xl md:text-7xl">🧠</div>
+              </div>
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { value: "99%", label: "Accuracy" },
+                  { value: "24/7", label: "Insights" },
+                  { value: "360°", label: "Coverage" },
+                  { value: "Real-time", label: "Analytics" },
+                ].map((stat) => (
+                  <div key={stat.label} className="p-4 bg-white rounded-xl border border-indigo-100 shadow-md hover:shadow-lg transition-shadow">
+                    <div className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-600">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs text-slate-600 font-medium mt-1">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Caption */}
+              <div className="space-y-2">
+                <p className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-sky-700">
+                  Academic Intelligence at a Glance
+                </p>
+                <p className="text-sm text-slate-600 max-w-xs mx-auto leading-relaxed">
+                  Track cohorts, identify at-risk students, and align interventions seamlessly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </FadeInUp>
+    </div>
+  </div>
+</SectionReveal>
+
+  {/* Main Content Container */}
+  {/* <div className="relative z-10 w-full max-w-none">
     <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
-      <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center">
+      <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center"> */}
         {/* Text Content */}
-        <FadeInUp className="space-y-8">
+        {/* <FadeInUp className="space-y-8">
           <div className="space-y-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/30 text-algoarnAqua text-xs md:text-sm font-semibold">
               🧠 Preview · SUCA Platform
@@ -351,10 +451,10 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-        </FadeInUp>
+        </FadeInUp> */}
  
         {/* Visual */}
-        <FadeInUp delay={0.2} className="relative">
+        {/* <FadeInUp delay={0.2} className="relative">
           <div className="aspect-square bg-gradient-to-br from-algoarnAqua/15 to-algoarnBlue/25 rounded-2xl border border-algoarnAqua/40 flex items-center justify-center p-8 shadow-xl shadow-algoarnAqua/10">
             <div className="space-y-6 text-center">
               <div className="text-5xl md:text-6xl">📈</div>
@@ -373,10 +473,10 @@ export default function HomePage() {
       </div>
     </div>
   </div>
-</SectionReveal>
+</SectionReveal> */}
  
       {/* 4. SERVICES OVERVIEW */}
-      <SectionReveal className="space-y-12">
+      {/* <SectionReveal className="space-y-12">
         <FadeInUp className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             Our AI Services
@@ -442,10 +542,86 @@ export default function HomePage() {
             </FadeInUp>
           ))}
         </div>
-      </SectionReveal>
- 
+      </SectionReveal> */}
+ {/* 4. AI SERVICES — LIKE ALGOARN.COM */}
+{/*  */}
+<SectionReveal className="pt-20 pb-24 space-y-16">
+  {/* Title */}
+  <FadeInUp className="text-center space-y-4">
+    <h2 className="text-4xl md:text-5xl font-bold">AI Services</h2>
+  </FadeInUp>
+
+  {/* 3 big illustrations */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 place-items-center">
+
+    {/* Computer Vision */}
+    <FadeInUp delay={0.1}>
+      <div className="text-center space-y-6 max-w-xs">
+        
+        {/* Image Hover Effect */}
+        <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
+          <img
+            src="/computer vision.avif"
+            alt="Computer Vision"
+            className="w-72 mx-auto"
+          />
+        </div>
+
+        <h3 className="text-xl font-bold">Computer Vision</h3>
+        <p className="text-black/70 text-base leading-relaxed">
+          Turning visuals into valuable insights—let AI see, understand,
+          and automate.
+        </p>
+      </div>
+    </FadeInUp>
+
+    {/* Generative AI */}
+    <FadeInUp delay={0.2}>
+      <div className="text-center space-y-6 max-w-xs">
+
+        {/* Image Hover Effect */}
+        <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
+          <img
+            src="/genai.avif"
+            alt="Generative AI"
+            className="w-72 mx-auto"
+          />
+        </div>
+
+        <h3 className="text-xl font-bold">Generative AI</h3>
+        <p className="text-black/70 text-base leading-relaxed">
+          Unleashing creativity and efficiency—AI that crafts, creates,
+          and innovates for you.
+        </p>
+      </div>
+    </FadeInUp>
+
+    {/* Predictive AI */}
+    <FadeInUp delay={0.3}>
+      <div className="text-center space-y-6 max-w-xs">
+
+        {/* Image Hover Effect */}
+        <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
+          <img
+            src="/predictive.png"
+            alt="Predictive AI"
+            className="w-72 mx-auto"
+          />
+        </div>
+
+        <h3 className="text-xl font-bold">Predictive AI</h3>
+        <p className="text-black/70 text-base leading-relaxed">
+          Stay ahead of the curve—AI that predicts trends and empowers
+          smarter decisions.
+        </p>
+      </div>
+    </FadeInUp>
+
+  </div>
+</SectionReveal>
+
       {/* 5. BLOG HIGHLIGHTS – TITLES ONLY */}
-      <SectionReveal className="space-y-12">
+      {/* <SectionReveal className="space-y-12">
         <FadeInUp className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">Latest Insights</h2>
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
@@ -471,10 +647,10 @@ export default function HomePage() {
             </FadeInUp>
           ))}
         </div>
-      </SectionReveal>
+      </SectionReveal> */}
  
       {/* 6. FINAL CTA */}
-      <SectionReveal className="relative">
+      {/* <SectionReveal className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-algoarnAqua/10 via-purple-500/10 to-algoarnBlue/10 rounded-3xl blur-3xl opacity-40" />
  
         <NeonCard className="p-10 md:p-16 relative bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-algoarnAqua/50 backdrop-blur-sm text-center">
@@ -517,7 +693,7 @@ export default function HomePage() {
             </div>
           </FadeInUp>
         </NeonCard>
-      </SectionReveal>
+      </SectionReveal> */}
     </div>
   );
 }

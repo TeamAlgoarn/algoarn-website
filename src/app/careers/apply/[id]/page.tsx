@@ -90,13 +90,20 @@ export default function ApplyPage() {
     <main className="pt-20 pb-24">
       <div className="max-w-4xl mx-auto px-4 space-y-10">
         <div className="space-y-3">
-          <Link href={`/careers/${jobId}`} className="text-xs text-algoarnAqua">
+          {/* <Link href={`/careers/${jobId}`} className="text-xs text-algoarnAqua">
             ← Back to role details
-          </Link>
+          </Link> */}
+          <Link
+  href="/careers"
+  className="text-xs !text-black hover:!text-blue transition-colors"
+>
+ ← Back to role details
+</Link>
+
           <h1 className="text-2xl md:text-3xl font-display font-bold">
             Apply for: <span className="text-algoarnAqua">{jobTitle}</span>
           </h1>
-          <p className="text-sm text-white/60">
+          <p className="text-sm text-black">
             Share a bit about yourself. We&apos;ll review and get back if
             there&apos;s a good match.
           </p>
@@ -106,7 +113,7 @@ export default function ApplyPage() {
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-white/80">
+                <label className="text-xs font-medium text-white">
                   Name <span className="text-red-400">*</span>
                 </label>
                 <Input
@@ -117,7 +124,7 @@ export default function ApplyPage() {
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-white/80">
+                <label className="text-xs font-medium text-white">
                   Email <span className="text-red-400">*</span>
                 </label>
                 <Input
@@ -132,7 +139,7 @@ export default function ApplyPage() {
 
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-white/80">
+                <label className="text-xs font-medium text-white">
                   Phone
                 </label>
                 <Input
@@ -143,7 +150,7 @@ export default function ApplyPage() {
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-white/80">
+                <label className="text-xs font-medium text-white">
                   LinkedIn
                 </label>
                 <Input
@@ -156,7 +163,7 @@ export default function ApplyPage() {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-white/80">
+              <label className="text-xs font-medium text-white">
                 Portfolio / GitHub / Resume link
               </label>
               <Input
@@ -168,7 +175,7 @@ export default function ApplyPage() {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-white/80">
+              <label className="text-xs font-medium text-white">
                 Short intro / message
               </label>
               <Textarea

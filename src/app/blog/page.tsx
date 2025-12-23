@@ -376,67 +376,72 @@ export default function BlogPage() {
   return (
     <div className="space-y-20 md:space-y-24">
       {/* HERO SECTION */}
-      <SectionReveal className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-b border-algoarnAqua/30 -mx-6 px-6 md:-mx-8 md:px-8 -mt-11">
-        {/* Background glows */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 -left-32 w-[800px] h-[800px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
-          <div className="absolute bottom-1/4 -right-32 w-[800px] h-[800px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
-        </div>
+      {/*  */}
+<SectionReveal
+  className="relative min-h-[50vh] flex justify-center overflow-hidden w-screen
+  -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
+  bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
+  pt-20 -mt-[31px]"
+>
+  {/* Background glows */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute top-1/4 -left-32 w-[800px] h-[800px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
+    <div className="absolute bottom-1/4 -right-32 w-[800px] h-[800px] bg-algoarnBlue/20 blur-3xl rounded-full animate-pulse-slow" />
+  </div>
 
-        {/* Particles */}
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
-          {floatingParticles.map((p, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-algoarnAqua rounded-full animate-float"
-              style={{
-                left: p.left,
-                top: p.top,
-                animationDelay: p.delay,
-                animationDuration: p.duration,
-              }}
-            />
-          ))}
-        </div>
+  {/* Particles (deterministic) */}
+  <div className="absolute inset-0 opacity-30 pointer-events-none">
+    {floatingParticles.map((p, i) => (
+      <div
+        key={i}
+        className="absolute w-1 h-1 bg-algoarnAqua rounded-full animate-float"
+        style={{
+          left: p.left,
+          top: p.top,
+          animationDelay: p.delay,
+          animationDuration: p.duration,
+        }}
+      />
+    ))}
+  </div>
 
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto py-16 md:py-20 text-center space-y-8">
-          <FadeInUp delay={0.1}>
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm">
-              <div className="w-2 h-2 bg-algoarnAqua rounded-full animate-ping" />
-              <span className="text-xs md:text-sm font-medium text-algoarnAqua tracking-[0.2em] uppercase">
-                Insights & Updates
-              </span>
-            </div>
-          </FadeInUp>
+  {/* Content */}
+  <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-16 md:py-20 text-center space-y-8">
+    <FadeInUp delay={0.1}>
+      <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm">
+        <div className="w-2 h-2 bg-algoarnAqua rounded-full animate-ping" />
+        <span className="text-xs md:text-sm font-medium text-indigo-500 tracking-[0.2em] uppercase">
+          Insights & Updates
+        </span>
+      </div>
+    </FadeInUp>
 
-          <FadeInUp delay={0.2}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
-              Algoarn{" "}
-              <span className="text-algoarnAqua">Insights</span>
-            </h1>
-          </FadeInUp>
+    <FadeInUp delay={0.2}>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900">
+        Algoarn{" "}
+        <span className="text-algoarnAqua">Insights</span>
+      </h1>
+    </FadeInUp>
 
-          <FadeInUp delay={0.3}>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
-              Thought leadership on AI in education, technical deep dives, and
-              practical insights from building privacy-first intelligence
-              systems.
-            </p>
-          </FadeInUp>
-        </div>
-      </SectionReveal>
+    <FadeInUp delay={0.3}>
+      <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto">
+        Thought leadership on AI in education, technical deep dives, and
+        practical insights from building privacy-first intelligence systems.
+      </p>
+    </FadeInUp>
+  </div>
+</SectionReveal>
 
       {/* CATEGORY FILTER */}
-      <SectionReveal>
+      {/* <SectionReveal>
         <FadeInUp>
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-3 justify-center text-black">
             {categories.map((category) => (
               <button
                 key={category}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-5 py-2.5 rounded-full text-black text-sm font-medium transition-all duration-300 ${
                   category === "All"
-                    ? "bg-gradient-to-r from-algoarnAqua to-algoarnBlue text-white shadow-lg shadow-algoarnAqua/30"
+                    ? "bg-gradient-to-r from-algoarnAqua to-algoarnBlue text-black shadow-lg shadow-algoarnAqua/30"
                     : "bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white hover:border-algoarnAqua/30"
                 }`}
               >
@@ -445,7 +450,28 @@ export default function BlogPage() {
             ))}
           </div>
         </FadeInUp>
-      </SectionReveal>
+      </SectionReveal> */}
+{/* CATEGORY FILTER */}
+<SectionReveal>
+  <FadeInUp>
+    <div className="flex flex-wrap gap-3 justify-center">
+      {categories.map((category) => (
+        <button
+          key={category}
+          className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300
+            ${
+              category === "All"
+                ? "bg-white text-black shadow-md border border-black/10"
+                : "bg-white text-black border border-black/10 hover:bg-black hover:text-white"
+            }
+          `}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+  </FadeInUp>
+</SectionReveal>
 
       {/* BLOG POSTS GRID */}
       <SectionReveal className="space-y-12">
@@ -457,7 +483,7 @@ export default function BlogPage() {
                   <div className="space-y-6 flex-1 flex flex-col">
                     {/* Category Badge */}
                     <div className="flex items-center justify-between">
-                      <span className="inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-algoarnAqua/10 text-algoarnAqua border border-algoarnAqua/30">
+                      <span className="inline-flex px-3 py-1 rounded-full  text-xs font-semibold bg-algoarnAqua/10 text-algoarnAqua border border-algoarnAqua/30">
                         {post.category}
                       </span>
                       <span className="text-xs text-white/50">
@@ -505,9 +531,10 @@ export default function BlogPage() {
                 key={page}
                 className={`w-10 h-10 rounded-lg flex items-center justify-center font-semibold transition-all duration-300 ${
                   page === 1
-                    ? "bg-gradient-to-r from-algoarnAqua to-algoarnBlue text-white shadow-lg shadow-algoarnAqua/30"
-                    : "bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:border-algoarnAqua/30"
-                }`}
+            ? "bg-white text-black shadow-md border border-black/10"
+            : "bg-white text-black border border-black/10 hover:bg-black hover:text-white"
+        }
+      `}
               >
                 {page}
               </button>
@@ -517,7 +544,7 @@ export default function BlogPage() {
       </SectionReveal>
 
       {/* NEWSLETTER SUBSCRIBE CTA */}
-      <SectionReveal className="relative overflow-hidden bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-y border-algoarnAqua/40 -mx-6 px-6 md:-mx-8 md:px-8">
+      {/* <SectionReveal className="relative overflow-hidden bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-y border-algoarnAqua/40 -mx-6 px-6 md:-mx-8 md:px-8">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/15 blur-3xl rounded-full animate-pulse-slow" />
           <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/20 blur-3xl rounded-full animate-pulse-slow" />
@@ -551,7 +578,64 @@ export default function BlogPage() {
             </p>
           </FadeInUp>
         </div>
-      </SectionReveal>
+      </SectionReveal> */}
+      <SectionReveal className="relative overflow-hidden rounded-[32px] border border-algoarnAqua/25 bg-[#071226] shadow-[0_0_60px_rgba(56,189,248,0.18)] -mx-6 px-6 md:-mx-8 md:px-8">
+  {/* Neon glow background */}
+  <div className="absolute inset-0 pointer-events-none">
+    {/* vignette + depth */}
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.10)_0%,rgba(7,18,38,0.9)_45%,rgba(3,8,20,1)_100%)]" />
+
+    {/* top glow */}
+    <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[520px] bg-algoarnAqua/25 blur-[90px] rounded-full" />
+
+    {/* side glows */}
+    <div className="absolute top-1/3 -left-56 w-[700px] h-[700px] bg-algoarnBlue/20 blur-[110px] rounded-full" />
+    <div className="absolute bottom-1/3 -right-56 w-[700px] h-[700px] bg-algoarnAqua/18 blur-[110px] rounded-full" />
+
+    {/* subtle animated shimmer */}
+    <div className="absolute inset-0 opacity-40 animate-pulse">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.18),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(99,102,241,0.16),transparent_55%)]" />
+    </div>
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 w-full max-w-4xl mx-auto py-16 md:py-20 text-center space-y-8">
+    <FadeInUp>
+      <div className="text-4xl md:text-5xl mb-4">📬</div>
+
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        Stay Updated with <span className="text-algoarnAqua">AI Insights</span>
+      </h2>
+
+      <p className="text-lg text-white/80 leading-relaxed max-w-2xl mx-auto mb-8">
+        Get the latest articles on AI in education, product updates, and
+        technical insights delivered to your inbox.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          className="flex-1 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:outline-none focus:border-algoarnAqua/50 focus:ring-2 focus:ring-algoarnAqua/20 transition-all"
+        />
+
+        <button
+          className="px-8 py-3 rounded-full bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90 font-semibold text-white
+          shadow-[0_0_22px_rgba(56,189,248,0.35)] hover:shadow-[0_0_34px_rgba(56,189,248,0.55)]
+          transform hover:scale-105 transition-all"
+        >
+          Subscribe
+        </button>
+      </div>
+
+      <p className="text-xs text-white/50 mt-4">
+        No spam. Unsubscribe anytime. Privacy-first commitment.
+      </p>
+    </FadeInUp>
+  </div>
+</SectionReveal>
+
     </div>
   );
 }

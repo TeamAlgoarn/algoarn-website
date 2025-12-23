@@ -2,6 +2,7 @@
  
 import { motion } from "framer-motion";
 import Link from "next/link";
+
 import {
   GraduationCap,
   School,
@@ -136,104 +137,203 @@ const staggerChildren = {
     },
   },
 };
- 
+ const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
+  left: `${(i * 17) % 100}%`,
+  top: `${(i * 37) % 100}%`,
+  duration: 3 + (i % 3), // 3–5 seconds
+  delay: (i % 4) * 0.4,  // 0, 0.4, 0.8, 1.2
+}));
 export default function SUCAPage() {
   return (
-    <main className="min-h-screen pt-20 overflow-hidden">
-      {/* 1. ENHANCED HERO SECTION */}
-      <section className="section-padding relative overflow-hidden bg-gradient-to-br from-algoarn-black via-algoarn-black to-slate-900">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 -z-10 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-algoarnBlue rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute top-40 right-20 w-96 h-96 bg-algoarnAqua rounded-full blur-3xl animate-pulse-slower" />
-          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-500 rounded-full blur-3xl animate-pulse-slow" />
-        </div>
- 
-        {/* Floating elements */}
-        <motion.div
-          className="absolute top-1/4 left-1/6"
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 4, repeat: Infinity }}
-        >
-          <Sparkles className="w-8 h-8 text-algoarnAqua/40" />
-        </motion.div>
-        <motion.div
-          className="absolute top-1/3 right-1/5"
-          animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-        >
-          <BarChart className="w-6 h-6 text-algoarnBlue/40" />
-        </motion.div>
- 
-        {/* <motion.div
-          initial="initial"
-          animate="animate"
-          variants={staggerChildren}
-          className="max-w-6xl mx-auto text-center space-y-8"
-        > */}
-        <motion.div
-  initial="initial"
-  animate="animate"
-  variants={staggerChildren}
-  className="max-w-6xl mx-auto text-center space-y-8 pb-16 md:pb-24"
+    <>
+ <section className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-20 -mt-[31px]" style={{marginTop:'-25px'}}>
+
+  {/* Background Glows */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
+    <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
+  </div>
+
+  {/* Floating Particles */}
+  <div className="absolute inset-0 opacity-40 pointer-events-none">
+    {serviceParticles.map((p, i) => (
+      <motion.div
+        key={i}
+        className="absolute w-1 h-1 bg-algoarnAqua rounded-full"
+        style={{ left: p.left, top: p.top }}
+        animate={{ y: [0, -30, 0], opacity: [0, 1, 0] }}
+        transition={{
+          duration: p.duration,
+          delay: p.delay,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+    ))}
+  </div>
+
+  {/* Content */}
+  <motion.div
+    initial={{ opacity: 0, y: 60 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-10"
+  >
+    {/* Badge */}
+    {/* <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full 
+      bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm"> */}
+      <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm">
+
+      <Sparkles className="w-4 h-4 text-algoarnAqua" />
+      <span className="text-xs md:text-sm font-medium text-indigo-500 tracking-[0.25em] uppercase">
+       Flagship AI Product
+      </span>
+    </div>
+
+    {/* Heading */}
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
+      Transform Education With AI Intelligence 
+    </h1>
+
+    {/* Subheading */}
+    <p className="text-lg md:text-xl text-black leading-relaxed max-w-4xl mx-auto">
+       SUCA turns academic data into{" "}
+          <span className="text-algoarnAqua font-semibold">actionable intelligence</span> — helping
+          institutions predict outcomes, personalize learning, and drive excellence at every level.
+    </p>
+
+    {/* CTAs */}
+    
+   <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 text-white" style={{ marginBottom: "78px" }}>
+
+ {/* <Button
+  asChild
+  size="lg"
+  className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all"
+  style={{ borderRadius: "9999px" }}
 >
- 
-          <motion.div variants={fadeInUp}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/20 mb-6">
-              <Sparkles className="w-4 h-4 text-algoarnAqua" />
-              <span className="text-[13px] uppercase tracking-[0.2em] text-algoarnAqua font-semibold">
-                Flagship AI Product
-              </span>
-            </div>
-          </motion.div>
- 
-          <motion.h1
-            variants={fadeInUp}
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white"
-          >
-            Transform Education  With AI Intelligence
-           
-          </motion.h1>
- 
-          <motion.p
-            variants={fadeInUp}
-            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
-          >
-            SUCA turns academic data into <span className="text-algoarnAqua font-semibold">actionable intelligence</span> — helping institutions predict outcomes, personalize learning, and drive excellence at every level.
-          </motion.p>
- 
-          <motion.div
-            variants={fadeInUp}
-            className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Link href="/contact?type=SUCA+Demo">
-              <Button size="lg" className="px-8 py-4 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90" style={{borderRadius:'2.5rem', width:'104%'}}>
-                <Sparkles className="w-5 h-5 mr-2" />
-                Book a Demo
-              </Button>
-            </Link>
-            <Link href="/contact?type=SUCA+Pricing">
-              <Button size="lg" className="px-8 py-4 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90" style={{borderRadius:'2.5rem', width:'104%'}}>
-                View Pricing Plans
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
-          </motion.div>
- 
-          {/* Stats preview */}
-          <motion.div
-            variants={fadeInUp}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 max-w-3xl mx-auto"
-          >
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.number}</div>
-                <div className="text-xs text-gray-400 uppercase tracking-wider">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
+  <Link href="/contact?type=AI+Services " >Contact Us</Link>
+</Button> */}
+<Button
+  asChild
+  size="lg"
+  className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all"
+  style={{ borderRadius: "9999px" }}
+>
+  <Link href="/contact?type=AI+Services">
+    <span className="text-white">Book a Demo</span>
+  </Link>
+</Button>
+
+<Button
+  asChild
+  size="lg"
+  className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all"
+  style={{ borderRadius: "9999px" }}
+>
+  <Link href="/services?type=AI+Services">
+    <span className="text-white">View Pricing Plans</span>
+  </Link>
+</Button>
+  {/* <Button
+    asChild
+    size="lg"
+    className="px-10 py-4 text-base md:text-lg font-semibold
+    bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg
+    hover:from-indigo-600 hover:to-sky-600 transition-all"
+    style={{ borderRadius: "9999px" }}
+  >
+    <Link href="#services" className="flex items-center gap-2">
+      Explore Services
+    </Link>
+  </Button> */}
+
+</div>
+
+
+  </motion.div>
+</section>
+      {/* 1. ENHANCED HERO SECTION */}
+    {/* 1. ENHANCED HERO SECTION (FULL WIDTH FIX) */}
+
+{/* 1. HERO SECTION (Transform box styled like "Your Data is 100% Secure") */}
+{/* <section className="relative overflow-hidden"> */}
+  {/* FULL-BLEED WRAPPER (breaks out of any max-w container / page padding) */}
+  {/* <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden"> */}
+    {/* Gradient Background */}
+    {/* <div className="absolute inset-0 bg-gradient-to-br from-[#0B1324] via-[#0B1B33] to-[#07101E]" /> */}
+
+    {/* Optional border + rounding (remove rounded if you want sharp edges) */}
+    {/* <div className="relative"> */}
+      {/* Subtle glow */}
+      {/* <div className="absolute -top-24 -left-24 w-80 h-80 bg-algoarnAqua/20 blur-3xl rounded-full" />
+      <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-algoarnBlue/20 blur-3xl rounded-full" /> */}
+
+      {/* Content */}
+      {/* <motion.div
+        initial="initial"
+        animate="animate"
+        variants={staggerChildren}
+        className="relative z-10 max-w-6xl mx-auto text-center space-y-8 py-20 md:py-28 px-6"
+      >
+        <motion.div variants={fadeInUp}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 mb-6">
+            <Sparkles className="w-4 h-4 text-algoarnAqua" />
+            <span className="text-[13px] uppercase tracking-[0.2em] text-white/80 font-semibold">
+              Flagship AI Product
+            </span>
+          </div>
         </motion.div>
-      </section>
+
+        <motion.h1
+          variants={fadeInUp}
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white"
+        >
+          Transform Education With AI Intelligence
+        </motion.h1>
+
+        <motion.p
+          variants={fadeInUp}
+          className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto leading-relaxed"
+        >
+          SUCA turns academic data into{" "}
+          <span className="text-algoarnAqua font-semibold">actionable intelligence</span> — helping
+          institutions predict outcomes, personalize learning, and drive excellence at every level.
+        </motion.p>
+
+        <motion.div
+          variants={fadeInUp}
+          className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <Link href="/contact?type=SUCA+Demo">
+            <Button
+              size="lg"
+              className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
+              style={{ borderRadius: "2.5rem" }}
+            >
+              <Sparkles className="w-5 h-5 mr-2" />
+              Book a Demo
+            </Button>
+          </Link>
+
+          <Link href="/contact?type=SUCA+Pricing">
+            <Button
+              size="lg"
+              className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
+              style={{ borderRadius: "2.5rem" }}
+            >
+              View Pricing Plans
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
+        </motion.div>
+      </motion.div>
+    </div>
+  </div>
+</section> */}
+
+
+
  
       {/* 2. ENHANCED PROBLEM SECTION */}
       {/* <section className="section-padding bg-gradient-to-br from-slate-900 to-algoarn-black relative" style={{marginTop:'50px'}}> */}
@@ -243,72 +343,67 @@ export default function SUCAPage() {
 >
  
         <div className="max-w-7xl mx-auto"> */}
-        <section className="section-padding bg-gradient-to-br from-slate-900 to-algoarn-black relative" style={{marginTop:'50px'}}>
-  <div className="max-w-7xl mx-auto pt-12">
- 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16 space-y-4"
-          >
-            {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20"> */}
-              {/* <AlertTriangle className="w-4 h-4 text-red-400" /> */}
-              {/* <span className="text-[13px] uppercase tracking-[0.2em] text-red-400 font-semibold">
-                The Challenge
-              </span> */}
-            {/* </div> */}
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
-              Data-Rich But <span className="text-red-400">Insight-Poor</span>
-            </h2>
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Institutions are drowning in data but starving for actionable insights that actually improve student outcomes.
-            </p>
-          </motion.div>
- 
-          <motion.div
-            variants={staggerChildren}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            {[
-              {
-                problem: "Reactive, Not Proactive",
-                description: "Issues are identified after exams, when it's too late for meaningful intervention.",
-                icon: AlertTriangle,
-                color: "red"
-              },
-              {
-                problem: "Siloed Information",
-                description: "Data lives in separate systems, preventing a holistic view of student progress.",
-                icon: BarChart,
-                color: "yellow"
-              },
-              {
-                problem: "One-Size-Fits-All Approach",
-                description: "Traditional methods can't provide the personalized insights each student needs.",
-                icon: Users,
-                color: "blue"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="glass-card p-8 rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-300 group hover:scale-105"
-              >
-                <div className={`w-14 h-14 rounded-2xl bg-${item.color}-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <item.icon className={`w-7 h-7 text-${item.color}-400`} />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{item.problem}</h3>
-                <p className="text-gray-300 leading-relaxed">{item.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+        
+ <section className="relative py-24 overflow-hidden" style={{marginTop:'35px'}}>
+  {/* Base dark navy (same style as hero) */}
+  {/* <div className="absolute inset-0 bg-gradient-to-br from-[#070F1F] via-[#081A33] to-[#040A16]" /> */}
+
+    <div >
+      {/* Gradient Background */}
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-[#0B1324] via-[#0B1B33] to-[#07101E]" /> */}
+      </div>
+
+  {/* Soft hero-like glows */}
+  <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-algoarnAqua/16 blur-[140px] rounded-full" />
+  <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-algoarnBlue/16 blur-[140px] rounded-full" />
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6">
+    <div className="text-center mb-20">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-black">
+         <span className="text-red"> Data-Rich But Insight-Poor</span>
+      </h2>
+      <p className="mt-4 text-lg text-black/ max-w-3xl mx-auto">
+        Institutions are drowning in data but starving for actionable insights
+        that actually improve student outcomes.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="bg-[#071428] rounded-[36px] p-10 shadow-2xl">
+        <div className="w-12 h-12 rounded-2xl bg-red-500/15 border border-red-400/30 flex items-center justify-center mb-6">
+          <AlertTriangle className="w-6 h-6 text-red-400" />
         </div>
-      </section>
- 
+        <h3 className="text-xl font-bold text-white mb-3">Reactive, Not Proactive</h3>
+        <p className="text-white/70 leading-relaxed">
+          Issues are identified after exams, when it’s too late for meaningful intervention.
+        </p>
+      </div>
+
+      <div className="bg-[#071428] rounded-[36px] p-10 shadow-2xl">
+        <div className="w-12 h-12 rounded-2xl bg-yellow-400/15 border border-yellow-300/30 flex items-center justify-center mb-6">
+          <BarChart className="w-6 h-6 text-yellow-300" />
+        </div>
+        <h3 className="text-xl font-bold text-white mb-3">Siloed Information</h3>
+        <p className="text-white/70 leading-relaxed">
+          Data lives in separate systems, preventing a holistic view of student progress.
+        </p>
+      </div>
+
+      <div className="bg-[#071428] rounded-[36px] p-10 shadow-2xl">
+        <div className="w-12 h-12 rounded-2xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center mb-6">
+          <Users className="w-6 h-6 text-blue-300" />
+        </div>
+        <h3 className="text-xl font-bold text-white mb-3">One-Size-Fits-All Approach</h3>
+        <p className="text-white/70 leading-relaxed">
+          Traditional methods can’t provide the personalized insights each student needs.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 {/* 3. ENHANCED PRODUCT OVERVIEW */}
       <section className="section-padding relative" style={{marginTop:'50px'}}>
         <div className="max-w-7xl mx-auto grid gap-16 lg:grid-cols-2 items-center">
@@ -324,14 +419,14 @@ export default function SUCAPage() {
                 The Solution
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-black">
               Meet SUCA: Your <span className="text-algoarnAqua">AI Academic Partner</span>
             </h2>
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg text-black-300 leading-relaxed">
               SUCA (Smart Unified Cognitive Analytics) is the intelligent layer that transforms raw academic data into meaningful, actionable insights for every stakeholder.
             </p>
            
-            <div className="space-y-4">
+            <div className="space-y-4 " >
               {[
                 "Predict student performance before exams",
                 "Identify at-risk students 6-8 weeks earlier",
@@ -340,7 +435,7 @@ export default function SUCAPage() {
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-algoarnAqua flex-shrink-0" />
-                  <span className="text-gray-300">{benefit}</span>
+                  <span className="text-black-300">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -352,8 +447,8 @@ export default function SUCAPage() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="glass-card rounded-3xl border border-white/10 p-8 space-y-6 bg-gradient-to-br from-algoarn-black/50 to-slate-900/50">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="glass-card rounded-3xl border border-white p-8 space-y-6 bg-gradient-to-br from-algoarn-black/50 to-slate-900/50">
+              <div className="grid grid-cols-2 gap-4 text-white">
                 {[
                   { label: "Predictive Analytics", value: "94%", color: "from-green-500 to-emerald-500" },
                   { label: "Risk Detection", value: "89%", color: "from-blue-500 to-cyan-500" },
@@ -364,17 +459,17 @@ export default function SUCAPage() {
                     <div className={`text-2xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                       {item.value}
                     </div>
-                    <div className="text-xs text-gray-400 mt-1">{item.label}</div>
+                    <div className="text-xs text-white mt-1">{item.label}</div>
                   </div>
                 ))}
               </div>
              
-              <div className="bg-algoarnAqua/10 border border-algoarnAqua/20 rounded-2xl p-4">
-                <div className="flex items-center gap-2 text-algoarnAqua text-sm font-semibold">
+              <div className="bg-algoarnAqua/10 border border-white rounded-2xl p-4">
+                <div className="flex items-center gap-2 text-white text-sm font-semibold">
                   <Star className="w-4 h-4 fill-algoarnAqua" />
                   Trusted by 50+ Institutions
                 </div>
-                <p className="text-xs text-gray-400 mt-1">
+                <p className="text-xs text-white mt-1">
                   Universities, schools, and colleges across India
                 </p>
               </div>
@@ -384,7 +479,7 @@ export default function SUCAPage() {
       </section>
  
       {/* 4. ENHANCED EDITIONS SECTION */}
-      <section className="section-padding bg-gradient-to-br from-algoarn-black to-slate-900 relative" style={{marginTop:'50px'}}>
+      <section className="section-padding " style={{marginTop:'50px'}}>
         <div className="max-w-7xl mx-auto space-y-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -398,10 +493,10 @@ export default function SUCAPage() {
                 Tailored Solutions
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-black">
               Choose Your <span className="text-algoarnBlue">SUCA Edition</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+            <p className="text-black-400 text-lg max-w-3xl mx-auto">
               One powerful AI engine, perfectly adapted for your specific educational context and challenges.
             </p>
           </motion.div>
@@ -459,15 +554,17 @@ export default function SUCAPage() {
             className="text-center space-y-4"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/20">
-              <Sparkles className="w-4 h-4 text-algoarnAqua" />
-              <span className="text-[13px] uppercase tracking-[0.2em] text-algoarnAqua font-semibold">
-                Powerful Features
+              {/* <Sparkles className="w-4 h-4 text-algoarnAqua" /> */}
+              <Sparkles className="w-8 h-8 text-white/60" />
+
+              <span className="text-[13px] uppercase tracking-[0.2em] text-black font-semibold">
+               The Powerful Features
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
               Intelligent Tools for <span className="text-algoarnAqua">Modern Education</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+            <p className="text-black text-lg max-w-3xl mx-auto">
               SUCA combines cutting-edge AI with deep educational expertise to deliver insights that matter.
             </p>
           </motion.div>
@@ -486,7 +583,7 @@ export default function SUCAPage() {
                 className="glass-card p-8 rounded-3xl border border-white/10 hover:border-algoarnAqua/30 transition-all duration-300 group hover:scale-105"
               >
                 <div className="p-4 rounded-2xl bg-algoarnAqua/10 inline-flex mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-7 h-7 text-algoarnAqua" />
+                  <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
                 <p className="text-gray-300 leading-relaxed">{feature.description}</p>
@@ -523,7 +620,7 @@ export default function SUCAPage() {
               ].map((item, index) => (
                 <div key={index} className="text-center p-4">
                   <div className="text-green-400 font-semibold mb-2">{item.title}</div>
-                  <div className="text-sm text-gray-400">{item.desc}</div>
+                  <div className="text-sm text-white">{item.desc}</div>
                 </div>
               ))}
             </div>
@@ -545,9 +642,9 @@ export default function SUCAPage() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-algoarnBlue/10 rounded-full blur-3xl translate-y-32 -translate-x-32" />
            
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/20 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algoarnAqua/10 border border-black mb-6">
                 <Sparkles className="w-4 h-4 text-algoarnAqua" />
-                <span className="text-[13px] uppercase tracking-[0.2em] text-algoarnAqua font-semibold">
+                <span className="text-[13px] uppercase tracking-[0.2em] text-white font-semibold">
                   Ready to Transform?
                 </span>
               </div>
@@ -575,14 +672,14 @@ export default function SUCAPage() {
                 </Link>
               </div>
              
-              <p className="text-gray-400 text-sm mt-6">
+              <p className="text-white text-sm mt-6">
                 No credit card required • Personalized demo in 24 hours
               </p>
             </div>
           </div>
         </motion.div>
       </section>
-    </main>
+    </>
   );
 }
  
