@@ -71,7 +71,7 @@ export default function HomePage() {
   className="relative min-h-[calc(100vh-96px)] flex justify-center overflow-hidden w-screen 
   -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
   bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
-  pt-20 -mt-[31px]"
+  pt-20 md:-mt-[31px]"
 >
 
   {/* Soft Pastel Circles Like SUCA */}
@@ -560,11 +560,7 @@ export default function HomePage() {
         
         {/* Image Hover Effect */}
         <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
-          <img
-            src="/computer vision.avif"
-            alt="Computer Vision"
-            className="w-72 mx-auto"
-          />
+          <img src="/computer vision.avif" alt="Computer Vision" className="w-full max-w-xs md:max-w-sm lg:max-w-md mx-auto" />
         </div>
 
         <h3 className="text-xl font-bold">Computer Vision</h3>
