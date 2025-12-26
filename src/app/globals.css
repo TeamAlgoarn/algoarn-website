@@ -75,11 +75,11 @@ main {
 
 /* Link styling */
 a {
- color: #00eaff;
+ color: white;
   text-decoration: none;
 }
 a:hover {
-  color: #0ea5e9; /* algoarnBlue */
+  color: rgb(119, 183, 246); /* algoarnBlue */
 }
 @keyframes float {
   0%,

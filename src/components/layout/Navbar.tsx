@@ -1080,7 +1080,7 @@ const navLinks = [
   { label: "About Us", href: "/about" },
   { label: "Careers", href: "/careers" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  // { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -1135,7 +1135,7 @@ export function Navbar() {
               >
                 {link.label}
                 {isActive(link.href) && (
-                  <span className="absolute left-0 right-0 -bottom-1 h-[2px] bg-[#00eaff]" />
+                  <span className="absolute left-0 right-0 -bottom-1 h-[2px] bg-[white]" />
                 )}
               </Link>
             ))}

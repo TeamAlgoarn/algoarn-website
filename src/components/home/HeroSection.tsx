@@ -111,8 +111,9 @@ export default function HomePage() {
 
       {/* Subtitle */}
       <FadeInUp delay={0.2}>
-        <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
-  At <span className="font-semibold text-indigo-600">ALGOARN</span>, we drive
+        {/* <p className="text-lg md:text-xl text-slate-600 leading-relaxed"> */}
+        <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+  At <span className="font-semibold text-black">ALGOARN</span>, we drive
           
           innovation through AI, enabling your businesses to unlock new
           potential and redefine what&apos;s possible. Our AI-driven solutions
@@ -152,7 +153,7 @@ export default function HomePage() {
 
         <FadeInUp className="text-center space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold">Why Algoarn?</h2>
-          <p className="text-lg md:text-xl text-black/70 max-w-2xl mx-auto">
+          <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
             We combine deep AI expertise with practical delivery to help your
             institution move from data to real-world impact.
           </p>
@@ -297,13 +298,13 @@ export default function HomePage() {
               Every student learns differently. Every classroom hides untapped potential.
               Every insight you don't see is a <span className="font-semibold text-slate-900">missed opportunity</span>.
             </p> */}
-            <p className="font-semibold text-lg text-slate-900">
+            <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
               SUCA turns invisible patterns into powerful academic intelligence.
             </p>
-            <p>
+            <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
               Powered by advanced AI, SUCA <span className="font-semibold">reads between the marks</span>,
               uncovers learning behaviours, predicts outcomes, and helps institutions
-              guide every student with <span className="font-semibold text-indigo-700">clarity and confidence</span>.
+              guide every student with <span className="font-semibold text-black">clarity and confidence</span>.
             </p>
           </div>
 
@@ -391,7 +392,7 @@ export default function HomePage() {
                 <p className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-sky-700">
                   Academic Intelligence at a Glance
                 </p>
-                <p className="text-sm text-slate-600 max-w-xs mx-auto leading-relaxed">
+                <p className="text-sm text-black max-w-xs mx-auto leading-relaxed">
                   Track cohorts, identify at-risk students, and align interventions seamlessly.
                 </p>
               </div>
@@ -564,7 +565,7 @@ export default function HomePage() {
         </div>
 
         <h3 className="text-xl font-bold">Computer Vision</h3>
-        <p className="text-black/70 text-base leading-relaxed">
+        <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
           Turning visuals into valuable insights—let AI see, understand,
           and automate.
         </p>
@@ -585,7 +586,7 @@ export default function HomePage() {
         </div>
 
         <h3 className="text-xl font-bold">Generative AI</h3>
-        <p className="text-black/70 text-base leading-relaxed">
+        <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
           Unleashing creativity and efficiency—AI that crafts, creates,
           and innovates for you.
         </p>
@@ -606,7 +607,7 @@ export default function HomePage() {
         </div>
 
         <h3 className="text-xl font-bold">Predictive AI</h3>
-        <p className="text-black/70 text-base leading-relaxed">
+        <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
           Stay ahead of the curve—AI that predicts trends and empowers
           smarter decisions.
         </p>
