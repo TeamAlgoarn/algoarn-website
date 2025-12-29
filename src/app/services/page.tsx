@@ -130,10 +130,10 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
     </h1>
 
     {/* Subheading */}
-    <p className="text-lg md:text-xl text-black leading-relaxed max-w-4xl mx-auto">
+    <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
       From computer vision and generative AI to LMS platforms and custom AI
       workflows, we design and ship{" "}
-      <span className="text-black font-semibold">
+      <span className="text-xl leading-7 max-w-3xl mx-auto text-black font-semibold">
         solutions aligned with your real-world outcomes
       </span>{" "}
       and business objectives.
@@ -215,7 +215,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-black to-black/80 bg-clip-text text-transparent">
             Our AI Service Portfolio
           </h2>
-          <p className="text-xl text-black/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
             End-to-end AI services designed to transform your operations with cutting-edge
             technology
           </p>
@@ -246,7 +246,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
                   {s.title}
                 </h2>
 
-                <p className="mt-4 text-gray-600 text-base leading-relaxed">
+                <p className="text-xl leading-7 max-w-3xl mx-auto text-black " style={{marginTop:'17px'}}>
                   {s.desc}
                 </p>
               </div>
@@ -715,7 +715,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl text-white max-w-3xl mx-auto leading-relaxed"
               >
                 Ready to transform your institution or business with cutting-edge AI
                 technology? Contact us to discuss your project requirements and start your AI

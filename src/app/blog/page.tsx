@@ -424,7 +424,7 @@ export default function BlogPage() {
     </FadeInUp>
 
     <FadeInUp delay={0.3}>
-      <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto">
+      <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
         Thought leadership on AI in education, technical deep dives, and
         practical insights from building privacy-first intelligence systems.
       </p>
@@ -492,18 +492,18 @@ export default function BlogPage() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-algoarnAqua transition-colors leading-snug flex-1">
+                    <h3 className="text-xl md:text-3xl font-bold text-white group-hover:text-algoarnAqua transition-colors leading-snug flex-1">
                       {post.title}
                     </h3>
 
                     {/* Excerpt */}
-                    <p className="text-sm md:text-base text-white/70 leading-relaxed line-clamp-3">
+                    <p className="text-xl leading-7 max-w-2xl mx-auto text-white line-clamp-3">
                       {post.excerpt}
                     </p>
 
                     {/* Meta Info */}
-                    <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                      <span className="text-xs text-white/50">
+                    <div className="flex items-center justify-between pt-4 border-t border-white">
+                      <span className="text-xs text-white">
                         {new Date(post.date).toLocaleDateString("en-US", {
                           month: "short",
                           day: "numeric",
@@ -608,7 +608,7 @@ export default function BlogPage() {
         Stay Updated with <span className="text-algoarnAqua">AI Insights</span>
       </h2>
 
-      <p className="text-lg text-white/80 leading-relaxed max-w-2xl mx-auto mb-8">
+      <p className="text-lg text-white  text-xl leading-7 max-w-3xl mx-auto  mb-8">
         Get the latest articles on AI in education, product updates, and
         technical insights delivered to your inbox.
       </p>

@@ -411,7 +411,7 @@ export default function ContactPage() {
                   Why <span className="text-algoarnAqua">Algoarn</span> Stands
                   Out
                 </h2>
-                <p className="text-white text-lg">
+                <p className="text-xl leading-7 max-w-3xl mx-auto text-black" style={{marginInline:'2px'}}>
                   We deliver enterprise-grade AI solutions with proven results
                   across the education sector.
                 </p>
@@ -565,7 +565,7 @@ export default function ContactPage() {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-3">
-                    <label className="text-sm font-semibold text-white">
+                    <label className="text-s font-semibold text-white">
                       Full Name <span className="text-red-400">*</span>
                     </label>
                     <Input
@@ -578,7 +578,7 @@ export default function ContactPage() {
                   </div>
  
                   <div className="space-y-3">
-                    <label className="text-sm font-semibold text-white">
+                    <label className="text-s font-semibold text-white">
                       Work Email <span className="text-red-400">*</span>
                     </label>
                     <Input
@@ -594,7 +594,7 @@ export default function ContactPage() {
  
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-3">
-                    <label className="text-sm font-semibold text-white">
+                    <label className="text-s font-semibold text-white">
                       Direct Phone
                     </label>
                     <Input
@@ -607,7 +607,7 @@ export default function ContactPage() {
                   </div>
  
                   <div className="space-y-3">
-                    <label className="text-sm font-semibold text-white">
+                    <label className="text-s font-semibold text-white">
                       Organization
                     </label>
                     <Input
@@ -622,7 +622,7 @@ export default function ContactPage() {
  
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-3">
-                    <label className="text-sm font-semibold text-white">
+                    <label className="text-s font-semibold text-white">
                       Institution Type
                     </label>
                     <select
@@ -640,7 +640,7 @@ export default function ContactPage() {
                   </div>
  
                   <div className="space-y-3">
-                    <label className="text-sm font-semibold text-white">
+                    <label className="text-s font-semibold text-white">
                       Team Size
                     </label>
                     <select
@@ -659,7 +659,7 @@ export default function ContactPage() {
  
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-3">
-                    <label className="text-sm font-semibold text-white">
+                    <label className="text-s font-semibold text-white">
                       Primary Interest
                     </label>
                     <select
@@ -686,7 +686,7 @@ export default function ContactPage() {
                   </div>
  
                   <div className="space-y-3">
-                    <label className="text-sm font-semibold text-white/80">
+                    <label className="text-s font-semibold text-white">
                       Implementation Timeline
                     </label>
                     <select
@@ -705,7 +705,7 @@ export default function ContactPage() {
                 </div>
  
                 <div className="space-y-3">
-                  <label className="text-sm font-semibold text-white">
+                  <label className="text-s font-semibold text-white">
                     Tell Us About Your Goals{" "}
                     <span className="text-red-400">*</span>
                   </label>

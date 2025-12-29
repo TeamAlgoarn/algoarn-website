@@ -15,14 +15,52 @@ import { ReactNode, useState } from "react";
 /* ----------------------------------
    NeonCard Component (from contact page)
 ----------------------------------- */
-const NeonCard = ({ children, className = "" }: { children: ReactNode; className?: string }) => (
-  <div className={`relative bg-gradient-to-br from-gray-900 to-slate-950 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-cyan-500/10 ${className}`}>
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-[inherit] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    <div className="relative">
+// const NeonCard = ({ children, className = "" }: { children: ReactNode; className?: string }) => (
+//   <div className={`relative bg-gradient-to-br from-gray-900 to-slate-950 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-cyan-500/10 ${className}`}>
+//     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-[inherit] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+//     <div className="relative">
+//       {children}
+//     </div>
+//   </div>
+// );
+const NeonCard = ({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) => (
+  <div className="relative group">
+    {/* ALWAYS-ON subtle glow + stronger on hover */}
+    <div
+      className="
+        pointer-events-none
+        absolute -inset-8
+        bg-gradient-to-r from-cyan-500/20 via-blue-500/15 to-indigo-500/20
+        blur-[120px]
+        opacity-60
+        group-hover:opacity-100
+        transition-opacity duration-500
+      "
+    />
+
+    {/* CARD */}
+    <div
+      className={`
+        relative rounded-[40px]
+        bg-gradient-to-b from-[#16283F] via-[#0E2036] to-[#081426]
+        border border-white/10
+        shadow-[0_30px_90px_rgba(2,6,23,0.20)]
+        transition-transform duration-500
+        group-hover:-translate-y-2
+        ${className}
+      `}
+    >
       {children}
     </div>
   </div>
 );
+
 
 /* ----------------------------------
    Button Component
@@ -94,7 +132,7 @@ const MarkdownContent = ({ content }: { content: string }) => {
       elements.push(
         <p
           key={elements.length}
-          className="text-lg text-gray-700 leading-relaxed mb-6"
+          className="text-xl leading-7 max-w-3xl mx-auto text-black mb-6"
           dangerouslySetInnerHTML={{
             __html: processInlineFormatting(currentParagraph.join(" ")),
           }}
@@ -109,8 +147,8 @@ const MarkdownContent = ({ content }: { content: string }) => {
       elements.push(
         <ul key={elements.length} className="space-y-3 mb-6 ml-6">
           {listItems.map((item, idx) => (
-            <li key={idx} className="flex items-start gap-3 text-gray-700">
-              <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2.5 flex-shrink-0" />
+            <li key={idx} className="flex items-start gap-3 text-black">
+              <div className="w-2 h-2 bg-black rounded-full mt-2.5 flex-shrink-0" />
               <span
                 className="text-lg"
                 dangerouslySetInnerHTML={{
@@ -155,7 +193,7 @@ const MarkdownContent = ({ content }: { content: string }) => {
       elements.push(
         <h3
           key={elements.length}
-          className="text-2xl md:text-3xl font-bold text-cyan-600 mt-8 mb-5"
+          className="text-2xl md:text-3xl font-bold text-black mt-8 mb-5"
         >
           {trimmed.slice(4)}
         </h3>
@@ -176,7 +214,7 @@ const MarkdownContent = ({ content }: { content: string }) => {
       elements.push(
         <blockquote
           key={elements.length}
-          className="border-l-4 border-cyan-500 pl-6 py-4 my-8 bg-cyan-50 rounded-r-2xl"
+          className="border-l-4 border-indigo-500 pl-6 py-4 my-8 bg-indigo-50 rounded-r-2xl"
         >
           <p className="text-lg text-gray-800 italic leading-relaxed font-medium">
             {trimmed.slice(2)}
@@ -345,7 +383,7 @@ export default function BlogPostPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-cyan-600 bg-cyan-50 text-cyan-500 text-sm font-semibold mb-8"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-black text-indigo-500 text-sm font-semibold mb-8"
           >
             <Sparkles className="w-4 h-4" />
             {blogPost.category}
@@ -355,7 +393,7 @@ export default function BlogPostPage() {
             {blogPost.title}
           </h1>
 
-          <p className="text-xl text-black leading-relaxed max-w-3xl mx-auto mb-8 pb-15">
+          <p className="text-xl leading-7 max-w-3xl mx-auto text-black mb-8 pb-15">
             {blogPost.excerpt}
           </p>
 
@@ -428,7 +466,7 @@ export default function BlogPostPage() {
                 <div className="text-4xl font-bold text-white mb-2">
                   {stat.value}
                 </div>
-                <div className="text-white/60 text-sm font-medium">
+                <div className="text-white text-sm font-medium">
                   {stat.label}
                 </div>
               </NeonCard>
@@ -464,7 +502,7 @@ export default function BlogPostPage() {
                 <h3 className="text-2xl font-bold text-white">
                   {blogPost.author}
                 </h3>
-                <p className="text-base text-white/70 leading-relaxed">
+                <p className="text-base text-white leading-relaxed">
                   The Algoarn team brings together expertise in AI, machine
                   learning, and educational technology to build privacy-first
                   intelligence systems for institutions worldwide.
@@ -526,7 +564,7 @@ export default function BlogPostPage() {
         </div>
 
         {/* CTA - NEON CARD */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.6 }}
@@ -541,11 +579,13 @@ export default function BlogPostPage() {
               AI-powered academic intelligence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
+              
+               <Button
                 size="lg"
-                className="px-10 py-5 text-lg font-bold bg-white text-cyan-600 hover:bg-white/90 transform hover:scale-105 transition-all shadow-xl"
+                variant="outline"
+                className="px-10 py-5 text-lg font-bold border-2 border-white text-white hover:bg-white/20 transform hover:scale-105 transition-all"
               >
-                Book a Demo
+                  Book a Demo
               </Button>
               <Button
                 size="lg"
@@ -556,7 +596,7 @@ export default function BlogPostPage() {
               </Button>
             </div>
           </NeonCard>
-        </motion.div>
+        </motion.div> */}
 
         {/* Back to Blog - LIGHT THEME */}
         <motion.div
@@ -570,7 +610,7 @@ export default function BlogPostPage() {
             className="inline-flex items-center gap-2 text-cyan-550 hover:text-cyan-600 transition-colors font-semibold text-lg group"
           >
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
-            <span>Back to all articles</span>
+            <span className="text-black">Back to all articles</span>
           </a>
         </motion.div>
 

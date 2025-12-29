@@ -193,12 +193,17 @@ export default function CareersPage() {
       </main>
     );
   }
-
+const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
+  left: `${(i * 17) % 100}%`,
+  top: `${(i * 37) % 100}%`,
+  duration: 3 + (i % 3), // 3–5 seconds
+  delay: (i % 4) * 0.4,  // 0, 0.4, 0.8, 1.2
+}));
   return (
     <main className="pt-20 pb-24">
       <div className="max-w-6xl mx-auto px-4 space-y-16">
         {/* HERO */}
-        <section className="relative rounded-3xl border border-algoarnAqua/30 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-10 md:p-14 overflow-hidden">
+        {/* <section className="relative rounded-3xl border border-algoarnAqua/30 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-10 md:p-14 overflow-hidden">
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute -top-24 left-0 w-80 h-80 bg-algoarnAqua/20 blur-3xl rounded-full" />
             <div className="absolute bottom-0 right-10 w-96 h-96 bg-algoarnBlue/20 blur-3xl rounded-full" />
@@ -224,8 +229,96 @@ export default function CareersPage() {
               custom AI solutions for universities, schools and businesses.
             </p>
           </motion.div>
-        </section>
+        </section> */}
+<section className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-20 -mt-[31px]" style={{marginTop:'-111px'}}>
 
+  {/* Background Glows */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
+    <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
+  </div>
+
+  {/* Floating Particles */}
+  <div className="absolute inset-0 opacity-40 pointer-events-none">
+    {serviceParticles.map((p, i) => (
+      <motion.div
+        key={i}
+        className="absolute w-1 h-1 bg-algoarnAqua rounded-full"
+        style={{ left: p.left, top: p.top }}
+        animate={{ y: [0, -30, 0], opacity: [0, 1, 0] }}
+        transition={{
+          duration: p.duration,
+          delay: p.delay,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+    ))}
+  </div>
+
+  {/* Content */}
+  <motion.div
+    initial={{ opacity: 0, y: 60 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-10"
+  >
+    {/* Badge */}
+    {/* <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full 
+      bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm"> */}
+      {/* <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm"> */}
+
+     
+    {/* </div> */}
+
+    {/* Heading */}
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
+     
+       Build AI actually ships to institutions.
+                
+             
+    </h1>
+
+    {/* Subheading */}
+     <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
+              Join a compact, hands-on team working on SUCA, AI analytics, and
+              custom AI solutions for universities, schools and businesses.
+            </p>
+
+    {/* CTAs */}
+    
+   <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 text-white" style={{ marginBottom: "78px" }}>
+
+ {/* <Button
+  asChild
+  size="lg"
+  className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all"
+  style={{ borderRadius: "9999px" }}
+>
+  <Link href="/contact?type=AI+Services " >Contact Us</Link>
+</Button> */}
+
+
+
+  
+  {/* <Button
+    asChild
+    size="lg"
+    className="px-10 py-4 text-base md:text-lg font-semibold
+    bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg
+    hover:from-indigo-600 hover:to-sky-600 transition-all"
+    style={{ borderRadius: "9999px" }}
+  >
+    <Link href="#services" className="flex items-center gap-2">
+      Explore Services
+    </Link>
+  </Button> */}
+
+</div>
+
+
+  </motion.div>
+</section>
         {/* LIST OF OPENINGS */}
         <section className="space-y-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">

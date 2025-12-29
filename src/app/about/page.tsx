@@ -125,7 +125,7 @@ export default function AboutPage() {
     </FadeInUp>
 
     <FadeInUp delay={0.3}>
-      <p className="text-lg md:text-xl text-black-300 leading-relaxed max-w-3xl mx-auto">
+      <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
         Algoarn is an AI innovation company focused on building intelligent
         products that transform how people learn, work, shop, and make
         decisions.
@@ -155,24 +155,24 @@ export default function AboutPage() {
         {/* inner card */}
         <div className="rounded-[44px] bg-gradient-to-br from-[#0b1c2d] via-[#0f2238] to-[#071423] border border-white/10 px-10 py-12 md:px-16 md:py-16 lg:px-20 lg:py-20 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
-            <p className="text-white text-lg md:text-xl leading-relaxed">
+            <p className="text-white text-xl leading-7 max-w-3xl mx-auto ">
               Algoarn is an AI innovation company focused on building intelligent
               products that transform how people learn, work, shop, and make
               decisions.
             </p>
 
-            <p className="text-white text-lg md:text-xl leading-relaxed">
+            <p className="text-white text-xl leading-7 max-w-3xl mx-auto ">
               We combine deep research, engineering precision, and creative
               problem-solving to build systems powered by computer vision,
               generative AI, and predictive analytics.
             </p>
 
             <div className="pt-2">
-            <p className="text-white font-semibold text-lg md:text-xl">
+            <p className="text-white font-semibold text-xl leading-7 max-w-3xl mx-auto ">
               Our goal is simple :
             </p>
 
-            <p className="mt-3 text-white font-semibold text-xl md:text-2xl">
+            <p className="mt-3 text-xl leading-7 max-w-3xl mx-auto text-white font-bold">
               Create AI that is practical, powerful, and deeply human-centric.
             </p>
             </div>
@@ -214,8 +214,8 @@ export default function AboutPage() {
                 </div> */}
 
                 {/* content */}
-                <div className="md:col-span-11 space-y-6 text-white leading-relaxed text-base md:text-lg">
-                  <p>
+                <div className="md:col-span-11 space-y-6 text-white text-xl leading-7 max-w-3xl mx-auto  md:text-lg">
+                  <p >
                     Algoarn was born from the belief that technology should empower
                     people, not overwhelm them.
                   </p>
@@ -272,7 +272,7 @@ export default function AboutPage() {
 
           {/* IMPORTANT: flex-col + h-full */}
           <div className="p-6 md:p-7 space-y-5 text-white leading-relaxed flex-1 flex flex-col">
-            <p className="text-base md:text-lg">
+            <p className="text-xl leading-7 max-w-3xl mx-auto text-base md:text-lg">
               To build intelligent, practical, and human-centric AI systems
               that transform how the world learns, works, and experiences
               technology.
@@ -294,7 +294,7 @@ export default function AboutPage() {
             </ul>
 
             {/* Push this to bottom */}
-            <div className="mt-auto pt-5 border-t border-white/10 text-white/80">
+            <div className="mt-auto pt-5 border-t border-white/10 text-white">
               Our mission is not just to build software,
               <br />
               <span className="text-algoarnAqua font-semibold">
@@ -320,7 +320,7 @@ export default function AboutPage() {
 
           {/* IMPORTANT: flex-col + h-full */}
           <div className="p-6 md:p-7 space-y-5 text-white leading-relaxed flex-1 flex flex-col">
-            <p className="text-base md:text-lg">
+            <p className=" text-xl leading-7 max-w-3xl mx-auto text-white text-base md:text-lg">
               To become a global leader in AI innovation by shaping the future
               through intelligent products that enhance human potential and
               redefine digital experiences.
@@ -341,7 +341,7 @@ export default function AboutPage() {
             </ul>
 
             {/* Push this to bottom */}
-            <div className="mt-auto pt-5 border-t border-white/10 text-white/80">
+            <div className="mt-auto pt-5 border-t border-white/10 text-white">
               We are building a future where technology amplifies talent and
               unlocks new possibilities.
             </div>
@@ -357,7 +357,7 @@ export default function AboutPage() {
       <SectionReveal className="space-y-12">
         <FadeInUp className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">Our Founder</h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+          <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
             Built with vision, driven by precision
           </p>
         </FadeInUp>
@@ -379,12 +379,12 @@ export default function AboutPage() {
                       <p className="text-white/90 text-lg font-semibold">
                         Founder — Algoarn AI Solutions Pvt Ltd
                       </p>
-                      <p className="text-white/90 text-base md:text-lg">
+                      <p className="text-xl leading-7 max-w-3xl mx-auto text-white  text-base md:text-lg">
                         MSc Digital Engineering (Germany), Computer Vision Specialist
                       </p>
                     </div>
 
-                    <p className="text-lg text-white/70 leading-relaxed pt-2">
+                    <p className="text-xl leading-7 max-w-3xl mx-auto text-white pt-2">
                       A passionate builder focused on creating meaningful,
                       precise and affordable AI products and pushing the
                       boundaries of what intelligent systems can do.
@@ -472,16 +472,16 @@ export default function AboutPage() {
       <SectionReveal className="space-y-12"  >
         <FadeInUp className="text-center space-y-4" >
           <h2 className="text-4xl md:text-5xl font-bold">The Road Ahead</h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-xl leading-7 max-w-3xl mx-auto text-black">
             Algoarn is building toward a future where AI enhances every touchpoint
             of life — from learning and retail to business and creativity.
           </p>
         </FadeInUp>
 
         <FadeInUp delay={0.15}>
-          <div className="max-w-4xl mx-auto" style={{marginTop:'-79px'}}>
+          <div className="max-w-4xl mx-auto" style={{marginTop:'-17px'}}>
             <NeonCard className="p-10 md:p-12">
-              <div className="space-y-6 text-lg text-white/70 leading-relaxed">
+              <div className="space-y-6 text-lg text-white text-xl leading-7 max-w-3xl mx-auto ">
                 <p>
                   With SUCA ready for institutions, VTR soon entering the market,
                   and new products in development, we’re just getting started.
@@ -508,7 +508,7 @@ export default function AboutPage() {
              
             </h2>
 
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg md:text-xl text-white text-xl leading-7 max-w-3xl mx-auto text-black">
               Whether you’re an institution, a business, or a brand exploring AI
               transformation, Algoarn is ready to collaborate.
             </p>

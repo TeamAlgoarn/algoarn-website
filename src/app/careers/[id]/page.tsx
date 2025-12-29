@@ -118,28 +118,28 @@ export default function JobDetailPage() {
           <h1 className="text-3xl md:text-4xl font-display font-bold">
             {job.title}
           </h1>
-          <div className="flex flex-wrap gap-3 text-xs text-white/60">
-            <span className="px-3 py-1 rounded-full border border-white/15">
+          <div className="flex flex-wrap gap-3 text-xs text-white">
+            <span className="px-3 py-1 rounded-full border border-white">
               {job.location}
             </span>
-            <span className="px-3 py-1 rounded-full border border-white/15">
+            <span className="px-3 py-1 rounded-full border border-white">
               {job.type}
             </span>
-            <span className="px-3 py-1 rounded-full border border-white/15">
+            <span className="px-3 py-1 rounded-full border border-white">
               {job.team}
             </span>
           </div>
         </div>
 
         <NeonCard className="p-6 md:p-8 space-y-6">
-          <p className="text-sm md:text-base text-white/75">{job.intro}</p>
+          <p className="text-xl leading-7 max-w-3xl mx-auto text-white">{job.intro}</p>
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-3">
               <h2 className="text-base md:text-lg font-semibold text-white">
                 Responsibilities
               </h2>
-              <ul className="space-y-2 text-sm text-white/75">
+              <ul className="space-y-2 text-sm text-white">
                 {job.responsibilities.map((r) => (
                   <li key={r}>• {r}</li>
                 ))}
@@ -149,7 +149,7 @@ export default function JobDetailPage() {
               <h2 className="text-base md:text-lg font-semibold text-white">
                 Requirements
               </h2>
-              <ul className="space-y-2 text-sm text-white/75">
+              <ul className="space-y-2 text-sm text-white">
                 {job.requirements.map((r) => (
                   <li key={r}>• {r}</li>
                 ))}
