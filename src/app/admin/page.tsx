@@ -22,15 +22,22 @@ export default function AdminDashboard() {
               </p>
             </NeonCard>
           </Link>
-<Link href="/admin/careers">Careers</Link>
+<Link href="/admin/careers">
+<NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
+              <h2 className="text-xl font-semibold mb-2">Careers </h2>
+              <p className="text-white/70 text-sm">
+                View and manage all messages sent from the Contact page.
+              </p>
+            </NeonCard>
+</Link>
 
           {/* PLACEHOLDER CARDS FOR LATER */}
-          <NeonCard className="p-6 rounded-2xl opacity-60">
+          {/* <NeonCard className="p-6 rounded-2xl opacity-60">
             <h2 className="text-xl font-semibold mb-2">Careers (coming soon)</h2>
             <p className="text-white/70 text-sm">
               This will show and manage job postings.
             </p>
-          </NeonCard>
+          </NeonCard> */}
 
           <NeonCard className="p-6 rounded-2xl opacity-60">
             <h2 className="text-xl font-semibold mb-2">Blog (coming soon)</h2>
