@@ -1576,9 +1576,12 @@ import {
   Building2,
   UserRound,
   User,
+  Download,
   CalendarClock,
   Zap,
 } from "lucide-react";
+
+
 import { Button } from "@/components/ui/button";
 
 
@@ -1822,11 +1825,11 @@ export default function SUCAPage() {
               </Link>
             </Button>
 
-            <Button asChild size="lg" className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all" style={{ borderRadius: "9999px" }}>
+            {/* <Button asChild size="lg" className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all" style={{ borderRadius: "9999px" }}>
               <Link href="#how-suca-works">
                 <span className="text-white">See How SUCA Works</span>
               </Link>
-            </Button>
+            </Button> */}
           </div>
         </motion.div>
       </section>
@@ -1849,7 +1852,65 @@ export default function SUCAPage() {
 </p>
 
 {/* Two centered cards */}
-<div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
+{/*  */}
+{/* <div className="mt-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0"> */}
+
+  {/* LEFT PANEL */}
+  {/* <div className="w-full max-w-[420px] border-l-4 border-indigo-500 bg-indigo-50/60 rounded-r-lg px-6 py-3 justify-self-center">
+    <div className="space-y-2 text-left">
+      <p className="text-lg italic text-slate-700">
+        Exam <span className="font-semibold text-slate-900">scores</span>
+      </p>
+
+      <p className="text-lg italic text-slate-700">
+        Attendance <span className="font-semibold text-slate-900">records</span>
+      </p>
+    </div>
+  </div> */}
+
+  {/* RIGHT PANEL */}
+  {/* <div className="w-full max-w-[420px] border-l-4 border-indigo-500 bg-indigo-50/60 rounded-r-lg px-6 py-3 justify-self-center">
+    <div className="space-y-2 text-left">
+      <p className="text-lg italic text-slate-700">
+        Internal <span className="font-semibold text-slate-900">assessments</span>
+      </p>
+
+      <p className="text-lg italic text-slate-700">
+        LMS and <span className="font-semibold text-slate-900">activity data</span>
+      </p>
+    </div>
+  </div>
+
+</div> */}
+<div className="mt-10 max-w-6xl mx-auto flex flex-col md:flex-row justify-center gap-18">
+  
+  {/* LEFT PANEL */}
+  <div className="w-full max-w-[420px] border-l-4 border-indigo-500 bg-indigo-50/50 py-4 rounded-r-lg pl-6" style={{width:'68%' ,marginInline:'40px'}}>
+    <div className="space-y-3 text-left">
+      <p className="text-lg italic text-slate-700">
+        Exam <span className="font-semibold text-slate-900">scores</span>
+      </p>
+      <p className="text-lg italic text-slate-700">
+        Attendance <span className="font-semibold text-slate-900">records</span>
+      </p>
+    </div>
+  </div>
+
+  {/* RIGHT PANEL */}
+  <div className="w-full max-w-[420px] border-l-4 border-indigo-500 bg-indigo-50/50 py-4 rounded-r-lg pl-6" style={{width:'68%'}}>
+    <div className="space-y-3 text-left">
+      <p className="text-lg italic text-slate-700">
+        Internal <span className="font-semibold text-slate-900">assessments</span>
+      </p>
+      <p className="text-lg italic text-slate-700">
+        LMS and <span className="font-semibold text-slate-900">activity data</span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+{/* <div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
   <div className="w-full max-w-[280px] rounded-xl bg-white/70 border border-black px-4 py-3 text-center shadow-sm">
     <div className="text-sm font-medium text-black">
       Exam scores
@@ -1867,7 +1928,7 @@ export default function SUCAPage() {
       LMS and activity data
     </div>
   </div>
-</div>
+</div> */}
 
 
       {/* <div className="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -2087,7 +2148,7 @@ export default function SUCAPage() {
         <div className="max-w-7xl mx-auto grid gap-16 lg:grid-cols-2 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/20">
-              <Lightbulb className="w-8 h-8 text-algoarnAqua" />
+              {/* <Lightbulb className="w-8 h-8 text-algoarnAqua" /> */}
               <span className="text-[18px] uppercase tracking-[0.2em] text-algoarnAqua font-semibold"> Meet SUCA</span>
             </div>
 
@@ -2123,9 +2184,9 @@ export default function SUCAPage() {
             <div className="absolute -inset-8 rounded-[44px] bg-gradient-to-r from-algoarnAqua/20 via-sky-400/15 to-algoarnBlue/20 blur-3xl opacity-70" />
             <div className="relative rounded-[40px] border border-white/10 p-8 space-y-6 bg-gradient-to-b from-[#16283F] via-[#0E2036] to-[#081426] shadow-[0_30px_90px_rgba(2,6,23,0.25)]">
               <div className="flex items-center justify-between">
-                <div className="text-white font-semibold">📊 Intelligence → Action → Measurable Improvement</div>
-                <div className="inline-flex items-center gap-2 text-xs text-white/70">
-                  <Star className="w-4 h-4 fill-algoarnAqua text-algoarnAqua" />
+                <div className="text-white font-semibold"> Intelligence → Action → Measurable Improvement</div>
+                <div className="inline-flex items-center gap-2 text-xs text-white">
+                <span> .</span>
                   Explainable Insights
                 </div>
               </div>
@@ -2146,7 +2207,7 @@ export default function SUCAPage() {
 
               <div className="bg-algoarnAqua/10 border border-white/10 rounded-2xl p-4">
                 <div className="flex items-center gap-2 text-white text-sm font-semibold">
-                  <Star className="w-4 h-4 fill-algoarnAqua text-algoarnAqua" />
+                 
                   Built for Indian Education Systems
                 </div>
                 <p className="text-xs text-white mt-1">Schools • Colleges • Universities • Autonomous Institutions</p>
@@ -2304,16 +2365,17 @@ export default function SUCAPage() {
             </ul>
 
             {/* ✅ ADD BROCHURE DOWNLOAD OPTION IN EDITION CARD */}
-            <div className="pt-6 mt-8 border-t border-white/10">
-              <a
-                href={edition.brochureHref}
-                download
-                className="inline-flex items-center justify-center w-full px-6 py-3 rounded-2xl bg-gradient-to-r from-algoarnAqua to-algoarnBlue text-white font-semibold shadow-lg hover:scale-[1.02] transition-all"
-              >
-                📗 Download Brochure
-              </a>
+          <div className="pt-6 mt-8 border-t border-white/10">
+  <a
+    href={edition.brochureHref}
+    download
+    className="inline-flex items-center justify-center w-full px-6 py-3 rounded-2xl bg-gradient-to-r from-algoarnAqua to-algoarnBlue text-white font-semibold shadow-lg hover:scale-[1.02] transition-all"
+  >
+    <Download className="w-5 h-5 mr-2 text-white" />
+    Download Brochure
+  </a>
 
-              <p className="text-xs text-white/70 text-center mt-3">
+              <p className="text-xs text-white/99 text-center mt-3">
                 Customized implementation for your institution
               </p>
             </div>
@@ -2453,10 +2515,10 @@ export default function SUCAPage() {
       <div className="relative z-10">
 
         {/* BIGGER BADGE */}
-        <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-algoarnAqua/15 border border-algoarnAqua/40 mb-10">
-          <Sparkles className="w-6 h-6 text-white" />
+        <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-algoarnAqua/15 border border-white mb-10">
+         
           <span className="text-xl md:text-2xl uppercase tracking-[0.3em] text-white font-semibold">
-            🚀 Ready to Transform Academic Outcomes?
+             Ready to Transform Academic Outcomes?
           </span>
         </div>
 
@@ -2469,7 +2531,7 @@ export default function SUCAPage() {
         </h2>
 
         {/* SUBTEXT – smaller & lighter */}
-        <p className="text-white/70 text-sm md:text-base max-w-2xl mx-auto mb-8">
+        <p className="text-white text-sm md:text-base max-w-2xl mx-auto mb-8">
           Not just another edtech platform — SUCA helps institutions predict outcomes,
           personalize learning, and intervene early with clarity and confidence.
         </p>
@@ -2486,21 +2548,12 @@ export default function SUCAPage() {
               className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
               style={{ borderRadius: "2.5rem" }}
             >
-              <Sparkles className="w-5 h-5 mr-2" />
+              
               Book a Personalized Institutional Demo
             </Button>
           </Link>
 
-          <Link href="#how-suca-works">
-            <Button
-              size="lg"
-              className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
-              style={{ borderRadius: "2.5rem" }}
-            >
-              See How SUCA Works
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+         
         </div>
 
         <p className="text-white/60 text-xs mt-6">

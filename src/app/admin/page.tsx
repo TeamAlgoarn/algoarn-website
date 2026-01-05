@@ -22,6 +22,7 @@ export default function AdminDashboard() {
               </p>
             </NeonCard>
           </Link>
+<Link href="/admin/careers">Careers</Link>
 
           {/* PLACEHOLDER CARDS FOR LATER */}
           <NeonCard className="p-6 rounded-2xl opacity-60">

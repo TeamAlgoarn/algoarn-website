@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { NeonCard } from "@/components/ui/neon-card";
- 
+ import { MdEmail, MdPhone } from 'react-icons/md';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 // deterministic particles so no hydration warning
 const floatingParticles = Array.from({ length: 20 }, (_, i) => ({
   left: `${(i * 7) % 100}%`,
@@ -73,48 +74,45 @@ export default function HomePage() {
   bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
   pt-20 md:-mt-[31px]"
 >
+  {/* ✅ Background Video */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover z-0"
+  >
+    <source src="/homepage_bg_video.mp4" type="video/mp4" />
+  </video>
 
-  {/* Soft Pastel Circles Like SUCA */}
-  {/* <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute -left-20 top-24 w-64 h-64 bg-[#c7d2fe]/60 rounded-full blur-3xl" />
-    <div className="absolute right-10 top-40 w-60 h-60 bg-[#e9d5ff]/60 rounded-full blur-3xl" />
-    <div className="absolute left-1/2 bottom-10 -translate-x-1/2 w-72 h-72 bg-[#fee2e2]/60 rounded-full blur-3xl" />
-  </div> */}
-    {/* Soft Pastel Circles Like SUCA */}
-  <div className="absolute inset-0 pointer-events-none">
+  {/* ✅ Soft white overlay (keeps text readable) */}
+  <div className="absolute inset-0 z-[5] bg-black/45" />
+
+
+  {/* ✅ Soft Pastel Circles Like SUCA */}
+  <div className="absolute inset-0 pointer-events-none z-10">
     <div className="absolute -left-20 top-24 w-64 h-64 bg-[#e8eeff]/50 rounded-full blur-3xl" />
     <div className="absolute right-10 top-40 w-60 h-60 bg-[#f3e8ff]/50 rounded-full blur-3xl" />
     <div className="absolute left-1/2 bottom-10 -translate-x-1/2 w-72 h-72 bg-[#ffeef2]/50 rounded-full blur-3xl" />
   </div>
 
-
   {/* Content */}
-  <div className="relative z-10 w-full">
+  <div className="relative z-20 w-full">
     <div className="max-w-3xl mx-auto px-6 pb-16 md:pb-20 text-center space-y-8">
-
       {/* Heading */}
       <FadeInUp delay={0.1}>
-        {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
           Smart AI for Smarter{" "}
-          <span className="block md:inline text-indigo-600">
+          <span className="block md:inline text-indigo-500">
             Institutions &amp; Businesses
           </span>
-        </h1> */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-800">
-  Smart AI for Smarter{" "}
-  <span className="block md:inline text-indigo-500">
-    Institutions &amp; Businesses
-  </span>
-</h1>
-
+        </h1>
       </FadeInUp>
 
       {/* Subtitle */}
       <FadeInUp delay={0.2}>
-        {/* <p className="text-lg md:text-xl text-slate-600 leading-relaxed"> */}
-        <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
-  At <span className="font-semibold text-black">ALGOARN</span>, we drive
-          
+        <p className="text-xl leading-7 max-w-2xl mx-auto text-white">
+          At <span className="font-bold text-white">ALGOARN</span>, we drive
           innovation through AI, enabling your businesses to unlock new
           potential and redefine what&apos;s possible. Our AI-driven solutions
           elevate experiences, reduce costs, and accelerate digital transformation.
@@ -134,16 +132,15 @@ export default function HomePage() {
             >
               <span className="flex items-center gap-2">
                 Contact Us
-               
               </span>
             </Button>
           </Link>
         </div>
       </FadeInUp>
-
     </div>
   </div>
 </SectionReveal>
+
 
 
  
@@ -691,6 +688,9 @@ export default function HomePage() {
           </FadeInUp>
         </NeonCard>
       </SectionReveal> */}
+      {/* Footer - Updated */}
+      
+    
     </div>
   );
 }
