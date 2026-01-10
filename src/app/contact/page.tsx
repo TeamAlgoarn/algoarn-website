@@ -1,5 +1,6 @@
 "use client";
- 
+ import type { ReactNode } from "react";
+
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -230,7 +231,51 @@ export default function ContactPage() {
     { value: "3-months", label: "Medium-term (3 months)" },
     { value: "6-months", label: "Long-term (6+ months)" },
   ];
+ const floatingParticles = Array.from({ length: 20 }, (_, i) => ({
+   left: `${(i * 7) % 100}%`,
+   top: `${(i * 13) % 100}%`,
+   delay: `${(i * 0.35) % 5}s`,
+   duration: `${10 + (i % 6)}s`,
+ }));
  
+ // Animation helpers
+ const SectionReveal = ({
+   children,
+   className = "",
+ }: {
+   children: ReactNode;
+   className?: string;
+ }) => (
+   <motion.section
+     className={className}
+     initial={{ opacity: 0, y: 60 }}
+     whileInView={{ opacity: 1, y: 0 }}
+     viewport={{ once: true, amount: 0.25 }}
+     transition={{ duration: 0.7, ease: "easeOut" }}
+   >
+     {children}
+   </motion.section>
+ );
+ 
+ const FadeInUp = ({
+   children,
+   delay = 0,
+   className = "",
+ }: {
+   children: ReactNode;
+   delay?: number;
+   className?: string;
+ }) => (
+   <motion.div
+     className={className}
+     initial={{ opacity: 0, y: 40 }}
+     whileInView={{ opacity: 1, y: 0 }}
+     viewport={{ once: true, amount: 0.3 }}
+     transition={{ duration: 0.6, delay, ease: "easeOut" }}
+   >
+     {children}
+   </motion.div>
+ );
   return (
     <main className="pt-20 pb-24">
       {/* Enhanced Live Chat Widget */}
@@ -305,89 +350,53 @@ export default function ContactPage() {
         <MessageCircle className="w-7 h-7 text-white" />
         <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full border-2 border-gray-900 animate-ping" />
       </motion.button> */}
+ <SectionReveal
+         className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen
+         -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
+         bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-24 pb-16 -mt-[79px]"
+       >
+         {/* Background glows */}
+         <div className="absolute inset-0 pointer-events-none overflow-hidden">
+           <div className="absolute top-1/4 -left-32 w-[800px] h-[800px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
+           <div className="absolute bottom-1/4 -right-32 w-[800px] h-[800px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
+         </div>
  
-      <div className="max-w-7xl mx-auto px-4 space-y-24">
-        {/* Enhanced Hero Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center space-y-12"
-        >
-          <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-3 rounded-full border border-algoarnAqua/30 bg-algoarnAqua/10 px-8 py-4 text-base font-semibold text-algoarnAqua backdrop-blur-sm"
-            >
-              <Sparkles className="w-5 h-5" />
+         {/* Particles */}
+         <div className="absolute inset-0 opacity-40 pointer-events-none">
+           {floatingParticles.map((p, i) => (
+             <div
+               key={i}
+               className="absolute w-1 h-1 bg-algoarnAqua rounded-full animate-float"
+               style={{
+                 left: p.left,
+                 top: p.top,
+                 animationDelay: p.delay,
+                 animationDuration: p.duration,
+               }}
+             />
+           ))}
+         </div>
+ 
+         {/* Content */}
+         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-8">
+           
+ 
+           <FadeInUp delay={0.15}>
+             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
               Trusted by Leading Educational Institutions Worldwide
-              <Sparkles className="w-5 h-5" />
-            </motion.div>
+             </h1>
+           </FadeInUp>
  
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black"
-            >
-              Transform Your  Institution  with AI
-             
-            </motion.h1>
- 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-2xl text-black max-w-4xl mx-auto leading-relaxed"
-            >
-              Join forward-thinking universities and businesses leveraging our AI
+           <FadeInUp delay={0.25}>
+             <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+               Join forward-thinking universities and businesses leveraging our AI
               platform to enhance learning outcomes, optimize operations, and
               drive measurable results.
-            </motion.p>
-          </div>
- 
-          {/* Enhanced Stats Section – NOW USING NEONCARD */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.7 + index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <NeonCard className="text-center p-6 rounded-2xl">
-                  <div className="w-14 h-14 bg-gradient-to-r from-algoarnAqua to-algoarnBlue rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-white text-sm font-medium">
-                    {stat.label}
-                  </div>
-                </NeonCard>
-              </motion.div>
-            ))}
-          </motion.div>
- 
-          {/* CTA Buttons (commented out in your code) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
-          ></motion.div>
-        </motion.section>
- 
-        {/* Testimonials Section (still commented out) */}
+             </p>
+           </FadeInUp>
+         </div>
+       </SectionReveal>
+      
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -400,18 +409,18 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="grid gap-16 lg:grid-cols-[1.1fr,1fr] items-start"
+          className="grid gap-16 lg:grid-cols-[1.1fr,1fr] items-start" style={{marginTop:"88px"}}
         >
           {/* Left: Enhanced Features & Info */}
           <div className="space-y-12">
             {/* Features Grid */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  Why <span className="text-algoarnAqua">Algoarn</span> Stands
+                <h2 className="text-3xl md:text-5xl font-bold">
+                  Why Algoarn Stands
                   Out
                 </h2>
-                <p className="text-xl leading-7 max-w-3xl mx-auto text-black" style={{marginInline:'2px'}}>
+                <p className="text-xl leading-7 max-w-2xl mx-auto text-black" style={{marginInline:'2px', marginTop:'22px'}}>
                   We deliver enterprise-grade AI solutions with proven results
                   across the education sector.
                 </p>
@@ -446,8 +455,8 @@ export default function ContactPage() {
             </div>
  
             {/* Enhanced Contact Methods */}
-            <div className="space-y-8">
-              <h3 className="text-4xl md:text-5xl font-bold mb-4">Multiple Ways to Connect</h3>
+            <div className="space-y-8" style={{marginTop:"90px"}}>
+              <h3 className="text-3xl md:text-5xl font-bold mb-4">Multiple Ways to Connect</h3>
               <div className="space-y-4">
                 {/* Email card */}
                 <motion.div whileHover={{ scale: 1.02 }}>
@@ -518,7 +527,7 @@ export default function ContactPage() {
             </div>
  
             {/* Enhanced Trust Indicators */}
-            <NeonCard className="p-8 space-y-6 rounded-3xl bg-gradient-to-br from-algoarnAqua/5 to-algoarnBlue/5">
+            <NeonCard className="p-8 space-y-6 rounded-3xl bg-gradient-to-br from-algoarnAqua/5 to-algoarnBlue/5" style={{marginTop:"-26px"}}>
               <div className="flex items-center gap-4">
                 <Shield className="w-8 h-8 text-white" />
                 <h4 className="font-bold text-white text-xl">
@@ -547,7 +556,7 @@ export default function ContactPage() {
           </div>
  
           {/* Right: Enhanced Form */}
-          <div className="sticky top-24">
+          <div className="sticky top-24" style={{marginTop:"50px"}}>
             <NeonCard className="relative p-8 rounded-3xl border border-algoarnAqua/40 bg-gradient-to-br from-slate-900/90 to-gray-950/90 backdrop-blur-sm">
               <div className="text-center mb-8">
                 <div className="w-16 h-16 bg-gradient-to-r from-algoarnAqua to-algoarnBlue rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -788,7 +797,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center space-y-8"
+          className="text-center space-y-8 " style={{marginTop:"90px"}}
         >
           <NeonCard className="p-12 rounded-3xl bg-gradient-to-br from-algoarnAqua/5 to-algoarnBlue/5">
             <div className="flex items-center justify-center gap-4 mb-6">
@@ -817,8 +826,8 @@ export default function ContactPage() {
             </div>
           </NeonCard>
         </motion.section>
-      </div>
-    </main>
+      {/* </div> */}
+     </main>
   );
 }
  

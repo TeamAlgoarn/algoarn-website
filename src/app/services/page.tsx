@@ -1,5 +1,6 @@
  
 "use client";
+import { useContactModal } from "@/components/contact/contact-modal-provider";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -69,6 +70,8 @@ const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
   },
 ];
 export default function ServicesPage() {
+const { openModal } = useContactModal();
+
   return (
     <div className="space-y-28 pt-20 pb-20">
       {/* 1. ENHANCED HERO SECTION */}
@@ -151,18 +154,22 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
 >
   <Link href="/contact?type=AI+Services " >Contact Us</Link>
 </Button> */}
-<Button
-  asChild
-  size="lg"
-  className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all"
-  style={{ borderRadius: "9999px" }}
->
-  <Link href="/contact?type=AI+Services">
-    <span className="text-white">Contact Us</span>
-  </Link>
-</Button>
 
 <Button
+  size="lg"
+  className="px-10 py-4 ..."
+  style={{ borderRadius: "9999px" }}
+  onClick={() => openModal("AI Services")}
+>
+  Contact Us
+</Button>
+
+  {/* <Link href="/contact?type=AI+Services">
+    <span className="text-white">Contact Us</span>
+  </Link> */}
+
+
+{/* <Button
   asChild
   size="lg"
   className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all"
@@ -171,7 +178,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
   <Link href="/services?type=AI+Services">
     <span className="text-white">Explore Services</span>
   </Link>
-</Button>
+</Button> */}
   {/* <Button
     asChild
     size="lg"
@@ -193,7 +200,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
 
  
       {/* 2. ENHANCED SERVICES OVERVIEW - PREMIUM NEON GRID */}
-      <section id="services" className="space-y-16 px-4">
+      <section id="services" className="space-y-16 px-4" style={{marginTop:"-12px"}}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -212,25 +219,26 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
             {/* <Target className="w-6 h-6" /> */}
          
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-black to-black/80 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-5xl font-bold">
             Our AI Service Portfolio
           </h2>
-          <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
+          <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
             End-to-end AI services designed to transform your operations with cutting-edge
             technology
           </p>
         </motion.div>
  
        
-          <section className="bg-white py-20">
+          <section className="bg-white py-20" style={{marginTop:"-12px"}}>
       <div className="max-w-7xl mx-auto px-4 space-y-28">
         {services.map((s, i) => (
           <FadeInUp key={s.title} delay={0.1 + i * 0.1}>
             <div
-              className={`grid grid-cols-1 md:grid-cols-2 gap-14 items-center ${
-                i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
-              }`}
-            >
+  className={`grid grid-cols-1 md:grid-cols-2 gap-14 items-start ${
+    i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
+  }`}
+>
+
               {/* Image – casual, no border */}
               <div className="flex justify-center">
                 <img
@@ -246,7 +254,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
                   {s.title}
                 </h2>
 
-                <p className="text-xl leading-7 max-w-3xl mx-auto text-black " style={{marginTop:'17px'}}>
+                <p className="text-xl leading-7 max-w-2xl mx-auto text-black " style={{marginTop:'17px'}}>
                   {s.desc}
                 </p>
               </div>
@@ -255,335 +263,12 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
         ))}
       </div>
     </section>
-          {/* Computer Vision */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.7 }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            className="group relative"
-          > */}
-            {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-            <NeonCard className="p-8 h-full flex flex-col space-y-6 bg-gradient-to-br from-slate-900/80 to-slate-800/60 border border-white/10 group-hover:border-blue-400/50 backdrop-blur-sm transition-all duration-500 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-              <div className="absolute inset-[2px] rounded-3xl bg-slate-900 -z-10"></div> */}
-{/*
-              <div className="flex items-center gap-4">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <Eye className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Computer Vision</h3>
-              </div> */}
-              {/* <div className="flex items-center gap-4">
-  <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-    <div className="relative w-20 h-20">
-      <Image
-        src="/computer vision.avif"    // ⬅️ your image path
-        alt="Computer Vision"
-        fill
-        className="object-contain"
-      />
-    </div>
-  </div>
-  <h3 className="text-2xl font-bold text-white">Computer Vision</h3>
-</div> */}
- 
- 
-              {/* <ul className="space-y-4 flex-1">
-                {["Detection & tracking", "OCR", "Video analytics", "Quality inspection"].map(
-                  (feature, index) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 + index * 0.1 }}
-                      className="flex items-start gap-4 text-white/80 text-base leading-relaxed group/item hover:text-white transition-colors"
-                    >
-                      <div className="p-1 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-400 mt-1 flex-shrink-0">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span>{feature}</span>
-                    </motion.li>
-                  )
-                )}
-              </ul>
-            </NeonCard>
-          </motion.div>
-  */}
-          {/* Generative AI */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            className="group relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-            <NeonCard className="p-8 h-full flex flex-col space-y-6 bg-gradient-to-br from-slate-900/80 to-slate-800/60 border border-white/10 group-hover:border-purple-400/50 backdrop-blur-sm transition-all duration-500 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-              <div className="absolute inset-[2px] rounded-3xl bg-slate-900 -z-10"></div> */}
- 
-              {/* <div className="flex items-center gap-4">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <Brain className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Generative AI</h3>
-              </div> */}
-{/* <div className="flex items-center gap-4">
-  <div className="p-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-    <div className="relative w-20 h-20">
-      <Image
-        src="/genai.avif"   // ⬅️ your image path
-        alt="Generative AI"
-        fill
-        className="object-contain"
-      />
-    </div>
-  </div>
-  <h3 className="text-2xl font-bold text-white">Generative AI</h3>
-</div>
- 
-              <ul className="space-y-4 flex-1">
-                {["Chatbots", "Content automation", "Model fine-tuning"].map(
-                  (feature, index) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 + index * 0.1 }}
-                      className="flex items-start gap-4 text-white/80 text-base leading-relaxed group/item hover:text-white transition-colors"
-                    >
-                      <div className="p-1 rounded-lg bg-gradient-to-r from-purple-400 to-pink-400 mt-1 flex-shrink-0">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span>{feature}</span>
-                    </motion.li>
-                  )
-                )}
-              </ul>
-            </NeonCard>
-          </motion.div> */}
- 
-          {/* Predictive AI */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            className="group relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-            <NeonCard className="p-8 h-full flex flex-col space-y-6 bg-gradient-to-br from-slate-900/80 to-slate-800/60 border border-white/10 group-hover:border-green-400/50 backdrop-blur-sm transition-all duration-500 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-              <div className="absolute inset-[2px] rounded-3xl bg-slate-900 -z-10"></div> */}
-{/*
-               <div className="flex items-center gap-4">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <ChartLine className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Predictive AI</h3>
-              </div> */}
-              {/* <div className="flex items-center gap-4">
-  <div className="p-4 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-<div className="relative w-20 h-20">
-  <Image
-    // src="/Predictive-AI.jpg"
-     src="/predictive.png"
-    alt="Predictive AI"
-    fill
-    className="object-contain"
-  />
-</div>
-</div>
- <h3 className="text-2xl font-bold text-white">Predictive AI</h3>
- </div>
-              <ul className="space-y-4 flex-1">
-                {["Forecasting", "Risk prediction", "Time-series analysis"].map(
-                  (feature, index) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + index * 0.1 }}
-                      className="flex items-start gap-4 text-white/80 text-base leading-relaxed group/item hover:text-white transition-colors"
-                    >
-                      <div className="p-1 rounded-lg bg-gradient-to-r from-green-400 to-emerald-400 mt-1 flex-shrink-0">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span>{feature}</span>
-                    </motion.li>
-                  )
-                )}
-              </ul>
-            </NeonCard>
-          </motion.div> */}
- 
          
-          {/* <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            className="group relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-            <NeonCard className="p-8 h-full flex flex-col space-y-6 bg-gradient-to-br from-slate-900/80 to-slate-800/60 border border-white/10 group-hover:border-orange-400/50 backdrop-blur-sm transition-all duration-500 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-              <div className="absolute inset-[2px] rounded-3xl bg-slate-900 -z-10"></div> */}
- 
-              {/* <div className="flex items-center gap-4">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-orange-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <GraduationCap className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">LMS & EdTech</h3>
-              </div> */}
-{/* <div className="flex items-center gap-4">
-  <div className="p-4 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-orange-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-    <div className="relative w-20 h-20">
-      <Image
-        src="/LMS.jpg"   // ⬅️ your image file path
-        alt="LMS & EdTech"
-        fill
-        className="object-contain"
-      />
-    </div>
-  </div>
-  <h3 className="text-2xl font-bold text-white">LMS & EdTech</h3>
-</div> */}
- 
-              {/* <ul className="space-y-4 flex-1">
-                {["Full LMS", "AI-powered assessments", "Dashboards"].map(
-                  (feature, index) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 + index * 0.1 }}
-                      className="flex items-start gap-4 text-white/80 text-base leading-relaxed group/item hover:text-white transition-colors"
-                    >
-                      <div className="p-1 rounded-lg bg-gradient-to-r from-orange-400 to-red-400 mt-1 flex-shrink-0">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span>{feature}</span>
-                    </motion.li>
-                  )
-                )}
-              </ul>
-            </NeonCard>
-          </motion.div> */}
- 
-{/* Custom AI Development */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            className="group relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-            <NeonCard className="p-8 h-full flex flex-col space-y-6 bg-gradient-to-br from-slate-900/80 to-slate-800/60 border border-white/10 group-hover:border-blue-400/50 backdrop-blur-sm transition-all duration-500 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-              <div className="absolute inset-[2px] rounded-3xl bg-slate-900 -z-10"></div> */}
- 
-              {/* <div className="flex items-center gap-4">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 border border-blue-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <Cpu className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Custom AI</h3>
-              </div> */}
-{/* <div className="flex items-center gap-4">
-  <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 border border-blue-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-    <div className="relative w-20 h-20">
-      <Image
-        src="/custom.jpg"   // ⬅️ your image file
-        alt="Custom AI"
-        fill
-        className="object-contain"
-      />
-    </div>
-  </div>
-  <h3 className="text-2xl font-bold text-white">Custom AI</h3>
-</div>
- 
-              <ul className="space-y-4 flex-1">
-                {["Tailored AI solutions", "Integration with existing systems"].map(
-                  (feature, index) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5 + index * 0.1 }}
-                      className="flex items-start gap-4 text-white/80 text-base leading-relaxed group/item hover:text-white transition-colors"
-                    >
-                      <div className="p-1 rounded-lg bg-gradient-to-r from-blue-400 to-indigo-400 mt-1 flex-shrink-0">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span>{feature}</span>
-                    </motion.li>
-                  )
-                )}
-              </ul>
-            </NeonCard>
-          </motion.div> */}
- 
-          {/* Software Development */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.7 }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            className="group relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-            <NeonCard className="p-8 h-full flex flex-col space-y-6 bg-gradient-to-br from-slate-900/80 to-slate-800/60 border border-white/10 group-hover:border-cyan-400/50 backdrop-blur-sm transition-all duration-500 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-              <div className="absolute inset-[2px] rounded-3xl bg-slate-900 -z-10"></div> */}
- 
-              {/* <div className="flex items-center gap-4">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <Settings className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Software Dev</h3>
-              </div> */}
-{/* <div className="flex items-center gap-4">
-  <div className="p-4 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-400/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-    <div className="relative w-19 h-19">
-      <Image
-        src="/Dev.avif"   // ⬅️ your image path
-        alt="Software Development"
-        fill
-        className="object-contain"
-      />
-    </div>
-  </div>
-  <h3 className="text-2xl font-bold text-white">Software Dev</h3>
-</div> */}
- 
-              {/* <ul className="space-y-4 flex-1">
-                {["Web apps", "Dashboards", "Backend systems"].map(
-                  (feature, index) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.6 + index * 0.1 }}
-                      className="flex items-start gap-4 text-white/80 text-base leading-relaxed group/item hover:text-white transition-colors"
-                    >
-                      <div className="p-1 rounded-lg bg-gradient-to-r from-cyan-400 to-teal-400 mt-1 flex-shrink-0">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span>{feature}</span>
-                    </motion.li>
-                  )
-                )}
-              </ul> */}
-            {/* </NeonCard>
-          </motion.div> */}
         
       </section>
  
       {/* 3. ENHANCED EXPERIENCE SECTION */}
-      <section className="relative px-4">
+      <section className="relative px-4" style={{marginTop:"-140px"}}>
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -595,12 +280,12 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.2, duration: 0.5 }}
     >
-      <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-black to-black/80 bg-clip-text text-transparent">
+      <h2 className="text-3xl md:text-5xl font-bold">
         Proven Track Record
       </h2>
     </motion.div>
 
-    <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+    <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-black">
       Our Experience
     </h2>
   </motion.div>
@@ -612,7 +297,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
       </div>
 
-      {/* ✅ CONTENT */}
+      {/*  CONTENT */}
       <div className="relative z-10 space-y-6">
         {/* Headings row */}
         <div className="grid md:grid-cols-2 gap-8">
@@ -652,7 +337,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
                 <div className="p-2 rounded-xl bg-algoarnAqua/20 border border-algoarnAqua/30 group-hover:scale-110 transition-transform">
                   <Star className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-white text-lg leading-relaxed flex-1">
+                <span className="text-xl leading-7 max-w-2xl mx-auto text-white flex-1">
                   {row.left}
                 </span>
               </motion.div>
@@ -668,7 +353,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
                 <div className="p-2 rounded-xl bg-algoarnBlue/20 border border-algoarnBlue/30 group-hover:scale-110 transition-transform">
                   <Rocket className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-white text-lg leading-relaxed flex-1">
+                <span className="text-xl leading-7 max-w-2xl mx-auto text-white flex-1">
                   {row.right}
                 </span>
               </motion.div>
@@ -705,7 +390,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl md:text-6xl font-bold text-white"
+                className="text-3xl md:text-5xl font-bold text-white"
               >
                 Let&apos;s Build Your   AI Solution
                
@@ -715,7 +400,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-white max-w-3xl mx-auto leading-relaxed"
+                className="text-xl leading-7 max-w-2xl mx-auto text-white"
               >
                 Ready to transform your institution or business with cutting-edge AI
                 technology? Contact us to discuss your project requirements and start your AI
@@ -729,13 +414,14 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
                 className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8"
               >
                 <Link href="/contact?type=AI+Services">
-                  <Button className="px-16 py-8 text-xl font-bold bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90 hover:scale-105 transform transition-all duration-300 shadow-2xl shadow-algoarnAqua/30 group relative overflow-hidden">
-                    <span className="relative z-10 flex items-center gap-4">
-                      🚀 Start Your Project
-                      {/* <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" /> */}
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                  </Button>
+                  
+                  <Button
+                      size="lg"
+                      className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
+                      style={{ borderRadius: "2.5rem" }}
+                    >
+                     Start Your Project
+                    </Button>
                 </Link>
               </motion.div>
  
@@ -755,7 +441,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
                     key={item.text}
                     className="flex items-center gap-3 justify-center p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
                   >
-                    <item.icon className="w-5 h-5 text-algoarnAqua" />
+                    <item.icon className="w-5 h-5 text-white" />
                     <span className="text-white/90 text-sm font-medium">
                       {item.text}
                     </span>

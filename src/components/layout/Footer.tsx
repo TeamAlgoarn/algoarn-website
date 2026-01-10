@@ -247,20 +247,28 @@ export default function Footer() {
           {/* Address */}
           {/* Address */}
 <div className="lg:col-span-1">
-  <h3 className="font-semibold mb-4 text-blue-300">Address</h3>
+  <h3 className="font-semibold mb-4 text-white">Address</h3>
   <div className="space-y-2 text-gray-300 text-sm leading-relaxed">
-    <p>Pole Workspaces</p>
+    {/* <p>Pole Workspaces</p>
     <p>33/1 Racha, Galaxy 21st</p>
     <p>Marenahalli, Vijayanagar</p>
     <p>Bangalore North</p>
-    <p>Karnataka, India – 560040</p>
+    <p>Karnataka, India – 560040</p> */}
+    <p className="text-sm text-white leading-relaxed">
+  Pole Workspaces <br />
+  33/1 Racha, Galaxy 21st <br />
+  Marenahalli, Vijayanagar (Bangalore) <br />
+  Bangalore North, Bangalore – 560040 <br />
+  Karnataka, India
+</p>
+ 
   </div>
 </div>
 
 
           {/* Navigation */}
           <div className="lg:col-span-1">
-            <h3 className="font-semibold mb-4 text-blue-300">Navigation</h3>
+            <h3 className="font-semibold mb-4 text-white">Navigation</h3>
             <ul className="space-y-2">
               {[
                 { href: "/about", text: "About Us" },
@@ -282,7 +290,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-1">
-            <h3 className="font-semibold mb-4 text-blue-300">Contact</h3>
+            <h3 className="font-semibold mb-4 text-white">Contact</h3>
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
                 <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
@@ -306,7 +314,7 @@ export default function Footer() {
 
           {/* Social */}
           <div className="lg:col-span-1">
-            <h3 className="font-semibold mb-4 text-blue-300">Follow Us</h3>
+            <h3 className="font-semibold mb-4 text-white">Follow Us</h3>
             <div className="flex items-center gap-4 text-xl">
               <a
                 href="#"

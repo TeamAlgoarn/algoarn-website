@@ -280,7 +280,7 @@ const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
     </h1>
 
     {/* Subheading */}
-     <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
+     <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
               Join a compact, hands-on team working on SUCA, AI analytics, and
               custom AI solutions for universities, schools and businesses.
             </p>
@@ -323,10 +323,10 @@ const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
         <section className="space-y-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold">
+              <h2 className="text-3xl md:text-5xl font-bold">
                 Current Openings
               </h2>
-              <p className="text-sm text-white/90">
+              <p className="text-xl leading-7 max-w-2xl mx-auto text-black" style={{marginTop:"18px"}}>
                 Don&apos;t see a perfect fit? You can still reach out via the
                 contact page.
               </p>
@@ -344,7 +344,7 @@ const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
               >
                 <NeonCard className="p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
                   <div className="space-y-2">
-                    <h3 className="text-lg md:text-xl font-semibold text-white">
+                    <h3 className="text-xl leading-7 max-w-2xl mx-auto  font-semibold text-white">
                       {job.title}
                     </h3>
                     <div className="flex flex-wrap gap-3 text-xs text-white">
