@@ -2817,7 +2817,7 @@ const { openModal } = useContactModal();
         </motion.div>
       </section>
 
-      {/* ✅ SAME SECTION SPACING SYSTEM AS HOMEPAGE */}
+   
       <div className="space-y-20 md:space-y-24">
         {/* THE PROBLEM */}
         <section className="relative py-24">

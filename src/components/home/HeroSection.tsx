@@ -1130,7 +1130,11 @@
 
 
 "use client";
+import {
+  
+  Sparkles,
 
+} from "lucide-react";
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -1157,7 +1161,12 @@ const SectionReveal = ({
     {children}
   </motion.section>
 );
-
+const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
+  left: `${(i * 17) % 100}%`,
+  top: `${(i * 37) % 100}%`,
+  duration: 3 + (i % 3),
+  delay: (i % 4) * 0.4,
+}));
 const FadeInUp = ({
   children,
   delay = 0,
@@ -1182,20 +1191,30 @@ const SECTION_START = "pt-20 md:pt-24";
 const SECTION_END = "pb-20 md:pb-24";
 
 export default function HomePage() {
-  // ✅ use modal open function
+  //use modal open function
 const { openModal } = useContactModal();
 
   return (
     <div>
-      {/* 1) HERO SECTION */}
-      <SectionReveal
-        className="relative min-h-[calc(100vh-96px)] flex justify-center overflow-hidden w-screen
-        -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
-        bg-black
-        -mt-[96px] pt-[96px]"
-      >
-        {/* Background Video */}
-        <video
+   <section
+  className="
+    relative
+    min-h-screen
+    flex items-center justify-center
+    overflow-hidden
+    w-screen
+    -mx-[calc((100vw-100%)/2)]
+    px-[calc((100vw-100%)/2)]
+    bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
+    pt-20
+    pb-24
+    -mt-[29px]
+  "
+  style={{marginTop:"-32px"}}
+>
+
+
+   <video
           autoPlay
           muted
           loop
@@ -1204,19 +1223,100 @@ const { openModal } = useContactModal();
         >
           <source src="/homepage_bg_video.mp4" type="video/mp4" />
         </video>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
+          <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
+        </div>
+
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
+          {serviceParticles.map((p, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-algoarnAqua rounded-full"
+              style={{ left: p.left, top: p.top }}
+              animate={{ y: [0, -30, 0], opacity: [0, 1, 0] }}
+              transition={{
+                duration: p.duration,
+                delay: p.delay,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-10"
+        >
+         
+     
+          
+        
+
+          <div className="space-y-3">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+                Smart AI for Smarter{" "}
+                <span className="block md:inline text-white">Businesses</span>
+              </h1>
+          </div>
+
+          <p className="text-xl leading-7 max-w-2xl mx-auto text-white">
+                At <span className="font-bold text-white">ALGOARN</span>, we drive
+                innovation through AI, enabling your businesses to unlock new
+                potential and redefine what&apos;s possible. Our AI-driven solutions
+                elevate experiences, reduce costs, and accelerate digital transformation.
+              </p>
+
+          <div className="flex flex-col md:flex-row gap-3 justify-center items-center text-sm text-slate-700">
+           
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6 pb-20">
+           
+<Button
+  size="lg"
+  className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
+  style={{ borderRadius: "2.5rem" }}
+  onClick={() => openModal("Institutional Demo")}
+>
+ Contact Us
+</Button>
+
+          </div>
+        </motion.div>
+      </section>
+      {/* <SectionReveal
+        className="relative min-h-[calc(100vh-96px)] flex justify-center overflow-hidden w-screen
+        -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
+        bg-black
+        -mt-[96px] pt-[96px]"
+      > */}
+        {/* Background Video */}
+        {/* <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/homepage_bg_video.mp4" type="video/mp4" />
+        </video> */}
 
         {/* Overlay */}
-        <div className="absolute inset-0 z-[5] bg-black/45" />
+        {/* <div className="absolute inset-0 z-[5] bg-black/45" /> */}
 
         {/* Soft Pastel Circles */}
-        <div className="absolute inset-0 pointer-events-none z-10">
+        {/* <div className="absolute inset-0 pointer-events-none z-10">
           <div className="absolute -left-20 top-24 w-64 h-64 bg-[#e8eeff]/50 rounded-full blur-3xl" />
           <div className="absolute right-10 top-40 w-60 h-60 bg-[#f3e8ff]/50 rounded-full blur-3xl" />
           <div className="absolute left-1/2 bottom-10 -translate-x-1/2 w-72 h-72 bg-[#ffeef2]/50 rounded-full blur-3xl" />
-        </div>
+        </div> */}
 
         {/* Content */}
-        <div className="relative z-20 w-full">
+        {/* <div className="relative z-20 w-full">
           <div className="max-w-3xl mx-auto px-6 pb-16 md:pb-20 text-center space-y-8">
             <FadeInUp delay={0.1}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
@@ -1232,11 +1332,11 @@ const { openModal } = useContactModal();
                 potential and redefine what&apos;s possible. Our AI-driven solutions
                 elevate experiences, reduce costs, and accelerate digital transformation.
               </p>
-            </FadeInUp>
+            </FadeInUp> */}
 
             {/* ✅ CTA (OPEN MODAL INSTEAD OF /contact PAGE) */}
-            <FadeInUp delay={0.3}>
-              <div className="flex justify-center pt-4">
+            {/* <FadeInUp delay={0.3}>
+              <div className="flex justify-center pt-4"> */}
                 {/* <Button
                   type="button"
                   onClick={() => openContact("contact")}
@@ -1248,19 +1348,19 @@ const { openModal } = useContactModal();
                 >
                   <span className="flex items-center gap-2">Contact Us</span>
                 </Button> */}
-                <Button
+                {/* <Button
   size="lg"
   className="px-10 py-4 ..."
   style={{ borderRadius: "9999px" }}
   onClick={() => openModal("AI Services")}
 >
   Contact Us
-</Button>
-              </div>
+</Button> */}
+              {/* </div>
             </FadeInUp>
           </div>
-        </div>
-      </SectionReveal>
+        </div> */}
+      {/* // </SectionReveal> */}
 
       {/* 2) WHY ALGOARN */}
       <SectionReveal className={`${SECTION_START} ${SECTION_END} space-y-12`}>

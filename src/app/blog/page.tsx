@@ -905,12 +905,21 @@ const FadeInUp = ({
 
   return (
     <main className="bg-white">
-      {/* ✅ HERO SECTION like your About page screenshot */}
+      {/*  HERO SECTION like your About page screenshot */}
       <SectionReveal
-              className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen
-              -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
-              bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-24 pb-16 -mt-[79px]"
-            >
+              className=" relative
+    min-h-screen
+    flex items-center justify-center
+    overflow-hidden
+    w-screen
+    -mx-[calc((100vw-100%)/2)]
+    px-[calc((100vw-100%)/2)]
+    bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
+    pt-20
+    pb-24
+    -mt-[32px]
+  " 
+  >
               {/* Background glows */}
               <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-1/4 -left-32 w-[800px] h-[800px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />

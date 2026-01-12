@@ -1502,8 +1502,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { NeonCard } from "@/components/ui/neon-card";
 import { style } from "framer-motion/client";
-
-// ✅ SUCA-consistent spacing & typography
+import { useContactModal } from "@/components/contact/contact-modal-provider";
 const SECTION = "relative py-20 md:py-24 -mt-[115px]" ;
 const WRAP = "max-w-7xl mx-auto px-6";
 
@@ -1537,7 +1536,12 @@ const SectionReveal = ({
     {children}
   </motion.section>
 );
-
+const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
+  left: `${(i * 17) % 100}%`,
+  top: `${(i * 37) % 100}%`,
+  duration: 3 + (i % 3),
+  delay: (i % 4) * 0.4,
+}));
 const FadeInUp = ({
   children,
   delay = 0,
@@ -1559,22 +1563,123 @@ const FadeInUp = ({
 );
 
 export default function AboutPage() {
+  const { openModal } = useContactModal();
   return (
-    <div className="space-y-20 md:space-y-24 pb-16">
+    
+    <>
+      <section
+  className={[
+    "relative",
+    "min-h-screen",
+    "flex items-center justify-center",
+    "overflow-hidden",
+    "w-screen",
+    "-mx-[calc((100vw-100%)/2)]",
+    "px-[calc((100vw-100%)/2)]",
+    "bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]",
+    "pt-20",
+    "pb-24",
+    "-mt-[32px]",
+  ].join(" ")}
+>
+
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
+          <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
+        </div>
+
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
+          {serviceParticles.map((p, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-algoarnAqua rounded-full"
+              style={{ left: p.left, top: p.top }}
+              animate={{ y: [0, -30, 0], opacity: [0, 1, 0] }}
+              transition={{
+                duration: p.duration,
+                delay: p.delay,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-10"
+        >
+         
+            
+      
+
+          <div className="space-y-3">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
+             
+           Engineering Intelligence for the{" "}
+              <span className="text-algoarnAqua">Real World</span>
+            </h1>
+            
+          </div>
+
+          <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+          Algoarn is an AI innovation company focused on building intelligent
+              products that transform how people learn, work, shop, and make
+              decisions.
+          </p>
+
+          
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6 pb-20">
+            {/* <Button
+              asChild
+              size="lg"
+              className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all"
+              style={{ borderRadius: "9999px" }}
+            >
+              <Link href="/contact?type=SUCA+Institutional+Demo">
+                <span className="text-white">Book an Institutional Demo</span>
+              </Link>
+            </Button> */}
+            {/* <Button
+  size="lg"
+  type="button"
+  onClick={() => openContact("Institutional Demo")}
+  className="px-10 py-6 text-lg 
+    bg-gradient-to-r from-algoarnAqua to-algoarnBlue 
+    hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
+  style={{ borderRadius: "2.5rem" }}
+>
+  Book an  Institutional Demo
+</Button> */}
+<Button
+  size="lg"
+  className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
+  style={{ borderRadius: "2.5rem" }}
+  onClick={() => openModal("Institutional Demo")}
+>
+ Contact Us
+</Button>
+    </div>
+        </motion.div>
+      </section>
+
       {/* HERO SECTION */}
-      <SectionReveal
+      {/* <SectionReveal
         className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen
         -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
         bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-24 pb-16 -mt-[79px]"
-      >
+      > */}
         {/* Background glows */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-1/4 -left-32 w-[800px] h-[800px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
           <div className="absolute bottom-1/4 -right-32 w-[800px] h-[800px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
-        </div>
+        </div> */}
 
         {/* Particles */}
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
+        {/* <div className="absolute inset-0 opacity-40 pointer-events-none">
           {floatingParticles.map((p, i) => (
             <div
               key={i}
@@ -1587,20 +1692,20 @@ export default function AboutPage() {
               }}
             />
           ))}
-        </div>
+        </div> */}
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-8">
-          {/* ✅ Removed the "About Us" pill/badge */}
+        {/* <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-8"> */}
+          
 
-          <FadeInUp delay={0.15}>
+          {/* <FadeInUp delay={0.15}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
               Engineering Intelligence for the{" "}
               <span className="text-algoarnAqua">Real World</span>
             </h1>
-          </FadeInUp>
+          </FadeInUp> */}
 
-          <FadeInUp delay={0.25}>
+          {/* <FadeInUp delay={0.25}>
             <p className={P_LEAD}>
               Algoarn is an AI innovation company focused on building intelligent
               products that transform how people learn, work, shop, and make
@@ -1608,10 +1713,56 @@ export default function AboutPage() {
             </p>
           </FadeInUp>
         </div>
-      </SectionReveal>
+     </SectionReveal> */}
+ <SectionReveal className={`${SECTION} mt-1`}> 
 
+
+        <div className={WRAP}>
+          <div className="max-w-6xl mx-auto space-y-10">
+            <FadeInUp className="text-center space-y-4">
+              <h2 className="text-3xl md:text-5xl font-bold">Who We Are?</h2>
+            </FadeInUp>
+
+            <FadeInUp delay={0.15}>
+              <div className="max-w-7xl mx-auto">
+                <div className="relative group rounded-[46px]">
+                  <div className="absolute -inset-6 rounded-[56px] bg-gradient-to-r from-sky-400/20 via-indigo-500/15 to-fuchsia-500/20 blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <div className="relative rounded-[46px] bg-gradient-to-b from-white/10 to-white/0 p-[1.5px] shadow-[0_0_70px_rgba(56,189,248,0.18)] group-hover:shadow-[0_0_100px_rgba(56,189,248,0.28)] transition-all duration-500">
+                    <div className="rounded-[44px] bg-gradient-to-br from-[#0b1c2d] via-[#0f2238] to-[#071423] border border-white/10 px-8 py-10 md:px-12 md:py-12 lg:px-14 lg:py-14">
+                      <div className="space-y-6 text-white text-lg md:text-xl leading-7 max-w-2xl mx-auto">
+                        <p className="text-lg md:text-xl leading-7 max-w-2xl mx-auto text-white">
+                          Algoarn is an AI innovation company focused on building intelligent
+                          products that transform how people learn, work, shop, and make
+                          decisions.
+                        </p>
+
+                      <p className="text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white">
+                          We combine deep research, engineering precision, and creative
+                          problem-solving to build systems powered by computer vision,
+                          generative AI, and predictive analytics.
+                        </p>
+
+                         <p className="text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white font-semibold">
+                            Our goal is simple:
+                          </p>
+
+                          <p className="mt-3 text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white font-bold">
+                            Create AI that is practical, powerful, and deeply human-centric.
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeInUp>
+          </div>
+        </div>
+      </SectionReveal>
       {/* WHO WE ARE */}
-      <SectionReveal className={SECTION}>
+      {/* <SectionReveal className={SECTION}> */}
+      {/* <SectionReveal className={`${SECTION} mt-1`}>
+
         <div className={WRAP}>
           <div className="max-w-6xl mx-auto space-y-10">
             <FadeInUp className="text-center space-y-4">
@@ -1655,11 +1806,11 @@ export default function AboutPage() {
             </FadeInUp>
           </div>
         </div>
-      </SectionReveal>
+      </SectionReveal> */}
 
       {/* OUR STORY */}
       {/* <SectionReveal className={SECTION} > */}
-      <SectionReveal className={`${SECTION} -mt-[210px]`}>
+      <SectionReveal className={`${SECTION} -mt-1`}>
 
         <div className={WRAP}>
           <div className="max-w-6xl mx-auto space-y-10">
@@ -1711,7 +1862,7 @@ export default function AboutPage() {
       </SectionReveal>
 
       {/* MISSION & VISION */}
- <SectionReveal className={`${SECTION} -mt-[210px]`}>
+ <SectionReveal className={`${SECTION} -mt-1`}>
         <div className={WRAP}>
           <div className="space-y-12">
             <FadeInUp className="text-center space-y-4">
@@ -1809,7 +1960,7 @@ export default function AboutPage() {
       </SectionReveal>
 
       {/* FOUNDER */}
-      <SectionReveal className={`${SECTION} -mt-[210px]`}>
+      <SectionReveal className={`${SECTION} -mt-1`}>
         <div className={WRAP}>
           <div className="space-y-12">
             <FadeInUp className="text-center space-y-4">
@@ -1855,7 +2006,7 @@ export default function AboutPage() {
       </SectionReveal>
 
       {/* VALUES */}
-       <SectionReveal className={`${SECTION} -mt-[210px]`}>
+       <SectionReveal className={`${SECTION} -mt-1`}>
         <div className={WRAP}>
           <div className="space-y-12">
             <FadeInUp className="text-center space-y-4">
@@ -1907,7 +2058,7 @@ export default function AboutPage() {
       </SectionReveal>
 
       {/* ROAD AHEAD */}
-      <SectionReveal className={`${SECTION} -mt-[210px]`}>
+      <SectionReveal className={`${SECTION} -mt-1`}>
         <div className={WRAP}>
           <div className="space-y-12">
             <FadeInUp className="text-center space-y-4">
@@ -1940,7 +2091,7 @@ export default function AboutPage() {
       </SectionReveal>
 
       {/* FINAL CTA */}
-    <SectionReveal className={`${SECTION} -mt-[160px]`}>
+    <SectionReveal className={`${SECTION} -mt-1`}>
         <div className={WRAP}>
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-algoarnAqua/10 via-purple-500/10 to-algoarnBlue/10 rounded-3xl blur-3xl opacity-40" />
@@ -1984,6 +2135,8 @@ export default function AboutPage() {
           </div>
         </div>
       </SectionReveal>
-    </div>
+      
+    
+    </>
   );
 }

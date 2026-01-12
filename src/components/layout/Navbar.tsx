@@ -1095,8 +1095,19 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  // const isActive = (href: string) =>
+  //   href === "/" ? pathname === "/" : pathname.startsWith(href);
+const isActive = (href: string) => {
+  if (!pathname) return false;
+
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  return pathname === href || pathname.startsWith(href + "/");
+};
+
+
 
   return (
     <header
@@ -1122,22 +1133,46 @@ export function Navbar() {
           {/* Desktop Nav - Increased text size for better visibility */}
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`relative font-medium transition-colors text-base md:text-[15px]
-                  ${
-                    isActive(link.href)
-                      ? "text-[#00eaff]"
-                      : "text-white/80 hover:text-[#00eaff]"
-                  }
-                `}
-              >
-                {link.label}
-                {isActive(link.href) && (
-                  <span className="absolute left-0 right-0 -bottom-1 h-[2px] bg-[white]" />
-                )}
-              </Link>
+              // <Link
+              //   key={link.href}
+              //   href={link.href}
+              //   className={`relative font-medium transition-colors text-base md:text-[15px]
+              //     ${
+              //       isActive(link.href)
+              //         ? "text-[#00eaff]"
+              //         : "text-white/80 hover:text-[#00eaff]"
+              //     }
+              //   `}
+              // >
+              //   {link.label}
+              //   {isActive(link.href) && (
+              //     <span className="absolute left-0 right-0 -bottom-1 h-[2px] bg-[white]" />
+              //   )}
+              // </Link>
+//       <Link
+//   key={link.href}
+//   href={link.href}
+//   className={`relative font-medium transition-colors text-base md:text-[15px]
+//     ${isActive(link.href)
+//       ? "!text-[#00eaff]"
+//       : "text-white/80 hover:!text-[#00eaff]"}
+//   `}
+// >
+//   {link.label}
+// </Link>
+<Link
+  key={link.href}
+  href={link.href}
+  className={`font-medium transition-colors text-base md:text-[15px]
+    ${isActive(link.href)
+      ? "!text-blue-300"
+      : "text-white/80 hover:!text-blue-300"}
+  `}
+>
+  {link.label}
+</Link>
+
+
             ))}
           </nav>
 
@@ -1164,13 +1199,18 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`px-3 py-2.5 rounded-lg text-base
-                    ${
-                      isActive(link.href)
-                        ? "bg-white/10 text-[#00eaff]"
-                        : "text-white/80 hover:bg-white/5"
-                    }
-                  `}
+//                  className={`px-3 py-2.5 rounded-lg text-base
+//   ${isActive(link.href)
+//     ? "bg-white/10 !text-[#00eaff]"
+//     : "text-white/80 hover:bg-white/5 hover:!text-[#00eaff]"}
+// `}
+
+      className={`px-3 py-2.5 rounded-lg text-base
+  ${isActive(link.href)
+    ? "bg-white/10 !text-blue-300"
+    : "text-white/80 hover:bg-white/5 hover:!text-blue-300"}
+`}
+           
                 >
                   {link.label}
                 </Link>

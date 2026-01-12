@@ -200,8 +200,7 @@ const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
   delay: (i % 4) * 0.4,  // 0, 0.4, 0.8, 1.2
 }));
   return (
-    <main className="pt-20 pb-24">
-      <div className="max-w-6xl mx-auto px-4 space-y-16">
+  <>
         {/* HERO */}
         {/* <section className="relative rounded-3xl border border-algoarnAqua/30 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-10 md:p-14 overflow-hidden">
           <div className="pointer-events-none absolute inset-0">
@@ -230,8 +229,19 @@ const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
             </p>
           </motion.div>
         </section> */}
-<section className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-20 -mt-[31px]" style={{marginTop:'-111px'}}>
-
+{/* <section className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-20 -mt-[31px]" style={{marginTop:'-111px'}}> */}
+<section className=" relative
+    min-h-screen
+    flex items-center justify-center
+    overflow-hidden
+    w-screen
+    -mx-[calc((100vw-100%)/2)]
+    px-[calc((100vw-100%)/2)]
+    bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
+    pt-20
+    pb-24
+    -mt-[21px]
+  " style={{marginTop:"-32px"}}>
   {/* Background Glows */}
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
     <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
@@ -320,7 +330,7 @@ const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
   </motion.div>
 </section>
         {/* LIST OF OPENINGS */}
-        <section className="space-y-8">
+        <section className="space-y-8" style={{marginTop:"72px"}}>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div>
               <h2 className="text-3xl md:text-5xl font-bold">
@@ -385,7 +395,6 @@ const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
             ))}
           </div>
         </section>
-      </div>
-    </main>
+     </>
   );
 }

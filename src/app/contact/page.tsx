@@ -351,9 +351,18 @@ export default function ContactPage() {
         <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full border-2 border-gray-900 animate-ping" />
       </motion.button> */}
  <SectionReveal
-         className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen
-         -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
-         bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-24 pb-16 -mt-[79px]"
+ className=" relative
+    min-h-screen
+    flex items-center justify-center
+    overflow-hidden
+    w-screen
+    -mx-[calc((100vw-100%)/2)]
+    px-[calc((100vw-100%)/2)]
+    bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
+    pt-20
+    pb-24
+    -mt-[32px]"
+         
        >
          {/* Background glows */}
          <div className="absolute inset-0 pointer-events-none overflow-hidden">

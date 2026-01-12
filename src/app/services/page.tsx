@@ -73,7 +73,7 @@ export default function ServicesPage() {
 const { openModal } = useContactModal();
 
   return (
-    <div className="space-y-28 pt-20 pb-20">
+   <>
       {/* 1. ENHANCED HERO SECTION */}
       {/* <section className="relative min-h-[70vh] flex items-center justify-center overflow-x-hidden 
 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 
@@ -83,16 +83,16 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
   -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
   bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
   pt-20 -mt-[31px]" style={{marginTop:'-110px'}}> */}
-  <section className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-20 -mt-[31px]" style={{marginTop:'-110px'}}>
+  {/* <section className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-20 -mt-[31px]" style={{marginTop:'-110px'}}> */}
 
   {/* Background Glows */}
-  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+  {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
     <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
     <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
-  </div>
+  </div> */}
 
   {/* Floating Particles */}
-  <div className="absolute inset-0 opacity-40 pointer-events-none">
+  {/* <div className="absolute inset-0 opacity-40 pointer-events-none">
     {serviceParticles.map((p, i) => (
       <motion.div
         key={i}
@@ -107,44 +107,44 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
         }}
       />
     ))}
-  </div>
+  </div> */}
 
   {/* Content */}
-  <motion.div
+  {/* <motion.div
     initial={{ opacity: 0, y: 60 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-10"
-  >
+  > */}
     {/* Badge */}
     {/* <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full 
       bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm"> */}
-      <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm">
+      {/* <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm"> */}
 
-      <Sparkles className="w-4 h-4 text-algoarnAqua" />
+      {/* <Sparkles className="w-4 h-4 text-algoarnAqua" />
       <span className="text-xs md:text-sm font-medium text-indigo-500 tracking-[0.25em] uppercase">
         Enterprise AI Solutions
       </span>
-    </div>
+    </div> */}
 
     {/* Heading */}
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
+    {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
       Services <span className="text-black">Tailored for You</span>
-    </h1>
+    </h1> */}
 
     {/* Subheading */}
-    <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
+    {/* <p className="text-xl leading-7 max-w-3xl mx-auto text-black">
       From computer vision and generative AI to LMS platforms and custom AI
       workflows, we design and ship{" "}
       <span className="text-xl leading-7 max-w-3xl mx-auto text-black font-semibold">
         solutions aligned with your real-world outcomes
       </span>{" "}
       and business objectives.
-    </p>
+    </p> */}
 
     {/* CTAs */}
     
-   <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 text-white" style={{ marginBottom: "78px" }}>
+   {/* <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 text-white" style={{ marginBottom: "78px" }}> */}
 
  {/* <Button
   asChild
@@ -155,14 +155,14 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
   <Link href="/contact?type=AI+Services " >Contact Us</Link>
 </Button> */}
 
-<Button
+{/* <Button
   size="lg"
   className="px-10 py-4 ..."
   style={{ borderRadius: "9999px" }}
   onClick={() => openModal("AI Services")}
 >
   Contact Us
-</Button>
+</Button> */}
 
   {/* <Link href="/contact?type=AI+Services">
     <span className="text-white">Contact Us</span>
@@ -192,15 +192,96 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
     </Link>
   </Button> */}
 
-</div>
+{/* </div>
 
 
   </motion.div>
-</section>
+</section> */}
+ <section
+  className={[
+    "relative",
+    "min-h-screen",
+    "flex items-center justify-center",
+    "overflow-hidden",
+    "w-screen",
+    "-mx-[calc((100vw-100%)/2)]",
+    "px-[calc((100vw-100%)/2)]",
+    "bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]",
+    "pt-20",
+    "pb-24",
+    "-mt-[32px]",
+  ].join(" ")}
+>
 
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
+          <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
+        </div>
+
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
+          {serviceParticles.map((p, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-algoarnAqua rounded-full"
+              style={{ left: p.left, top: p.top }}
+              animate={{ y: [0, -30, 0], opacity: [0, 1, 0] }}
+              transition={{
+                duration: p.duration,
+                delay: p.delay,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-10"
+        >
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-algoarnAqua/10 border border-algoarnAqua/30 backdrop-blur-sm">
+            <Sparkles className="w-4 h-4 text-algoarnAqua" />
+            <span className="text-xs md:text-sm font-medium text-indigo-500 tracking-[0.25em] uppercase">
+             Enterprise AI Solutions
+            </span>
+          </div>
+
+          <div className="space-y-3">
+             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
+      Services <span className="text-black">Tailored for You</span>
+    </h1>
+            
+          </div>
+
+          <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+          From computer vision and generative AI to LMS platforms and custom AI
+      workflows, we design and ship{" "}
+      <span className="text-xl leading-7 max-w-3xl mx-auto text-black font-semibold">
+        solutions aligned with your real-world outcomes
+      </span>{" "}
+      and business objectives.
+          </p>
+
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6 pb-20">
+           
+<Button
+  size="lg"
+  className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
+  style={{ borderRadius: "2.5rem" }}
+  onClick={() => openModal("Institutional Demo")}
+>
+  Contact Us
+</Button>
+
+          </div>
+        </motion.div>
+      </section>
  
       {/* 2. ENHANCED SERVICES OVERVIEW - PREMIUM NEON GRID */}
-      <section id="services" className="space-y-16 px-4" style={{marginTop:"-12px"}}>
+      <section id="services" className="space-y-16 px-4" style={{marginTop:"94px"}}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -268,7 +349,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
       </section>
  
       {/* 3. ENHANCED EXPERIENCE SECTION */}
-      <section className="relative px-4" style={{marginTop:"-140px"}}>
+      <section className="relative px-4" >
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -367,7 +448,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
 
  
       {/* 4. ENHANCED CTA SECTION */}
-      <section className="px-4">
+      <section className="px-4" style={{marginTop:"97px"}}>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -452,7 +533,7 @@ w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-24 pb-28"> */}
           </NeonCard>
         </motion.div>
       </section>
-    </div>
+  </>
   );
 }
  
