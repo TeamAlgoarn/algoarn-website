@@ -19,22 +19,41 @@ export async function PATCH(req: Request, { params }: Ctx) {
 
     const body = await req.json();
 
-    const updateData: Record<string, any> = {
-      title: body.title ?? null,
-      slug: body.slug ?? null,
-      excerpt: body.excerpt ?? null,
-      content: body.content ?? null,
-      category: body.category ?? null,
-      author: body.author ?? null,
-      date: body.date ?? undefined, // ✅ add date support if you send it
-      read_time: body.read_time ?? body.readTime ?? null,
-      published: typeof body.published === "boolean" ? body.published : undefined,
-      updated_at: new Date().toISOString(),
-    };
+    // const updateData: Record<string, any> = {
+    //   title: body.title ?? null,
+    //   slug: body.slug ?? null,
+    //   excerpt: body.excerpt ?? null,
+    //   content: body.content ?? null,
+    //   category: body.category ?? null,
+    //   author: body.author ?? null,
+    //   date: body.date ?? undefined, 
+    //   read_time: body.read_time ?? body.readTime ?? null,
+    //   published: typeof body.published === "boolean" ? body.published : undefined,
+    //   updated_at: new Date().toISOString(),
+    // };
 
     // remove undefined keys so we don't overwrite unintentionally
-    Object.keys(updateData).forEach((k) => updateData[k] === undefined && delete updateData[k]);
+    // Object.keys(updateData).forEach((k) => updateData[k] === undefined && delete updateData[k]);
+const updateData: Record<string, any> = {
+  updated_at: new Date().toISOString(),
+};
 
+// only set fields if they are provided in the PATCH body
+if ("title" in body) updateData.title = body.title;
+if ("slug" in body) updateData.slug = body.slug;
+if ("excerpt" in body) updateData.excerpt = body.excerpt;
+if ("content" in body) updateData.content = body.content;
+if ("category" in body) updateData.category = body.category;
+if ("author" in body) updateData.author = body.author;
+if ("date" in body) updateData.date = body.date;
+if ("read_time" in body) updateData.read_time = body.read_time;
+if ("readTime" in body) updateData.read_time = body.readTime;
+if ("published" in body) updateData.published = body.published;
+
+// optional: prevent empty patch
+if (Object.keys(updateData).length === 1) {
+  return NextResponse.json({ error: "No valid fields to update" }, { status: 400 });
+}
     const { data, error } = await supabaseAdmin
       .from("blogs")
       .update(updateData)

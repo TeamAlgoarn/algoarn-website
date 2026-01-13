@@ -1,59 +1,164 @@
+// // import Link from "next/link";
+// // import { NeonCard } from "@/components/ui/neon-card";
+
+// // export default function AdminDashboard() {
+// //   return (
+    
+// //     <main className="min-h-screen bg-slate-950 text-white py-10 px-6">
+// //       <div className="max-w-5xl mx-auto space-y-10">
+// //         <header className="space-y-2">
+// //           <h1 className="text-3xl md:text-4xl font-bold">Algoarn Admin Panel</h1>
+// //           <p className="text-white ">
+// //             Internal area to manage website content and data.
+// //           </p>
+// //         </header>
+
+// //         <div className="grid gap-6 md:grid-cols-2">
+// //           {/* CONTACT SUBMISSIONS CARD */}
+// //           <Link href="/admin/contacts">
+// //             <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
+// //               <h2 className="text-xl font-semibold mb-2">Contact Submissions</h2>
+// //               <p className="text-white text-sm">
+// //                 View and manage all messages sent from the Contact page.
+// //               </p>
+// //             </NeonCard>
+// //           </Link>
+// // <Link href="/admin/careers">
+// // <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
+// //               <h2 className="text-xl font-semibold mb-2">Careers </h2>
+// //               <p className="text-white text-sm">
+// //                 View and manage all messages sent from the Contact page.
+// //               </p>
+// //             </NeonCard>
+// // </Link>
+// //  <Link href="/admin/blog">
+// //          <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
+// //               <h2 className="text-xl font-semibold mb-2">Blog</h2>
+// //               <p className="text-white/ text-sm">
+// //                 View and manage all  the blog post.
+// //               </p>
+// //             </NeonCard>
+// // </Link>
+
+// //           {/* PLACEHOLDER CARDS FOR LATER */}
+// //           {/* <NeonCard className="p-6 rounded-2xl opacity-60">
+// //             <h2 className="text-xl font-semibold mb-2">Careers (coming soon)</h2>
+// //             <p className="text-white/70 text-sm">
+// //               This will show and manage job postings.
+// //             </p>
+// //           </NeonCard> */}
+
+// //           {/* <NeonCard className="p-6 rounded-2xl opacity-60">
+// //             <h2 className="text-xl font-semibold mb-2">Applications (coming soon)</h2>
+// //             <p className="text-white/70 text-sm">
+// //               This will list job applications from the Careers page.
+// //             </p>
+// //           </NeonCard> */}
+          
+// //         </div>
+// //       </div>
+// //     </main>
+// //   );
+// // }
+
+// import Link from "next/link";
+// import { cookies } from "next/headers";
+// import { redirect } from "next/navigation";
+// import { NeonCard } from "@/components/ui/neon-card";
+
+// export default async function AdminPage() {
+//   const cookieStore = await cookies();
+//   const token = cookieStore.get("admin_token")?.value;
+
+//   // not logged in -> login
+//   if (!token) redirect("/admin/login");
+
+//   // logged in -> show dashboard
+//   return (
+//     <main className="min-h-screen bg-slate-950 text-white py-10 px-6">
+//       <div className="max-w-5xl mx-auto space-y-10">
+//         <header className="space-y-2">
+//           <h1 className="text-3xl md:text-4xl font-bold">Algoarn Admin Panel</h1>
+//           <p className="text-white">
+//             Internal area to manage website content and data.
+//           </p>
+//         </header>
+
+//         <div className="grid gap-6 md:grid-cols-2">
+//           <Link href="/admin/contacts">
+//             <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
+//               <h2 className="text-xl font-semibold mb-2">Contact Submissions</h2>
+//               <p className="text-white text-sm">
+//                 View and manage all messages sent from the Contact page.
+//               </p>
+//             </NeonCard>
+//           </Link>
+
+//           <Link href="/admin/careers">
+//             <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
+//               <h2 className="text-xl font-semibold mb-2">Careers</h2>
+//               <p className="text-white text-sm">Manage careers content.</p>
+//             </NeonCard>
+//           </Link>
+
+//           <Link href="/admin/blog">
+//             <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
+//               <h2 className="text-xl font-semibold mb-2">Blog</h2>
+//               <p className="text-white text-sm">View and manage blog posts.</p>
+//             </NeonCard>
+//           </Link>
+//         </div>
+//       </div>
+//     </main>
+//   );
+// }
+
+
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 import { NeonCard } from "@/components/ui/neon-card";
+import LogoutButton from "./LogoutButton";
 
-export default function AdminDashboard() {
+export default async function AdminPage() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("admin_token")?.value;
+
+  if (!token) redirect("/admin/login");
+
   return (
     <main className="min-h-screen bg-slate-950 text-white py-10 px-6">
       <div className="max-w-5xl mx-auto space-y-10">
-        <header className="space-y-2">
+        {/* <header className="space-y-2"> */}
+        <header className="space-y-2 flex items-start justify-between">
           <h1 className="text-3xl md:text-4xl font-bold">Algoarn Admin Panel</h1>
-          <p className="text-white ">
-            Internal area to manage website content and data.
-          </p>
+          <p className="text-white">Internal area to manage website content and data.</p>
+          
+
+  <LogoutButton />
         </header>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {/* CONTACT SUBMISSIONS CARD */}
           <Link href="/admin/contacts">
             <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
               <h2 className="text-xl font-semibold mb-2">Contact Submissions</h2>
-              <p className="text-white text-sm">
-                View and manage all messages sent from the Contact page.
-              </p>
+              <p className="text-white text-sm">View contact messages.</p>
             </NeonCard>
           </Link>
 <Link href="/admin/careers">
-<NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
-              <h2 className="text-xl font-semibold mb-2">Careers </h2>
+ <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
+               <h2 className="text-xl font-semibold mb-2">Careers </h2>
               <p className="text-white text-sm">
-                View and manage all messages sent from the Contact page.
+               View and manage all messages sent from the Contact page.
               </p>
             </NeonCard>
 </Link>
- <Link href="/admin/blog">
-         <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
+          <Link href="/admin/blog">
+            <NeonCard className="p-6 rounded-2xl hover:border-algoarnAqua cursor-pointer transition-all">
               <h2 className="text-xl font-semibold mb-2">Blog</h2>
-              <p className="text-white/ text-sm">
-                View and manage all  the blog post.
-              </p>
+              <p className="text-white text-sm">Manage blog posts.</p>
             </NeonCard>
-</Link>
-
-          {/* PLACEHOLDER CARDS FOR LATER */}
-          {/* <NeonCard className="p-6 rounded-2xl opacity-60">
-            <h2 className="text-xl font-semibold mb-2">Careers (coming soon)</h2>
-            <p className="text-white/70 text-sm">
-              This will show and manage job postings.
-            </p>
-          </NeonCard> */}
-
-          {/* <NeonCard className="p-6 rounded-2xl opacity-60">
-            <h2 className="text-xl font-semibold mb-2">Applications (coming soon)</h2>
-            <p className="text-white/70 text-sm">
-              This will list job applications from the Careers page.
-            </p>
-          </NeonCard> */}
-          
+          </Link>
         </div>
       </div>
     </main>

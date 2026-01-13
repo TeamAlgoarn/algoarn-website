@@ -58,7 +58,8 @@ export default function AdminBlogPage() {
 
   async function load() {
     setLoading(true);
-    const res = await fetch("/api/admin/blog", { cache: "no-store" });
+    const res = await fetch("/api/admin/blogs", { cache: "no-store" });
+
     const json = await res.json();
     setPosts(json.data || []);
     setLoading(false);
@@ -114,7 +115,9 @@ export default function AdminBlogPage() {
       published: !!formData.published,
     };
 
-    const url = editingPost ? `/api/admin/blog/${editingPost.id}` : "/api/admin/blog";
+    // const url = editingPost ? `/api/admin/blog/${editingPost.id}` : "/api/admin/blog";
+    const url = editingPost ? `/api/admin/blogs/${editingPost.id}` : "/api/admin/blogs";
+
     const method = editingPost ? "PATCH" : "POST";
 
     const res = await fetch(url, {
@@ -162,7 +165,8 @@ export default function AdminBlogPage() {
     if (!id) return alert('Missing id to delete (got "undefined")');
     if (!confirm("Are you sure you want to delete this post?")) return;
 
-    const res = await fetch(`/api/admin/blog/${id}`, { method: "DELETE" });
+    const res = await fetch(`/api/admin/blogs/${id}`,
+ { method: "DELETE" });
     const json = await res.json();
 
     if (!res.ok) {
@@ -177,7 +181,8 @@ export default function AdminBlogPage() {
   async function handleTogglePublish(post: BlogRow) {
     if (!post?.id) return alert('Missing id to publish/unpublish (got "undefined")');
 
-    const res = await fetch(`/api/admin/blog/${post.id}`, {
+  const res = await fetch(`/api/admin/blogs/${post.id}`, {
+
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ published: !post.published }),

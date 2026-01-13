@@ -5,6 +5,25 @@
 :root {
   color-scheme: dark;
 }
+/* --- Admin auth inputs: force white --- */
+.admin-auth input,
+.admin-auth textarea,
+.admin-auth select {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Fix Chrome autofill grey/yellow background */
+.admin-auth input:-webkit-autofill,
+.admin-auth input:-webkit-autofill:hover,
+.admin-auth input:-webkit-autofill:focus,
+.admin-auth textarea:-webkit-autofill,
+.admin-auth select:-webkit-autofill {
+  -webkit-text-fill-color: #000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+  box-shadow: 0 0 0px 1000px #fff inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 /* Body defaults */
 body {
