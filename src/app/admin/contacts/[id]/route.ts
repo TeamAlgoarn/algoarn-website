@@ -1,9 +1,13 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 
+type RouteContext<T> = {
+  params: Promise<T>;
+};
+
 export async function DELETE(
-  _req: Request,
-  { params }: { params: { id: string } }
+  _req: NextRequest,
+  { params }: RouteContext<{ id: string }>
 ) {
   if (!supabaseAdmin) {
     return NextResponse.json(
@@ -12,10 +16,11 @@ export async function DELETE(
     );
   }
 
+  const { id } = await params;
   const { error } = await supabaseAdmin
     .from("contact_messages")
     .delete()
-    .eq("id", params.id);
+    .eq("id", id);
 
   if (error) {
     console.error("Supabase delete error:", error);

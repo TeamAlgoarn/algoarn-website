@@ -1,9 +1,14 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 
-type Ctx = { params: Promise<{ id: string }> };
+type RouteContext<T> = {
+  params: Promise<T>;
+};
 
-export async function PATCH(req: Request, { params }: Ctx) {
+export async function PATCH(
+  req: NextRequest,
+  { params }: RouteContext<{ id: string }>
+) {
   try {
     if (!supabaseAdmin) {
       return NextResponse.json(
@@ -83,7 +88,10 @@ if (Object.keys(updateData).length === 1) {
   }
 }
 
-export async function DELETE(_req: Request, { params }: Ctx) {
+export async function DELETE(
+  _req: NextRequest,
+  { params }: RouteContext<{ id: string }>
+) {
   try {
     if (!supabaseAdmin) {
       return NextResponse.json(

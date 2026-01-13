@@ -171,16 +171,17 @@
 // }
 
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 
-function getIdFromUrl(req: Request) {
-  const pathname = new URL(req.url).pathname;
-  const parts = pathname.split("/");
-  return parts[parts.length - 1] || "";
-}
+type RouteContext<T> = {
+  params: Promise<T>;
+};
 
-export async function PATCH(req: Request) {
+export async function PATCH(
+  req: NextRequest,
+  { params }: RouteContext<{ id: string }>
+) {
   if (!supabaseAdmin) {
     return NextResponse.json(
       { error: "supabaseAdmin not initialized (check SUPABASE_SERVICE_ROLE_KEY)" },
@@ -188,7 +189,7 @@ export async function PATCH(req: Request) {
     );
   }
 
-  const id = getIdFromUrl(req);
+  const { id } = await params;
   if (!id) return NextResponse.json({ error: "Missing id in URL" }, { status: 400 });
 
   try {
@@ -234,7 +235,10 @@ export async function PATCH(req: Request) {
   }
 }
 
-export async function DELETE(req: Request) {
+export async function DELETE(
+  _req: NextRequest,
+  { params }: RouteContext<{ id: string }>
+) {
   if (!supabaseAdmin) {
     return NextResponse.json(
       { error: "supabaseAdmin not initialized (check SUPABASE_SERVICE_ROLE_KEY)" },
@@ -242,7 +246,7 @@ export async function DELETE(req: Request) {
     );
   }
 
-  const id = getIdFromUrl(req);
+  const { id } = await params;
   if (!id) return NextResponse.json({ error: "Missing id in URL" }, { status: 400 });
 
   try {
