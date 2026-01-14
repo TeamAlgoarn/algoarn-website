@@ -1,0 +1,192 @@
+/* Import Tailwind (new style for @tailwindcss/postcss) */
+@import "tailwindcss";
+
+/* Dark theme base */
+:root {
+  color-scheme: dark;
+}
+/* --- Admin auth inputs: force white --- */
+.admin-auth input,
+.admin-auth textarea,
+.admin-auth select {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Fix Chrome autofill grey/yellow background */
+.admin-auth input:-webkit-autofill,
+.admin-auth input:-webkit-autofill:hover,
+.admin-auth input:-webkit-autofill:focus,
+.admin-auth textarea:-webkit-autofill,
+.admin-auth select:-webkit-autofill {
+  -webkit-text-fill-color: #000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+  box-shadow: 0 0 0px 1000px #fff inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Body defaults */
+body {
+  background-color:white; /* carbonBlack */
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* use Montserrat for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+
+/* Make the page layout feel centered & clean */
+main {
+  width: 100%;
+}
+
+/* Glassmorphism helper */
+/* Rectangular neon glass cards */
+.glass-card,
+.neon-card {
+  position: relative;
+  border-radius: 2.5rem;               /* rectangle: change to 0 for perfect square */
+  background: rgba(15, 23, 42, 0.96);  /* dark glass-like background */
+  border: 1px solid rgba(34, 211, 238, 0.35); /* algoarnAqua border */
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.18); /* soft neon glow */
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+/* optional subtle inner glow */
+.neon-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top,
+    rgba(34, 211, 238, 0.35),
+    transparent 60%
+  );
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* keep after around in case you use it later */
+.neon-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+
+/* Link styling */
+a {
+ color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(119, 183, 246); /* algoarnBlue */
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 6s ease infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Abstract AI-style mesh background for hero */
+.hero-ai-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-ai-bg::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.15), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(129, 140, 248, 0.15), transparent 55%),
+    radial-gradient(circle at 0% 100%, rgba(236, 72, 153, 0.12), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(147, 51, 234, 0.18), transparent 55%);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+
+
+
+
+/* Gradient card used for contact sections */
+.section-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem; /* 16px like rounded-2xl */
+  border: 1px solid rgba(34, 211, 238, 0.4);
+
+  /* MAIN GRADIENT (like your first screenshot) */
+  background: linear-gradient(
+    145deg,
+    #03101a 0%,
+    #021520 35%,
+    #010a12 100%
+  );
+
+  /* GLOW SHADOW */
+  box-shadow: 0 0 35px rgba(34, 211, 238, 0.25);
+}
+
+.section-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(34, 211, 238, 0.35),
+    transparent 60%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
