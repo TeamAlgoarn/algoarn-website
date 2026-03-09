@@ -1,4 +1,3 @@
- 
 // // "use client";
 
 // // import type { ReactNode } from "react";
@@ -81,7 +80,7 @@
 // //   -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
 // //   bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
 // //   pt-20 -mt-[31px]"> */}
- 
+
 // // <SectionReveal className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-20 -mt-[79px]">
 
 // //   {/* Background glows */}
@@ -370,7 +369,6 @@
 // //                   <div className="flex-shrink-0 w-24 h-24 rounded-full bg-gradient-to-br from-algoarnAqua to-algoarnBlue flex items-center justify-center text-4xl">
 // //                     👤
 // //                   </div>
-
 // //                   <div className="flex-1 space-y-3 text-center md:text-left">
 // //                     <div>
 // //                       <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-algoarnAqua transition-colors">
@@ -408,7 +406,7 @@
 
 // //         {/* <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 // //           {[
-// //             { icon: "🚀", title: "Innovation", desc: "We push boundaries to create what’s next." },
+// //             { icon: "🚀", title: "Innovation", desc: "We push boundaries to create what's next." },
 // //             { icon: "🧭", title: "Integrity", desc: "We build trust through honesty and responsibility." },
 // //             { icon: "🎯", title: "Impact-driven Engineering", desc: "We focus on outcomes that matter in the real world." },
 // //             { icon: "🔬", title: "Research Excellence", desc: "We turn deep research into usable intelligence." },
@@ -433,7 +431,7 @@
 // //                 </div> */}
 // //              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 // //   {[
-// //     { icon: "🚀", title: "Innovation", desc: "We push boundaries to create what’s next." },
+// //     { icon: "🚀", title: "Innovation", desc: "We push boundaries to create what's next." },
 // //     { icon: "🧭", title: "Integrity", desc: "We build trust through honesty and responsibility." },
 // //     { icon: "🎯", title: "Impact-driven Engineering", desc: "We focus on outcomes that matter in the real world." },
 // //     { icon: "🔬", title: "Research Excellence", desc: "We turn deep research into usable intelligence." },
@@ -484,12 +482,12 @@
 // //               <div className="space-y-6 text-lg text-white text-xl leading-7 max-w-3xl mx-auto ">
 // //                 <p>
 // //                   With SUCA ready for institutions, VTR soon entering the market,
-// //                   and new products in development, we’re just getting started.
+// //                   and new products in development, we're just getting started.
 // //                 </p>
 // //                 <p className="text-white font-semibold text-xl" style={{marginTop:'-21px'}}>
 // //   The future is intelligent.
 // //   <br />
-// //   And we’re building it — one breakthrough at a time.
+// //   And we're building it — one breakthrough at a time.
 // // </p>
 // // </div>
 // //             </NeonCard>
@@ -504,12 +502,12 @@
 // //         <NeonCard className="p-10 md:p-16 relative bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-algoarnAqua/50 backdrop-blur-sm text-center">
 // //           <FadeInUp className="max-w-4xl mx-auto space-y-8">
 // //             <h2 className="text-3xl md:text-5xl font-bold text-white">
-// //               Let’s Build the  Future Together
-             
+// //               Let's Build the  Future Together
+
 // //             </h2>
 
 // //             <p className="text-lg md:text-xl text-white text-xl leading-7 max-w-3xl mx-auto text-black">
-// //               Whether you’re an institution, a business, or a brand exploring AI
+// //               Whether you're an institution, a business, or a brand exploring AI
 // //               transformation, Algoarn is ready to collaborate.
 // //             </p>
 
@@ -544,7 +542,7 @@
 // //                   style={{ borderRadius: "2.5rem", width: "104%" }}
 // //                 >
 // //                   <span className="flex items-center gap-2">
-                  
+
 // //                   Explore Our AI Products
 // //                     {/* <span className="group-hover:translate-x-1 transition-transform">
 // //                       →
@@ -561,17 +559,14 @@
 // // }
 
 
-
-
-
 // // // "use client";
- 
+
 // // // import type { ReactNode } from "react";
 // // // import { motion } from "framer-motion";
 // // // import Link from "next/link";
 // // // import { Button } from "@/components/ui/button";
 // // // import { NeonCard } from "@/components/ui/neon-card";
- 
+
 // // // // Deterministic particles for consistency
 // // // const floatingParticles = Array.from({ length: 20 }, (_, i) => ({
 // // //   left: `${(i * 7) % 100}%`,
@@ -579,7 +574,7 @@
 // // //   delay: `${(i * 0.35) % 5}s`,
 // // //   duration: `${10 + (i % 6)}s`,
 // // // }));
- 
+
 // // // // Animation helpers
 // // // const SectionReveal = ({
 // // //   children,
@@ -598,7 +593,7 @@
 // // //     {children}
 // // //   </motion.section>
 // // // );
- 
+
 // // // const FadeInUp = ({
 // // //   children,
 // // //   delay = 0,
@@ -618,7 +613,7 @@
 // // //     {children}
 // // //   </motion.div>
 // // // );
- 
+
 // // // export default function AboutPage() {
 // // //   return (
 // // //     <div className="space-y-20 md:space-y-24">
@@ -629,7 +624,7 @@
 // // //           <div className="absolute top-1/4 -left-32 w-[800px] h-[800px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
 // // //           <div className="absolute bottom-1/4 -right-32 w-[800px] h-[800px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
 // // //         </div>
- 
+
 // // //         {/* Particles */}
 // // //         <div className="absolute inset-0 opacity-40 pointer-events-none">
 // // //           {floatingParticles.map((p, i) => (
@@ -645,7 +640,7 @@
 // // //             />
 // // //           ))}
 // // //         </div>
- 
+
 // // //         {/* Content */}
 // // //         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 md:py-20 text-center space-y-8">
 // // //           <FadeInUp delay={0.1}>
@@ -656,7 +651,7 @@
 // // //               </span>
 // // //             </div>
 // // //           </FadeInUp>
- 
+
 // // //           <FadeInUp delay={0.2}>
 // // //             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
 // // //               Building the Future of{" "}
@@ -665,7 +660,7 @@
 // // //               </span>
 // // //             </h1>
 // // //           </FadeInUp>
- 
+
 // // //           <FadeInUp delay={0.3}>
 // // //             <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
 // // //               We're on a mission to make advanced AI accessible, practical, and transformative for institutions and businesses across India and beyond.
@@ -673,14 +668,14 @@
 // // //           </FadeInUp>
 // // //         </div>
 // // //       </SectionReveal>
- 
+
 // // //       {/* COMPANY STORY */}
 // // //       <SectionReveal className="space-y-12">
 // // //         <FadeInUp className="text-center space-y-4">
 // // //           <h2 className="text-4xl md:text-5xl font-bold">Our Story</h2>
 // // //           <div className="w-24 h-1 bg-gradient-to-r from-algoarnAqua to-algoarnBlue mx-auto rounded-full" />
 // // //         </FadeInUp>
- 
+
 // // //         <FadeInUp delay={0.2}>
 // // //           <div className="max-w-4xl mx-auto space-y-6 text-lg text-black/80 leading-relaxed">
 // // //             <p>
@@ -695,7 +690,7 @@
 // // //           </div>
 // // //         </FadeInUp>
 // // //       </SectionReveal>
- 
+
 // // //       {/* MISSION & VISION */}
 // // //       <SectionReveal className="relative w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] overflow-x-hidden bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-y border-algoarnAqua/40">
 // // //         {/* Background effects */}
@@ -703,7 +698,7 @@
 // // //           <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/15 blur-3xl rounded-full animate-pulse-slow" />
 // // //           <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/20 blur-3xl rounded-full animate-pulse-slow" />
 // // //         </div>
- 
+
 // // //         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 md:py-28">
 // // //           <div className="grid lg:grid-cols-2 gap-12 md:gap-16">
 // // //             {/* Mission */}
@@ -722,7 +717,7 @@
 // // //                 </div>
 // // //               </NeonCard>
 // // //             </FadeInUp>
- 
+
 // // //             {/* Vision */}
 // // //             <FadeInUp delay={0.2}>
 // // //               <NeonCard className="p-10 md:p-12 h-full group hover:scale-[1.02] transition-all duration-500">
@@ -742,7 +737,7 @@
 // // //           </div>
 // // //         </div>
 // // //       </SectionReveal>
- 
+
 // // //       {/* FOUNDER SECTION */}
 // // //       <SectionReveal className="space-y-12">
 // // //         <FadeInUp className="text-center space-y-4">
@@ -751,7 +746,7 @@
 // // //             Driven by innovation, guided by expertise
 // // //           </p>
 // // //         </FadeInUp>
- 
+
 // // //         <FadeInUp delay={0.2}>
 // // //           <div className="max-w-4xl mx-auto">
 // // //             <NeonCard className="p-10 md:p-14 group hover:scale-[1.02] transition-all duration-500">
@@ -761,7 +756,7 @@
 // // //                   <div className="flex-shrink-0 w-24 h-24 rounded-full bg-gradient-to-br from-algoarnAqua to-algoarnBlue flex items-center justify-center text-4xl">
 // // //                     👤
 // // //                   </div>
- 
+
 // // //                   <div className="flex-1 space-y-4 text-center md:text-left">
 // // //                     <div>
 // // //                       <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-algoarnAqua transition-colors">
@@ -771,7 +766,7 @@
 // // //                         Algoarn AI Solutions
 // // //                       </p>
 // // //                     </div>
- 
+
 // // //                     <p className="text-lg text-white/80 leading-relaxed">
 // // //                       With a background in artificial intelligence, machine learning, and educational technology, our founder envisioned a world where institutions could harness AI without compromising privacy or clarity. This vision birthed SUCA and continues to drive Algoarn's commitment to ethical, impactful AI.
 // // //                     </p>
@@ -782,7 +777,7 @@
 // // //           </div>
 // // //         </FadeInUp>
 // // //       </SectionReveal>
- 
+
 // // //       {/* COMPANY VALUES */}
 // // //       <SectionReveal className="space-y-12">
 // // //         <FadeInUp className="text-center space-y-4">
@@ -791,7 +786,7 @@
 // // //             The principles that guide everything we build
 // // //           </p>
 // // //         </FadeInUp>
- 
+
 // // //         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 // // //           {[
 // // //             {
@@ -845,11 +840,11 @@
 // // //                   >
 // // //                     <span className="text-3xl">{value.icon}</span>
 // // //                   </div>
- 
+
 // // //                   <h3 className="text-xl font-bold text-white group-hover:text-algoarnAqua transition-colors">
 // // //                     {value.title}
 // // //                   </h3>
- 
+
 // // //                   <p className="text-sm md:text-base text-white/70 leading-relaxed">
 // // //                     {value.description}
 // // //                   </p>
@@ -859,7 +854,7 @@
 // // //           ))}
 // // //         </div>
 // // //       </SectionReveal>
- 
+
 // // //       {/* ROADMAP */}
 // // //       <SectionReveal className="space-y-12">
 // // //         <FadeInUp className="text-center space-y-4">
@@ -868,7 +863,7 @@
 // // //             Building toward a future where AI empowers every decision
 // // //           </p>
 // // //         </FadeInUp>
- 
+
 // // //         <div className="max-w-4xl mx-auto space-y-6">
 // // //           {[
 // // //             {
@@ -918,7 +913,7 @@
 // // //                       {phase.status}
 // // //                     </span>
 // // //                   </div>
- 
+
 // // //                   <ul className="space-y-3">
 // // //                     {phase.items.map((item) => (
 // // //                       <li
@@ -936,14 +931,14 @@
 // // //           ))}
 // // //         </div>
 // // //       </SectionReveal>
- 
+
 // // //       {/* PRIVACY-FIRST COMMITMENT */}
 // // //       <SectionReveal className="relative w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] overflow-x-hidden bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-y border-algoarnAqua/40">
 // // //         <div className="absolute inset-0 pointer-events-none overflow-hidden">
 // // //           <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/15 blur-3xl rounded-full animate-pulse-slow" />
 // // //           <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/20 blur-3xl rounded-full animate-pulse-slow" />
 // // //         </div>
- 
+
 // // //         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 md:py-28 text-center space-y-8">
 // // //           <FadeInUp>
 // // //             <div className="text-5xl md:text-6xl mb-6">🔐</div>
@@ -964,11 +959,11 @@
 // // //           </FadeInUp>
 // // //         </div>
 // // //       </SectionReveal>
- 
+
 // // //       {/* FINAL CTA */}
 // // //       <SectionReveal className="relative">
 // // //         <div className="absolute inset-0 bg-gradient-to-r from-algoarnAqua/10 via-purple-500/10 to-algoarnBlue/10 rounded-3xl blur-3xl opacity-40" />
- 
+
 // // //         <NeonCard className="p-10 md:p-16 relative bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-algoarnAqua/50 backdrop-blur-sm text-center">
 // // //           <FadeInUp className="max-w-4xl mx-auto space-y-8">
 // // //             <h2 className="text-3xl md:text-5xl font-bold">
@@ -977,11 +972,11 @@
 // // //                 with Algoarn?
 // // //               </span>
 // // //             </h2>
- 
+
 // // //             <p className="text-lg md:text-xl text-white/80 leading-relaxed">
 // // //               Whether you're exploring SUCA, need custom AI development, or want to discuss how AI can elevate your institution—we're here to help you move from data to decisions.
 // // //             </p>
- 
+
 // // //             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
 // // //               <Link href="/contact" className="group">
 // // //                 <Button
@@ -997,7 +992,7 @@
 // // //                   </span>
 // // //                 </Button>
 // // //               </Link>
- 
+
 // // //               <Link href="/suca" className="group">
 // // //                 <Button
 // // //                   size="lg"
@@ -1015,7 +1010,7 @@
 // // //     </div>
 // // //   );
 // // // }
- 
+
 // "use client";
 
 // import type { ReactNode } from "react";
@@ -1141,7 +1136,7 @@
 //                 <div className="relative rounded-[46px] bg-gradient-to-b from-white/10 to-white/0 p-[1.5px] shadow-[0_0_70px_rgba(56,189,248,0.18)] group-hover:shadow-[0_0_100px_rgba(56,189,248,0.28)] transition-all duration-500">
 //                   <div className="rounded-[44px] bg-gradient-to-br from-[#0b1c2d] via-[#0f2238] to-[#071423] border border-white/10 px-10 py-12 md:px-16 md:py-16 lg:px-20 lg:py-20 text-center">
 //                     <div className="max-w-4xl mx-auto space-y-8">
-//                       <p className="text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white">
+//                       <p className="text-lg md:text-xl leading-7 max-w-2xl mx-auto text-white">
 //                         Algoarn is an AI innovation company focused on building intelligent
 //                         products that transform how people learn, work, shop, and make
 //                         decisions.
@@ -1377,7 +1372,7 @@
 
 //         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
 //           {[
-//             { icon: "🚀", title: "Innovation", desc: "We push boundaries to create what’s next." },
+//             { icon: "🚀", title: "Innovation", desc: "We push boundaries to create what's next." },
 //             { icon: "🧭", title: "Integrity", desc: "We build trust through honesty and responsibility." },
 //             { icon: "🎯", title: "Impact-driven Engineering", desc: "We focus on outcomes that matter in the real world." },
 //             { icon: "🔬", title: "Research Excellence", desc: "We turn deep research into usable intelligence." },
@@ -1437,12 +1432,12 @@
 //               <div className="space-y-6 text-lg md:text-xl text-white leading-7 max-w-3xl mx-auto">
 //                 <p>
 //                   With SUCA ready for institutions, VTR soon entering the market,
-//                   and new products in development, we’re just getting started.
+//                   and new products in development, we're just getting started.
 //                 </p>
 //                 <p className="text-white font-semibold text-lg md:text-xl">
 //                   The future is intelligent.
 //                   <br />
-//                   And we’re building it — one breakthrough at a time.
+//                   And we're building it — one breakthrough at a time.
 //                 </p>
 //               </div>
 //             </NeonCard>
@@ -1457,11 +1452,11 @@
 //         <NeonCard className="p-10 md:p-16 relative bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-algoarnAqua/50 backdrop-blur-sm text-center">
 //           <FadeInUp className="max-w-4xl mx-auto space-y-8">
 //             <h2 className="text-3xl md:text-5xl font-bold text-white">
-//               Let’s Build the Future Together
+//               Let's Build the Future Together
 //             </h2>
 
 //             <p className="text-lg md:text-xl text-white leading-7 max-w-3xl mx-auto">
-//               Whether you’re an institution, a business, or a brand exploring AI
+//               Whether you're an institution, a business, or a brand exploring AI
 //               transformation, Algoarn is ready to collaborate.
 //             </p>
 
@@ -1501,24 +1496,21 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { NeonCard } from "@/components/ui/neon-card";
-import { style } from "framer-motion/client";
+import { Sparkles, Shield, Star, Rocket } from "lucide-react";
 import { useContactModal } from "@/components/contact/contact-modal-provider";
-const SECTION = "relative py-20 md:py-24 -mt-[115px]" ;
+
+// ── shared constants ──────────────────────────────────────────────────────────
 const WRAP = "max-w-7xl mx-auto px-6";
 
-const H2 = "text-4xl md:text-5xl font-extrabold text-black";
-const P_LEAD = "text-lg md:text-xl leading-7 max-w-3xl mx-auto text-black";
-const P_BODY = "text-lg md:text-xl leading-7 text-black";
-
-// Deterministic particles for consistency
-const floatingParticles = Array.from({ length: 20 }, (_, i) => ({
-  left: `${(i * 7) % 100}%`,
-  top: `${(i * 13) % 100}%`,
-  delay: `${(i * 0.35) % 5}s`,
-  duration: `${10 + (i % 6)}s`,
+// Deterministic particles (same pattern as services page)
+const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
+  left: `${(i * 17) % 100}%`,
+  top: `${(i * 37) % 100}%`,
+  duration: 3 + (i % 3),
+  delay: (i % 4) * 0.4,
 }));
 
-// Animation helpers
+// ── animation helpers ─────────────────────────────────────────────────────────
 const SectionReveal = ({
   children,
   className = "",
@@ -1536,12 +1528,7 @@ const SectionReveal = ({
     {children}
   </motion.section>
 );
-const serviceParticles = Array.from({ length: 12 }, (_, i) => ({
-  left: `${(i * 17) % 100}%`,
-  top: `${(i * 37) % 100}%`,
-  duration: 3 + (i % 3),
-  delay: (i % 4) * 0.4,
-}));
+
 const FadeInUp = ({
   children,
   delay = 0,
@@ -1564,43 +1551,39 @@ const FadeInUp = ({
 
 export default function AboutPage() {
   const { openModal } = useContactModal();
-  return (
-    
-    <>
-      <section
-  className={[
-    "relative",
-    "min-h-screen",
-    "flex items-center justify-center",
-    "overflow-hidden",
-    "w-screen",
-    "-mx-[calc((100vw-100%)/2)]",
-    "px-[calc((100vw-100%)/2)]",
-    "bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]",
-    "pt-20",
-    "pb-24",
-    "-mt-[32px]",
-  ].join(" ")}
->
 
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
-          <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
+  return (
+    <>
+      {/* ── 1. HERO — dark blue-purple with background image (matches services) ── */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)] pt-20 pb-24 -mt-[32px]">
+
+        {/* Background image + dark gradient overlay */}
+        <div className="absolute inset-0">
+          <img
+            src="/about.webp"
+            alt="About Algoarn background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-indigo-900/70 to-purple-900/70" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(79,70,229,0.4)_0%,_transparent_20%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(139,92,246,0.3)_0%,_transparent_20%)]" />
         </div>
 
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
+        {/* Ambient blobs */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/4 -left-40 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full" />
+          <div className="absolute bottom-1/4 -right-40 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full" />
+        </div>
+
+        {/* Floating white particles */}
+        <div className="absolute inset-0 pointer-events-none">
           {serviceParticles.map((p, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-algoarnAqua rounded-full"
+              className="absolute w-1.5 h-1.5 bg-white rounded-full"
               style={{ left: p.left, top: p.top }}
-              animate={{ y: [0, -30, 0], opacity: [0, 1, 0] }}
-              transition={{
-                duration: p.duration,
-                delay: p.delay,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              animate={{ y: [0, -40, 0], opacity: [0.2, 1, 0.2], scale: [1, 1.5, 1] }}
+              transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
             />
           ))}
         </div>
@@ -1611,283 +1594,220 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-10"
         >
-         
-            
-      
+          {/* Badge */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8, type: "spring", stiffness: 50 }}
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm"
+          >
+            <Sparkles className="w-4 h-4 text-blue-300" />
+            <span className="text-xs md:text-sm font-medium text-white tracking-[0.25em] uppercase">
+              About Algoarn
+            </span>
+          </motion.div>
 
-          <div className="space-y-3">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
-             
-           Engineering Intelligence for the{" "}
-              <span className="text-algoarnAqua">Real World</span>
-            </h1>
-            
-          </div>
+          {/* Heading */}
+          <motion.h1
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8, type: "spring", stiffness: 50 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
+          >
+            <span className="bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200 bg-clip-text text-transparent">
+              Engineering Intelligence for the Real World
+            </span>
+          </motion.h1>
 
-          <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
-          Algoarn is an AI innovation company focused on building intelligent
-              products that transform how people learn, work, shop, and make
-              decisions.
-          </p>
+          {/* Subheading */}
+          <motion.p
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="text-xl leading-7 max-w-3xl mx-auto text-gray-200"
+          >
+            Algoarn is an AI innovation company focused on building intelligent
+            products that transform how people{" "}
+            <span className="font-semibold text-white">
+              learn, work, shop, and make decisions.
+            </span>
+          </motion.p>
 
-          
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6 pb-20">
-            {/* <Button
-              asChild
+          {/* CTA */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6 pb-20"
+          >
+            <Button
               size="lg"
-              className="px-10 py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-500 to-sky-500 text-white shadow-lg hover:from-indigo-600 hover:to-sky-600 transition-all"
-              style={{ borderRadius: "9999px" }}
+              className="px-10 py-6 text-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-2xl shadow-blue-500/30"
+              style={{ borderRadius: "2.5rem" }}
+              onClick={() => openModal("Institutional Demo")}
             >
-              <Link href="/contact?type=SUCA+Institutional+Demo">
-                <span className="text-white">Book an Institutional Demo</span>
-              </Link>
-            </Button> */}
-            {/* <Button
-  size="lg"
-  type="button"
-  onClick={() => openContact("Institutional Demo")}
-  className="px-10 py-6 text-lg 
-    bg-gradient-to-r from-algoarnAqua to-algoarnBlue 
-    hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
-  style={{ borderRadius: "2.5rem" }}
->
-  Book an  Institutional Demo
-</Button> */}
-<Button
-  size="lg"
-  className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
-  style={{ borderRadius: "2.5rem" }}
-  onClick={() => openModal("Institutional Demo")}
->
- Contact Us
-</Button>
-    </div>
+              Contact Us
+            </Button>
+          </motion.div>
         </motion.div>
       </section>
 
-      {/* HERO SECTION */}
-      {/* <SectionReveal
-        className="relative min-h-[60vh] flex justify-center overflow-hidden w-screen
-        -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
-        bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff] pt-24 pb-16 -mt-[79px]"
-      > */}
-        {/* Background glows */}
-        {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 -left-32 w-[800px] h-[800px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
-          <div className="absolute bottom-1/4 -right-32 w-[800px] h-[800px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
-        </div> */}
+      {/* ── 2. WHO WE ARE ─────────────────────────────────────────────────────── */}
+      <SectionReveal className="relative px-4 py-24">
 
-        {/* Particles */}
-        {/* <div className="absolute inset-0 opacity-40 pointer-events-none">
-          {floatingParticles.map((p, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-algoarnAqua rounded-full animate-float"
-              style={{
-                left: p.left,
-                top: p.top,
-                animationDelay: p.delay,
-                animationDuration: p.duration,
-              }}
-            />
-          ))}
-        </div> */}
+        {/* Ambient blobs */}
+        <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
 
-        {/* Content */}
-        {/* <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-8"> */}
-          
-
-          {/* <FadeInUp delay={0.15}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
-              Engineering Intelligence for the{" "}
-              <span className="text-algoarnAqua">Real World</span>
-            </h1>
-          </FadeInUp> */}
-
-          {/* <FadeInUp delay={0.25}>
-            <p className={P_LEAD}>
-              Algoarn is an AI innovation company focused on building intelligent
-              products that transform how people learn, work, shop, and make
-              decisions.
-            </p>
-          </FadeInUp>
-        </div>
-     </SectionReveal> */}
- <SectionReveal className={`${SECTION} mt-1`}> 
-
-
-        <div className={WRAP}>
+        <div className={`${WRAP} relative z-10`}>
           <div className="max-w-6xl mx-auto space-y-10">
+
             <FadeInUp className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Who We Are?</h2>
+              <h2 className="text-3xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Who We Are?
+                </span>
+              </h2>
             </FadeInUp>
 
             <FadeInUp delay={0.15}>
-              <div className="max-w-7xl mx-auto">
-                <div className="relative group rounded-[46px]">
-                  <div className="absolute -inset-6 rounded-[56px] bg-gradient-to-r from-sky-400/20 via-indigo-500/15 to-fuchsia-500/20 blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+              <motion.div
+                whileHover={{ y: -6, transition: { duration: 0.3, type: "spring" } }}
+                className="relative group"
+              >
+                {/* Card glow */}
+                <div className="absolute -inset-4 rounded-[44px] bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  <div className="relative rounded-[46px] bg-gradient-to-b from-white/10 to-white/0 p-[1.5px] shadow-[0_0_70px_rgba(56,189,248,0.18)] group-hover:shadow-[0_0_100px_rgba(56,189,248,0.28)] transition-all duration-500">
-                    <div className="rounded-[44px] bg-gradient-to-br from-[#0b1c2d] via-[#0f2238] to-[#071423] border border-white/10 px-8 py-10 md:px-12 md:py-12 lg:px-14 lg:py-14">
-                      <div className="space-y-6 text-white text-lg md:text-xl leading-7 max-w-2xl mx-auto">
-                        <p className="text-lg md:text-xl leading-7 max-w-2xl mx-auto text-white">
-                          Algoarn is an AI innovation company focused on building intelligent
-                          products that transform how people learn, work, shop, and make
-                          decisions.
-                        </p>
-
-                      <p className="text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white">
-                          We combine deep research, engineering precision, and creative
-                          problem-solving to build systems powered by computer vision,
-                          generative AI, and predictive analytics.
-                        </p>
-
-                         <p className="text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white font-semibold">
-                            Our goal is simple:
-                          </p>
-
-                          <p className="mt-3 text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white font-bold">
-                            Create AI that is practical, powerful, and deeply human-centric.
-                          </p>
-                      </div>
-                    </div>
+                <div className="relative rounded-[40px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl px-10 py-12 md:px-16 md:py-16">
+                  {/* Dot pattern */}
+                  <div className="absolute inset-0 opacity-5 rounded-[40px] overflow-hidden">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
+                  </div>
+                  <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-center">
+                    <p className="text-lg md:text-xl leading-7 text-gray-300">
+                      Algoarn is an AI innovation company focused on building intelligent
+                      products that transform how people learn, work, shop, and make decisions.
+                    </p>
+                    <p className="text-lg md:text-xl leading-7 text-gray-300">
+                      We combine deep research, engineering precision, and creative
+                      problem-solving to build systems powered by computer vision,
+                      generative AI, and predictive analytics.
+                    </p>
+                    <p className="text-lg md:text-xl leading-7 text-gray-200 font-semibold">
+                      Our goal is simple:{" "}
+                      <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent font-bold">
+                        Create AI that is practical, powerful, and deeply human-centric.
+                      </span>
+                    </p>
                   </div>
                 </div>
-              </div>
-            </FadeInUp>
-          </div>
-        </div>
-      </SectionReveal>
-      {/* WHO WE ARE */}
-      {/* <SectionReveal className={SECTION}> */}
-      {/* <SectionReveal className={`${SECTION} mt-1`}>
-
-        <div className={WRAP}>
-          <div className="max-w-6xl mx-auto space-y-10">
-            <FadeInUp className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Who We Are?</h2>
+              </motion.div>
             </FadeInUp>
 
-            <FadeInUp delay={0.15}>
-              <div className="max-w-7xl mx-auto">
-                <div className="relative group rounded-[46px]">
-                  <div className="absolute -inset-6 rounded-[56px] bg-gradient-to-r from-sky-400/20 via-indigo-500/15 to-fuchsia-500/20 blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="relative rounded-[46px] bg-gradient-to-b from-white/10 to-white/0 p-[1.5px] shadow-[0_0_70px_rgba(56,189,248,0.18)] group-hover:shadow-[0_0_100px_rgba(56,189,248,0.28)] transition-all duration-500">
-                    <div className="rounded-[44px] bg-gradient-to-br from-[#0b1c2d] via-[#0f2238] to-[#071423] border border-white/10 px-10 py-12 md:px-16 md:py-16 lg:px-20 lg:py-20 text-center">
-                      <div className="max-w-4xl mx-auto space-y-8">
-                        <p className="text-lg md:text-xl leading-7 max-w-2xl mx-auto text-white">
-                          Algoarn is an AI innovation company focused on building intelligent
-                          products that transform how people learn, work, shop, and make
-                          decisions.
-                        </p>
-
-                        <p className="text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white">
-                          We combine deep research, engineering precision, and creative
-                          problem-solving to build systems powered by computer vision,
-                          generative AI, and predictive analytics.
-                        </p>
-
-                        <div className="pt-2">
-                          <p className="text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white font-semibold">
-                            Our goal is simple:
-                          </p>
-
-                          <p className="mt-3 text-lg md:text-xl leading-7 max-w-3xl mx-auto text-white font-bold">
-                            Create AI that is practical, powerful, and deeply human-centric.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </FadeInUp>
-          </div>
-        </div>
-      </SectionReveal> */}
-
-      {/* OUR STORY */}
-      {/* <SectionReveal className={SECTION} > */}
-      <SectionReveal className={`${SECTION} -mt-1`}>
-
-        <div className={WRAP}>
-          <div className="max-w-6xl mx-auto space-y-10">
-            <FadeInUp className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Our Story</h2>
-            </FadeInUp>
-
-            <FadeInUp delay={0.15}>
-              <div className="max-w-7xl mx-auto">
-                <div className="relative group rounded-[46px]">
-                  <div className="absolute -inset-6 rounded-[56px] bg-gradient-to-r from-sky-400/20 via-indigo-500/15 to-fuchsia-500/20 blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="relative rounded-[46px] bg-gradient-to-b from-white/10 to-white/0 p-[1.5px] shadow-[0_0_70px_rgba(56,189,248,0.18)] group-hover:shadow-[0_0_100px_rgba(56,189,248,0.28)] transition-all duration-500">
-                    <div className="rounded-[44px] bg-gradient-to-br from-[#0b1c2d] via-[#0f2238] to-[#071423] border border-white/10 px-8 py-10 md:px-12 md:py-12 lg:px-14 lg:py-14">
-                      <div className="space-y-6 text-white text-lg md:text-xl leading-7 max-w-2xl mx-auto">
-                        <p>
-                          Algoarn was born from the belief that technology should empower
-                          people, not overwhelm them.
-                        </p>
-
-                        <p>
-                          With strong foundations in digital engineering, computer vision
-                          research, and product development, Algoarn began as a pursuit to
-                          solve real problems using advanced AI.
-                        </p>
-
-                        <p className="font-semibold text-white">
-                          From education intelligence to virtual retail experiences to
-                          enterprise automation, our journey has been defined by one
-                          principle:
-                          <span className="block mt-2 text-algoarnAqua font-semibold">
-                            AI should make life smarter, easier, and more meaningful.
-                          </span>
-                        </p>
-
-                        <p>
-                          Today, Algoarn is evolving into a multi-product AI company with
-                          global ambition, building solutions that bridge the gap between
-                          imagination and intelligent engineering.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </FadeInUp>
           </div>
         </div>
       </SectionReveal>
 
-      {/* MISSION & VISION */}
- <SectionReveal className={`${SECTION} -mt-1`}>
-        <div className={WRAP}>
+      {/* ── 3. OUR STORY ──────────────────────────────────────────────────────── */}
+      <SectionReveal className="relative px-4 py-24">
+
+        <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
+
+        <div className={`${WRAP} relative z-10`}>
+          <div className="max-w-6xl mx-auto space-y-10">
+
+            <FadeInUp className="text-center space-y-4">
+              <h2 className="text-3xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Our Story
+                </span>
+              </h2>
+            </FadeInUp>
+
+            <FadeInUp delay={0.15}>
+              <motion.div
+                whileHover={{ y: -6, transition: { duration: 0.3, type: "spring" } }}
+                className="relative group"
+              >
+                <div className="absolute -inset-4 rounded-[44px] bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative rounded-[40px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl px-8 py-10 md:px-14 md:py-14">
+                  <div className="absolute inset-0 opacity-5 rounded-[40px] overflow-hidden">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
+                  </div>
+                  <div className="relative z-10 space-y-6 text-lg md:text-xl leading-7 max-w-3xl mx-auto">
+                    <p className="text-gray-300">
+                      Algoarn was born from the belief that technology should empower
+                      people, not overwhelm them.
+                    </p>
+                    <p className="text-gray-300">
+                      With strong foundations in digital engineering, computer vision
+                      research, and product development, Algoarn began as a pursuit to
+                      solve real problems using advanced AI.
+                    </p>
+                    <p className="text-gray-200 font-semibold">
+                      From education intelligence to virtual retail experiences to
+                      enterprise automation, our journey has been defined by one principle:
+                      <span className="block mt-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent font-semibold">
+                        AI should make life smarter, easier, and more meaningful.
+                      </span>
+                    </p>
+                    <p className="text-gray-300">
+                      Today, Algoarn is evolving into a multi-product AI company with
+                      global ambition, building solutions that bridge the gap between
+                      imagination and intelligent engineering.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </FadeInUp>
+
+          </div>
+        </div>
+      </SectionReveal>
+
+      {/* ── 4. MISSION & VISION ───────────────────────────────────────────────── */}
+      <SectionReveal className="relative px-4 py-24">
+
+        <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
+
+        <div className={`${WRAP} relative z-10`}>
           <div className="space-y-12">
+
             <FadeInUp className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Our Mission & Vision</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-algoarnAqua to-algoarnBlue mx-auto rounded-full" />
+              <h2 className="text-3xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Our Mission & Vision
+                </span>
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
             </FadeInUp>
 
             <div className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto items-stretch">
+
               {/* Mission */}
               <FadeInUp>
-                <div className="relative group rounded-[32px] bg-gradient-to-br from-[#0b1c2d] via-[#0f2238] to-[#0b1c2d] p-[1px] shadow-[0_0_45px_rgba(56,189,248,0.18)] hover:shadow-[0_0_70px_rgba(56,189,248,0.35)] transition-all duration-500 h-full">
-                  <div className="rounded-2xl border border-white/10 overflow-hidden bg-white/[0.03] flex-1 flex flex-col h-full">
-                    <div className="bg-white/[0.05] border-b border-white/10 py-4 text-center">
-                      <h3 className="text-lg md:text-xl font-semibold text-white">
+                <motion.div
+                  whileHover={{ y: -6, transition: { duration: 0.3, type: "spring" } }}
+                  className="relative group h-full"
+                >
+                  <div className="absolute -inset-4 rounded-[44px] bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative rounded-[40px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden flex flex-col h-full">
+                    <div className="absolute inset-0 opacity-5">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
+                    </div>
+                    <div className="relative z-10 bg-white/5 border-b border-white/10 py-5 text-center">
+                      <h3 className="text-lg md:text-xl font-semibold bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent">
                         Our Mission
                       </h3>
                     </div>
-
-                    <div className="p-6 md:p-7 space-y-5 text-white leading-relaxed flex-1 flex flex-col">
-                      <p className="text-xl leading-7 max-w-2xl mx-auto">
+                    <div className="relative z-10 p-6 md:p-8 space-y-5 text-gray-300 leading-relaxed flex-1 flex flex-col">
+                      <p className="text-lg md:text-xl leading-7 text-gray-200">
                         To build intelligent, practical, and human-centric AI systems
-                        that transform how the world learns, works, and experiences
-                        technology.
+                        that transform how the world learns, works, and experiences technology.
                       </p>
-
                       <ul className="space-y-3">
                         {[
                           "Creating AI products that solve real-world problems across industries.",
@@ -1897,41 +1817,45 @@ export default function AboutPage() {
                           "Cultivating a culture of research and innovation.",
                         ].map((item) => (
                           <li key={item} className="flex items-start gap-3">
-                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-algoarnAqua shrink-0" />
+                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-400 shrink-0" />
                             <span className="text-base md:text-lg">{item}</span>
                           </li>
                         ))}
                       </ul>
-
-                      <div className="mt-auto pt-5 border-t border-white/10 text-white">
+                      <div className="mt-auto pt-5 border-t border-white/10 text-gray-200">
                         Our mission is not just to build software,
                         <br />
-                        <span className="text-algoarnAqua font-semibold">
+                        <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent font-semibold">
                           but to build intelligence that elevates people.
                         </span>
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </FadeInUp>
 
               {/* Vision */}
               <FadeInUp delay={0.1}>
-                <div className="relative group rounded-[32px] bg-gradient-to-br from-[#0b1c2d] via-[#0f2238] to-[#0b1c2d] p-[1px] shadow-[0_0_45px_rgba(56,189,248,0.18)] hover:shadow-[0_0_70px_rgba(56,189,248,0.35)] transition-all duration-500 h-full">
-                  <div className="rounded-2xl border border-white/10 overflow-hidden bg-white/[0.03] flex-1 flex flex-col h-full">
-                    <div className="bg-white/[0.05] border-b border-white/10 py-4 text-center">
-                      <h3 className="text-lg md:text-xl font-semibold text-white">
+                <motion.div
+                  whileHover={{ y: -6, transition: { duration: 0.3, type: "spring" } }}
+                  className="relative group h-full"
+                >
+                  <div className="absolute -inset-4 rounded-[44px] bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative rounded-[40px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden flex flex-col h-full">
+                    <div className="absolute inset-0 opacity-5">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
+                    </div>
+                    <div className="relative z-10 bg-white/5 border-b border-white/10 py-5 text-center">
+                      <h3 className="text-lg md:text-xl font-semibold bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">
                         Our Vision
                       </h3>
                     </div>
-
-                    <div className="p-6 md:p-7 space-y-5 text-white leading-relaxed flex-1 flex flex-col">
-                      <p className="text-lg md:text-xl leading-7">
+                    <div className="relative z-10 p-6 md:p-8 space-y-5 text-gray-300 leading-relaxed flex-1 flex flex-col">
+                      <p className="text-lg md:text-xl leading-7 text-gray-200">
                         To become a global leader in AI innovation by shaping the future
                         through intelligent products that enhance human potential and
                         redefine digital experiences.
                       </p>
-
                       <ul className="space-y-3">
                         {[
                           "AI becomes a trusted partner for learning, creativity, and decision-making.",
@@ -1940,57 +1864,71 @@ export default function AboutPage() {
                           "India becomes a global hub for AI excellence with Algoarn leading the movement.",
                         ].map((item) => (
                           <li key={item} className="flex items-start gap-3">
-                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-algoarnAqua shrink-0" />
+                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-purple-400 shrink-0" />
                             <span className="text-base md:text-lg">{item}</span>
                           </li>
                         ))}
                       </ul>
-
-                      <div className="mt-auto pt-5 border-t border-white/10 text-white">
+                      <div className="mt-auto pt-5 border-t border-white/10 text-gray-200">
                         We are building a future where technology amplifies talent and
                         unlocks new possibilities.
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </FadeInUp>
+
             </div>
           </div>
         </div>
       </SectionReveal>
 
-      {/* FOUNDER */}
-      <SectionReveal className={`${SECTION} -mt-1`}>
-        <div className={WRAP}>
+      {/* ── 5. FOUNDER ────────────────────────────────────────────────────────── */}
+      <SectionReveal className="relative px-4 py-24">
+
+        <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
+
+        <div className={`${WRAP} relative z-10`}>
           <div className="space-y-12">
+
             <FadeInUp className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Our Founder</h2>
-              <p className="text-xl leading-7 max-w-2xl mx-auto text-black">Built with vision, driven by precision</p>
+              <h2 className="text-3xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Our Founder
+                </span>
+              </h2>
+              <p className="text-xl leading-7 max-w-2xl mx-auto text-gray-400">
+                Built with vision, driven by precision
+              </p>
             </FadeInUp>
 
             <FadeInUp delay={0.15}>
               <div className="max-w-4xl mx-auto">
-                <NeonCard className="p-10 md:p-14 group hover:scale-[1.02] transition-all duration-500">
-                  <div className="space-y-8">
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-                      <div className="flex-shrink-0 w-24 h-24 rounded-full bg-gradient-to-br from-algoarnAqua to-algoarnBlue flex items-center justify-center text-4xl">
+                <motion.div
+                  whileHover={{ y: -6, transition: { duration: 0.3, type: "spring" } }}
+                  className="relative group"
+                >
+                  <div className="absolute -inset-4 rounded-[44px] bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative rounded-[40px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl p-10 md:p-14">
+                    <div className="absolute inset-0 opacity-5 rounded-[40px] overflow-hidden">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
+                    </div>
+                    <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8">
+                      <div className="shrink-0 w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-4xl shadow-lg shadow-blue-500/30">
                         👤
                       </div>
-
                       <div className="flex-1 space-y-3 text-center md:text-left">
-                        <div>
-                          <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-algoarnAqua transition-colors">
-                            Prajwal Gaddigoudar
-                          </h3>
-                          <p className="text-white/90 text-lg font-semibold">
-                            Founder — Algoarn AI Solutions Pvt Ltd
-                          </p>
-                          <p className="text-xl leading-7 max-w-2xl mx-auto  text-white">
-                            MSc Digital Engineering (Germany), Computer Vision Specialist
-                          </p>
-                        </div>
-
-                        <p className="text-xl leading-7 max-w-2xl mx-auto text-white pt-2">
+                        <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                          Prajwal Gaddigoudar
+                        </h3>
+                        <p className="text-gray-300 text-lg font-semibold">
+                          Founder — Algoarn AI Solutions Pvt Ltd
+                        </p>
+                        <p className="text-gray-400 text-base md:text-lg">
+                          MSc Digital Engineering (Germany), Computer Vision Specialist
+                        </p>
+                        <p className="text-xl leading-7 text-gray-200 pt-2">
                           A passionate builder focused on creating meaningful, precise and
                           affordable AI products and pushing the boundaries of what
                           intelligent systems can do.
@@ -1998,25 +1936,37 @@ export default function AboutPage() {
                       </div>
                     </div>
                   </div>
-                </NeonCard>
+                </motion.div>
               </div>
             </FadeInUp>
+
           </div>
         </div>
       </SectionReveal>
 
-      {/* VALUES */}
-       <SectionReveal className={`${SECTION} -mt-1`}>
-        <div className={WRAP}>
+      {/* ── 6. VALUES ─────────────────────────────────────────────────────────── */}
+      <SectionReveal className="relative px-4 py-24">
+
+        <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
+
+        <div className={`${WRAP} relative z-10`}>
           <div className="space-y-12">
+
             <FadeInUp className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Our Values</h2>
-              <p className="text-xl leading-7 max-w-2xl mx-auto text-black">The principles that guide everything we build</p>
+              <h2 className="text-3xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Our Values
+                </span>
+              </h2>
+              <p className="text-xl leading-7 max-w-2xl mx-auto text-gray-400">
+                The principles that guide everything we build
+              </p>
             </FadeInUp>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
               {[
-                { icon: "🚀", title: "Innovation", desc: "We push boundaries to create what’s next." },
+                { icon: "🚀", title: "Innovation", desc: "We push boundaries to create what's next." },
                 { icon: "🧭", title: "Integrity", desc: "We build trust through honesty and responsibility." },
                 { icon: "🎯", title: "Impact-driven Engineering", desc: "We focus on outcomes that matter in the real world." },
                 { icon: "🔬", title: "Research Excellence", desc: "We turn deep research into usable intelligence." },
@@ -2025,45 +1975,59 @@ export default function AboutPage() {
                 { icon: "🧠", title: "Future-first Thinking", desc: "We build products that stand the test of time." },
               ].map((v, idx, arr) => {
                 const isLast = idx === arr.length - 1;
-
                 return (
                   <FadeInUp
                     key={v.title}
                     delay={0.06 * idx}
-                    className={
-                      isLast
-                        ? "md:col-span-2 lg:col-span-1 lg:col-start-2 flex"
-                        : ""
-                    }
+                    className={isLast ? "md:col-span-2 lg:col-span-1 lg:col-start-2 flex" : ""}
                   >
-                    <NeonCard className="p-8 w-full h-full min-h-[220px] flex flex-col justify-center">
-                      <div className="space-y-4 text-center">
-                        <div className="inline-flex p-3 rounded-2xl bg-white/10 border border-white/10 mx-auto">
-                          <span className="text-3xl">{v.icon}</span>
+                    <motion.div
+                      whileHover={{ y: -6, transition: { duration: 0.3, type: "spring" } }}
+                      className="relative group w-full h-full"
+                    >
+                      <div className="absolute -inset-3 rounded-[36px] bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative rounded-[32px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl p-8 w-full h-full min-h-[220px] flex flex-col justify-center">
+                        <div className="absolute inset-0 opacity-5 rounded-[32px] overflow-hidden">
+                          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
                         </div>
-
-                        <h3 className="text-xl font-bold text-white">{v.title}</h3>
-
-                        <p className="text-sm md:text-base text-white leading-relaxed">
-                          {v.desc}
-                        </p>
+                        <div className="relative z-10 space-y-4 text-center">
+                          <div className="inline-flex p-3 rounded-2xl bg-white/10 border border-white/10 mx-auto">
+                            <span className="text-3xl">{v.icon}</span>
+                          </div>
+                          <h3 className="text-xl font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                            {v.title}
+                          </h3>
+                          <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                            {v.desc}
+                          </p>
+                        </div>
                       </div>
-                    </NeonCard>
+                    </motion.div>
                   </FadeInUp>
                 );
               })}
             </div>
+
           </div>
         </div>
       </SectionReveal>
 
-      {/* ROAD AHEAD */}
-      <SectionReveal className={`${SECTION} -mt-1`}>
-        <div className={WRAP}>
+      {/* ── 7. ROAD AHEAD ─────────────────────────────────────────────────────── */}
+      <SectionReveal className="relative px-4 py-24">
+
+        <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
+
+        <div className={`${WRAP} relative z-10`}>
           <div className="space-y-12">
+
             <FadeInUp className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold">The Road Ahead</h2>
-              <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+              <h2 className="text-3xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  The Road Ahead
+                </span>
+              </h2>
+              <p className="text-xl leading-7 max-w-2xl mx-auto text-gray-400">
                 Algoarn is building toward a future where AI enhances every touchpoint
                 of life — from learning and retail to business and creativity.
               </p>
@@ -2071,72 +2035,139 @@ export default function AboutPage() {
 
             <FadeInUp delay={0.15}>
               <div className="max-w-4xl mx-auto">
-                <NeonCard className="p-10 md:p-12">
-                  <div className="space-y-6 text-xl leading-7 max-w-2xl mx-auto text-white">
-                    <p>
-                      With SUCA ready for institutions, VTR soon entering the market,
-                      and new products in development, we’re just getting started.
-                    </p>
-                    <p className="text-xl leading-7 max-w-2xl mx-auto font-bold text-white">
-                      The future is intelligent.
-                      <br />
-                      And we’re building it — one breakthrough at a time.
-                    </p>
+                <motion.div
+                  whileHover={{ y: -6, transition: { duration: 0.3, type: "spring" } }}
+                  className="relative group"
+                >
+                  <div className="absolute -inset-4 rounded-[44px] bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative rounded-[40px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl p-10 md:p-12">
+                    <div className="absolute inset-0 opacity-5 rounded-[40px] overflow-hidden">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
+                    </div>
+                    <div className="relative z-10 space-y-6 text-xl leading-7 max-w-2xl mx-auto">
+                      <p className="text-gray-300">
+                        With SUCA ready for institutions, VTR soon entering the market,
+                        and new products in development, we're just getting started.
+                      </p>
+                      <p className="font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                        The future is intelligent.
+                        <br />
+                        And we're building it — one breakthrough at a time.
+                      </p>
+                    </div>
                   </div>
-                </NeonCard>
+                </motion.div>
               </div>
             </FadeInUp>
+
           </div>
         </div>
       </SectionReveal>
 
-      {/* FINAL CTA */}
-    <SectionReveal className={`${SECTION} -mt-1`}>
-        <div className={WRAP}>
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-algoarnAqua/10 via-purple-500/10 to-algoarnBlue/10 rounded-3xl blur-3xl opacity-40" />
+      {/* ── 8. FINAL CTA — matches services dark card style ───────────────────── */}
+      <section className="px-4 py-24">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl mx-auto"
+        >
+          <div className="relative rounded-[40px] overflow-hidden border border-white/10 p-12 md:p-16 text-center space-y-8 bg-gradient-to-br from-slate-800 to-slate-900 shadow-2xl">
 
-            <NeonCard className="p-10 md:p-16 relative bg-gradient-to-br from-slate-800/80 to-slate-900/90 border-algoarnAqua/50 backdrop-blur-sm text-center">
-              <FadeInUp className="max-w-4xl mx-auto space-y-8">
-                <h2 className="text-3xl md:text-5xl font-extrabold text-white">
-                  Let’s Build the Future Together
-                </h2>
+            {/* Dot pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
+            </div>
 
-                <p className="text-xl leading-7 max-w-2xl mx-auto text-white">
-                  Whether you’re an institution, a business, or a brand exploring AI
-                  transformation, Algoarn is ready to collaborate.
-                </p>
+            {/* Glow blobs */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-32 translate-x-32 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl translate-y-32 -translate-x-32 pointer-events-none" />
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                  <Link href="/contact" className="group">
-                   
-                    <Button
-                      size="lg"
-                      className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
-                      style={{ borderRadius: "2.5rem" }}
-                    >
-                     Work With Us
-                    </Button>
-                  </Link>
+            <div className="relative z-10 space-y-6">
 
-                  <Link href="/suca" className="group">
-                
-                    <Button
-                      size="lg"
-                      className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
-                      style={{ borderRadius: "2.5rem" }}
-                    >
-                     Explore Our AI Products
-                    </Button>
-                  </Link>
-                </div>
-              </FadeInUp>
-            </NeonCard>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white/10 border border-white/20 mb-4"
+              >
+                <span className="text-lg text-white">Ready to Work Together?</span>
+              </motion.div>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-3xl md:text-5xl font-bold"
+              >
+                <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                  Let&apos;s Build the Future Together
+                </span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-xl leading-7 max-w-2xl mx-auto text-gray-200 mt-8"
+              >
+                Whether you&apos;re an institution, a business, or a brand exploring AI
+                transformation, Algoarn is ready to collaborate.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 pb-12"
+              >
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    className="px-10 py-6 text-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-2xl shadow-blue-500/30"
+                    style={{ borderRadius: "2.5rem" }}
+                  >
+                    Work With Us
+                  </Button>
+                </Link>
+                <Link href="/suca">
+                  <Button
+                    size="lg"
+                    className="px-10 py-6 text-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-2xl shadow-blue-500/30"
+                    style={{ borderRadius: "2.5rem" }}
+                  >
+                    Explore Our AI Products
+                  </Button>
+                </Link>
+              </motion.div>
+
+              {/* Trust badges */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 max-w-2xl mx-auto"
+              >
+                {[
+                  { icon: Shield, text: "Secure & Confidential" },
+                  { icon: Star, text: "Proven Methodology" },
+                  { icon: Rocket, text: "Fast Deployment" },
+                ].map((item) => (
+                  <div
+                    key={item.text}
+                    className="flex items-center gap-3 justify-center p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
+                  >
+                    <item.icon className="w-5 h-5 text-blue-400" />
+                    <span className="text-white/90 text-sm font-medium">{item.text}</span>
+                  </div>
+                ))}
+              </motion.div>
+
+              <p className="text-gray-400 text-xs mt-6">· Personalized response in 24 hours</p>
+            </div>
           </div>
-        </div>
-      </SectionReveal>
-      
-    
+        </motion.div>
+      </section>
     </>
   );
 }

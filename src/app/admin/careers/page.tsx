@@ -107,7 +107,7 @@
 // //   return;
 // // }
 
-    
+
 
 // //     setSaving(true);
 
@@ -354,7 +354,7 @@
 // //               >
 // //                 Cancel
 // //               </button>
-           
+
 // //               <button
 // //                 onClick={save}
 // //                 disabled={saving}
@@ -1035,11 +1035,10 @@ export default function AdminCareersPage() {
               <div className="flex items-center gap-2 shrink-0">
                 <button
                   onClick={() => togglePublish(j)}
-                  className={`px-3 py-1 rounded-lg border transition-colors ${
-                    j.published
+                  className={`px-3 py-1 rounded-lg border transition-colors ${j.published
                       ? "border-green-400/30 bg-green-400/70 hover:bg-green-400/70"
                       : "border-yellow-400/30 bg-yellow-400/10 hover:bg-yellow-400/15"
-                  }`}
+                    }`}
                 >
                   {j.published ? "Published" : "Draft"}
                 </button>
@@ -1068,7 +1067,7 @@ export default function AdminCareersPage() {
       {/* Modal */}
       {open && (
         <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl bg-gradient-to-br from-slate-900/95 to-slate-950/95 border border-algoarnAqua/20 shadow-2xl shadow-algoarnAqua/10 p-6">
+          <div className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl bg-linear-to-br from-slate-900/95 to-slate-950/95 border border-algoarnAqua/20 shadow-2xl shadow-algoarnAqua/10 p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="text-xl text-white font-semibold">
                 {editing ? "Edit Job" : "Add Job"}

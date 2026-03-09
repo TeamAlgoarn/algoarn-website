@@ -215,7 +215,7 @@ export default function AdminBlogPage() {
         {!isCreating && (
           <Button
             onClick={() => setIsCreating(true)}
-            className="px-6 py-3 bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
+            className="px-6 py-3 bg-linear-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
             style={{ borderRadius: "2rem" }}
           >
             + New Post
@@ -351,7 +351,7 @@ export default function AdminBlogPage() {
                 <Button
                   onClick={handleSubmit}
                   disabled={saving}
-                  className="px-8 py-3 bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90 disabled:opacity-60"
+                  className="px-8 py-3 bg-linear-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90 disabled:opacity-60"
                   style={{ borderRadius: "2rem" }}
                 >
                   {saving ? "Saving..." : editingPost ? "Update Post" : "Create Post"}
@@ -480,7 +480,7 @@ export default function AdminBlogPage() {
               <p className="text-white/60 mb-6">Create your first blog post to get started</p>
               <Button
                 onClick={() => setIsCreating(true)}
-                className="px-6 py-3 bg-gradient-to-r from-algoarnAqua to-algoarnBlue"
+                className="px-6 py-3 bg-linear-to-r from-algoarnAqua to-algoarnBlue"
                 style={{ borderRadius: "2rem" }}
               >
                 Create Post

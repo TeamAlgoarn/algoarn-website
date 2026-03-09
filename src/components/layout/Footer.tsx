@@ -215,61 +215,99 @@
 //     </footer>
 //   );
 // }
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, Phone, Facebook, Instagram, Linkedin, Sparkles } from "lucide-react";
 
 const CURRENT_YEAR = 2025;
 
+// Deterministic particles (same pattern as services / about pages)
+const footerParticles = Array.from({ length: 10 }, (_, i) => ({
+  left: `${(i * 17) % 100}%`,
+  top: `${(i * 37) % 100}%`,
+  duration: 3 + (i % 3),
+  delay: (i % 4) * 0.4,
+}));
+
 export default function Footer() {
   return (
-    <footer className="bg-black text-white relative overflow-hidden">
-      {/* subtle animated highlight (like your reference) */}
-      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent animate-pulse" />
+    <footer className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white border-t border-white/10">
+
+      {/* ── Ambient blobs (match page sections) ── */}
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
+
+      {/* ── Dot pattern (same as cards) ── */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          {/* Logo */}
-          <div className="lg:col-span-1 flex justify-center lg:justify-start">
-            <div className="transition-transform duration-300 hover:scale-[1.03]">
+      {/* ── Floating particles ── */}
+      <div className="absolute inset-0 pointer-events-none">
+        {footerParticles.map((p, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full"
+            style={{ left: p.left, top: p.top }}
+            animate={{ y: [0, -30, 0], opacity: [0.1, 0.6, 0.1] }}
+            transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
+          />
+        ))}
+      </div>
+
+      {/* ── Top gradient accent line ── */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-14">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 items-start">
+
+          {/* ── Logo + tagline ── */}
+          <div className="lg:col-span-1 flex flex-col items-center lg:items-start gap-4">
+            <motion.div
+              whileHover={{ scale: 1.04 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <Image
                 src="/algo-logo.jpg"
                 alt="Algoarn Logo"
-                width={220}
-                height={60}
-                className="object-contain opacity-95 hover:opacity-100 transition-opacity"
+                width={200}
+                height={56}
+                className="object-contain opacity-90 hover:opacity-100 transition-opacity rounded-xl"
               />
+            </motion.div>
+            {/* Gradient badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+              <Sparkles className="w-3 h-3 text-blue-400" />
+              <span className="text-[11px] font-medium text-gray-300 tracking-widest uppercase">
+                AI Solutions
+              </span>
             </div>
           </div>
 
-          {/* Address */}
-          {/* Address */}
-<div className="lg:col-span-1">
-  <h3 className="font-semibold mb-4 text-white">Address</h3>
-  <div className="space-y-2 text-gray-300 text-sm leading-relaxed">
-    {/* <p>Pole Workspaces</p>
-    <p>33/1 Racha, Galaxy 21st</p>
-    <p>Marenahalli, Vijayanagar</p>
-    <p>Bangalore North</p>
-    <p>Karnataka, India – 560040</p> */}
-    <p className="text-sm text-white leading-relaxed">
-  Pole Workspaces <br />
-  33/1 Racha, Galaxy 21st <br />
-  Marenahalli, Vijayanagar (Bangalore) <br />
-  Bangalore North, Bangalore – 560040 <br />
-  Karnataka, India
-</p>
- 
-  </div>
-</div>
-
-
-          {/* Navigation */}
+          {/* ── Address ── */}
           <div className="lg:col-span-1">
-            <h3 className="font-semibold mb-4 text-white">Navigation</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-5 text-sm tracking-widest uppercase bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent">
+              Address
+            </h3>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Pole Workspaces<br />
+              33/1 Racha, Galaxy 21st<br />
+              Marenahalli, Vijayanagar (Bangalore)<br />
+              Bangalore North, Bangalore – 560040<br />
+              Karnataka, India
+            </p>
+          </div>
+
+          {/* ── Navigation ── */}
+          <div className="lg:col-span-1">
+            <h3 className="font-semibold mb-5 text-sm tracking-widest uppercase bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent">
+              Navigation
+            </h3>
+            <ul className="space-y-2.5">
               {[
                 { href: "/about", text: "About Us" },
                 { href: "/services", text: "Services" },
@@ -279,8 +317,9 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block"
+                    className="group inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-all duration-300"
                   >
+                    <span className="w-0 h-[1px] bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-4 transition-all duration-300 rounded-full" />
                     {link.text}
                   </Link>
                 </li>
@@ -288,66 +327,72 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* ── Contact ── */}
           <div className="lg:col-span-1">
-            <h3 className="font-semibold mb-4 text-white">Contact</h3>
+            <h3 className="font-semibold mb-5 text-sm tracking-widest uppercase bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent">
+              Contact
+            </h3>
             <div className="space-y-3">
-              <div className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-                <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a
-                  href="mailto:contact@algoarn.com"
-                  className="hover:underline text-sm"
-                >
-                  contact@algoarn.com
-                </a>
-              </div>
+              <a
+                href="mailto:contact@algoarn.com"
+                className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <div className="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
+                  <Mail className="w-3.5 h-3.5 text-blue-400" />
+                </div>
+                <span className="text-sm">contact@algoarn.com</span>
+              </a>
 
-              <div className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-                <Phone className="w-4 h-4 text-green-400 flex-shrink-0" />
-                <a href="tel:+910000000000" className="hover:underline text-sm">
-                  +91 8904252232
-                </a>
-              </div>
-
+              <a
+                href="tel:+918904252232"
+                className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <div className="p-2 rounded-xl bg-purple-500/10 border border-purple-500/20 group-hover:bg-purple-500/20 transition-colors">
+                  <Phone className="w-3.5 h-3.5 text-purple-400" />
+                </div>
+                <span className="text-sm">+91 8904252232</span>
+              </a>
             </div>
           </div>
 
-          {/* Social */}
+          {/* ── Social ── */}
           <div className="lg:col-span-1">
-            <h3 className="font-semibold mb-4 text-white">Follow Us</h3>
-            <div className="flex items-center gap-4 text-xl">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:scale-110"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-pink-400 transition-all duration-300 hover:scale-110"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-500 transition-all duration-300 hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
+            <h3 className="font-semibold mb-5 text-sm tracking-widest uppercase bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent">
+              Follow Us
+            </h3>
+            <div className="flex items-center gap-3">
+              {[
+                { href: "#", icon: Facebook, label: "Facebook", hover: "hover:bg-blue-500/20 hover:border-blue-500/40 hover:text-blue-400" },
+                { href: "#", icon: Instagram, label: "Instagram", hover: "hover:bg-pink-500/20 hover:border-pink-500/40 hover:text-pink-400" },
+                { href: "#", icon: Linkedin, label: "LinkedIn", hover: "hover:bg-indigo-500/20 hover:border-indigo-500/40 hover:text-indigo-400" },
+              ].map(({ href, icon: Icon, label, hover }) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  whileHover={{ y: -3 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                  className={`p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-400 transition-all duration-300 ${hover}`}
+                >
+                  <Icon className="w-4 h-4" />
+                </motion.a>
+              ))}
             </div>
           </div>
+
         </div>
 
-        {/* Bottom copyright */}
-        <div className="mt-10 pt-6 border-t border-white/10 text-center">
-          <p className="text-gray-400 text-sm">
+        {/* ── Bottom bar ── */}
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-gray-500 text-xs">
             © {CURRENT_YEAR} Algoarn AI Solutions Pvt. Ltd. All rights reserved.
           </p>
-          <div className="w-28 h-[2px] bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mt-3" />
+          <div className="h-[2px] w-24 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 rounded-full" />
+          <p className="text-gray-600 text-xs">
+            Built with precision · Powered by AI
+          </p>
         </div>
+
       </div>
     </footer>
   );

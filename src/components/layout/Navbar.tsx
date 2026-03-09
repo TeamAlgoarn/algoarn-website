@@ -1072,6 +1072,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -1095,129 +1097,179 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // const isActive = (href: string) =>
-  //   href === "/" ? pathname === "/" : pathname.startsWith(href);
-const isActive = (href: string) => {
-  if (!pathname) return false;
-
-  if (href === "/") {
-    return pathname === "/";
-  }
-
-  return pathname === href || pathname.startsWith(href + "/");
-};
-
-
+  const isActive = (href: string) => {
+    if (!pathname) return false;
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(href + "/");
+  };
 
   return (
-    <header
-      className={`sticky top-0 z-50 ${
-        scrolled ? "shadow-lg shadow-black/40" : ""
-      }`}
-    >
-      <div className="border-b border-white/10 bg-black backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-4 py-2 lg:px-6 flex items-center justify-between">
-          
-          {/* Logo */}
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "shadow-2xl shadow-black/60" : ""}`}>
+
+      {/* ── Top accent line (matches footer / hero) ── */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500" />
+
+      {/* ── Ambient blobs ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-10 -left-32 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full" />
+        <div className="absolute -top-10 -right-32 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full" />
+      </div>
+
+      {/* ── Dot pattern ── */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:32px_32px]" />
+      </div>
+
+      <div
+        className={`relative z-10 border-b border-white/10 transition-all duration-300 ${
+          scrolled
+            ? "bg-slate-900/95 backdrop-blur-xl"
+            : "bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 py-3 lg:px-6 flex items-center justify-between">
+
+          {/* ── Logo ── */}
           <Link href="/" className="flex items-center">
-            <Image
-              src="/algo-logo.jpg"
-              alt="Algoarn Logo"
-              width={160}
-              height={40}
-              priority
-              className="object-contain"
-            />
+            <motion.div whileHover={{ scale: 1.04 }} transition={{ type: "spring", stiffness: 300 }}>
+              <Image
+                src="/algo-logo.jpg"
+                alt="Algoarn Logo"
+                width={160}
+                height={40}
+                priority
+                className="object-contain opacity-90 hover:opacity-100 transition-opacity rounded-lg"
+              />
+            </motion.div>
           </Link>
 
-          {/* Desktop Nav - Increased text size for better visibility */}
-          <nav className="hidden md:flex items-center gap-6">
+          {/* ── Desktop Nav ── */}
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              // <Link
-              //   key={link.href}
-              //   href={link.href}
-              //   className={`relative font-medium transition-colors text-base md:text-[15px]
-              //     ${
-              //       isActive(link.href)
-              //         ? "text-[#00eaff]"
-              //         : "text-white/80 hover:text-[#00eaff]"
-              //     }
-              //   `}
-              // >
-              //   {link.label}
-              //   {isActive(link.href) && (
-              //     <span className="absolute left-0 right-0 -bottom-1 h-[2px] bg-[white]" />
-              //   )}
-              // </Link>
-//       <Link
-//   key={link.href}
-//   href={link.href}
-//   className={`relative font-medium transition-colors text-base md:text-[15px]
-//     ${isActive(link.href)
-//       ? "!text-[#00eaff]"
-//       : "text-white/80 hover:!text-[#00eaff]"}
-//   `}
-// >
-//   {link.label}
-// </Link>
-<Link
-  key={link.href}
-  href={link.href}
-  className={`font-medium transition-colors text-base md:text-[15px]
-    ${isActive(link.href)
-      ? "!text-blue-300"
-      : "text-white/80 hover:!text-blue-300"}
-  `}
->
-  {link.label}
-</Link>
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 group ${
+                  isActive(link.href)
+                    ? "text-white bg-white/10 border border-white/15"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                {/* Active gradient underline */}
+                {isActive(link.href) && (
+                  <motion.span
+                    layoutId="nav-indicator"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-[2px] rounded-full bg-gradient-to-r from-blue-400 to-purple-400"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
 
+                {/* Hover gradient underline */}
+                {!isActive(link.href) && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] rounded-full bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-6 transition-all duration-300" />
+                )}
 
+                {link.label}
+              </Link>
             ))}
+
+            {/* ── Contact CTA pill ── */}
+            <Link
+              href="/contact"
+              className="ml-3 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.03]"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              Contact
+            </Link>
           </nav>
 
-          {/* Mobile Button */}
+          {/* ── Mobile hamburger ── */}
           <button
-            className="md:hidden w-9 h-9 rounded-full border border-white/25 flex items-center justify-center"
+            className="md:hidden w-10 h-10 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
             <span className="relative w-4 h-3.5 flex flex-col justify-between">
-              <span className={`h-[2px] bg-white transition ${open && "rotate-45 translate-y-[6px]"}`} />
-              <span className={`h-[2px] bg-white transition ${open && "opacity-0"}`} />
-              <span className={`h-[2px] bg-white transition ${open && "-rotate-45 -translate-y-[6px]"}`} />
+              <span
+                className={`h-[2px] bg-white rounded-full transition-all duration-300 origin-center ${
+                  open ? "rotate-45 translate-y-[6px]" : ""
+                }`}
+              />
+              <span
+                className={`h-[2px] bg-white rounded-full transition-all duration-300 ${
+                  open ? "opacity-0 scale-x-0" : ""
+                }`}
+              />
+              <span
+                className={`h-[2px] bg-white rounded-full transition-all duration-300 origin-center ${
+                  open ? "-rotate-45 -translate-y-[6px]" : ""
+                }`}
+              />
             </span>
           </button>
+
         </div>
 
-        {/* Mobile Menu - Increased text size */}
-        {open && (
-          <div className="md:hidden bg-black/95 border-t border-white/10">
-            <div className="px-3 py-3 flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-//                  className={`px-3 py-2.5 rounded-lg text-base
-//   ${isActive(link.href)
-//     ? "bg-white/10 !text-[#00eaff]"
-//     : "text-white/80 hover:bg-white/5 hover:!text-[#00eaff]"}
-// `}
+        {/* ── Mobile menu ── */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="md:hidden overflow-hidden border-t border-white/10 bg-slate-900/98 backdrop-blur-xl"
+            >
+              {/* Dot pattern inside mobile menu */}
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:32px_32px]" />
+              </div>
 
-      className={`px-3 py-2.5 rounded-lg text-base
-  ${isActive(link.href)
-    ? "bg-white/10 !text-blue-300"
-    : "text-white/80 hover:bg-white/5 hover:!text-blue-300"}
-`}
-           
+              <div className="relative z-10 px-4 py-4 flex flex-col gap-1">
+                {navLinks.map((link, idx) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05, duration: 0.2 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                        isActive(link.href)
+                          ? "bg-white/10 border border-white/15 text-white"
+                          : "text-gray-400 hover:bg-white/5 hover:text-white"
+                      }`}
+                    >
+                      {isActive(link.href) && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 flex-shrink-0" />
+                      )}
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+
+                {/* Mobile Contact CTA */}
+                <motion.div
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.05, duration: 0.2 }}
+                  className="pt-2 mt-1 border-t border-white/10"
                 >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+                  <Link
+                    href="/contact"
+                    onClick={() => setOpen(false)}
+                    className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg shadow-blue-500/20 transition-all duration-300"
+                  >
+                    <Sparkles className="w-3.5 h-3.5" />
+                    Contact Us
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

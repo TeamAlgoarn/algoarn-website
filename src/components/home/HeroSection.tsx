@@ -1187,8 +1187,9 @@ const FadeInUp = ({
   </motion.div>
 );
 
-const SECTION_START = "pt-20 md:pt-24";
-const SECTION_END = "pb-20 md:pb-24";
+const SECTION_START = "pt-28 md:pt-36";
+const SECTION_END = "pb-28 md:pb-36";
+const WRAP = "max-w-7xl mx-auto px-6";
 
 export default function HomePage() {
   //use modal open function
@@ -1205,15 +1206,12 @@ const { openModal } = useContactModal();
     w-screen
     -mx-[calc((100vw-100%)/2)]
     px-[calc((100vw-100%)/2)]
-    bg-gradient-to-br from-[#f8faff] via-[#f3f4ff] to-[#eef9ff]
     pt-20
     pb-24
     -mt-[29px]
   "
   style={{marginTop:"-32px"}}
 >
-
-
    <video
           autoPlay
           muted
@@ -1223,18 +1221,26 @@ const { openModal } = useContactModal();
         >
           <source src="/homepage_bg_video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 -left-40 w-[900px] h-[900px] bg-algoarnAqua/20 blur-3xl rounded-full animate-pulse-slow" />
-          <div className="absolute bottom-1/4 -right-40 w-[900px] h-[900px] bg-algoarnBlue/25 blur-3xl rounded-full animate-pulse-slow" />
+
+        {/* Dark gradient overlay — matches About page hero */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-indigo-900/70 to-purple-900/70 z-[1]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(79,70,229,0.4)_0%,_transparent_20%)] z-[2]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(139,92,246,0.3)_0%,_transparent_20%)] z-[2]" />
+
+        {/* Ambient blobs */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-[3]">
+          <div className="absolute top-1/4 -left-40 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full" />
+          <div className="absolute bottom-1/4 -right-40 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full" />
         </div>
 
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
+        {/* Floating white particles */}
+        <div className="absolute inset-0 pointer-events-none z-[4]">
           {serviceParticles.map((p, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-algoarnAqua rounded-full"
+              className="absolute w-1.5 h-1.5 bg-white rounded-full"
               style={{ left: p.left, top: p.top }}
-              animate={{ y: [0, -30, 0], opacity: [0, 1, 0] }}
+              animate={{ y: [0, -40, 0], opacity: [0.2, 1, 0.2], scale: [1, 1.5, 1] }}
               transition={{
                 duration: p.duration,
                 delay: p.delay,
@@ -1251,41 +1257,64 @@ const { openModal } = useContactModal();
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center space-y-10"
         >
-         
-     
-          
-        
+          {/* Badge */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8, type: "spring", stiffness: 50 }}
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm"
+          >
+            <Sparkles className="w-4 h-4 text-blue-300" />
+            <span className="text-xs md:text-sm font-medium text-white tracking-[0.25em] uppercase">
+              AI Innovation Company
+            </span>
+          </motion.div>
 
           <div className="space-y-3">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+            <motion.h1
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8, type: "spring", stiffness: 50 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
+            >
+              <span className="bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200 bg-clip-text text-transparent">
                 Smart AI for Smarter{" "}
-                <span className="block md:inline text-white">Businesses</span>
-              </h1>
+                <span className="block md:inline">Businesses</span>
+              </span>
+            </motion.h1>
           </div>
 
-          <p className="text-xl leading-7 max-w-2xl mx-auto text-white">
-                At <span className="font-bold text-white">ALGOARN</span>, we drive
-                innovation through AI, enabling your businesses to unlock new
-                potential and redefine what&apos;s possible. Our AI-driven solutions
-                elevate experiences, reduce costs, and accelerate digital transformation.
-              </p>
+          <motion.p
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="text-xl leading-7 max-w-2xl mx-auto text-gray-200"
+          >
+            At <span className="font-bold text-white">ALGOARN</span>, we drive
+            innovation through AI, enabling your businesses to unlock new
+            potential and redefine what&apos;s possible. Our AI-driven solutions
+            elevate experiences, reduce costs, and accelerate digital transformation.
+          </motion.p>
 
           <div className="flex flex-col md:flex-row gap-3 justify-center items-center text-sm text-slate-700">
            
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6 pb-20">
-           
-<Button
-  size="lg"
-  className="px-10 py-6 text-lg bg-gradient-to-r from-algoarnAqua to-algoarnBlue hover:from-algoarnAqua/90 hover:to-algoarnBlue/90"
-  style={{ borderRadius: "2.5rem" }}
-  onClick={() => openModal("Institutional Demo")}
->
- Contact Us
-</Button>
-
-          </div>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6 pb-20"
+          >
+            <Button
+              size="lg"
+              className="px-10 py-6 text-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-2xl shadow-blue-500/30"
+              style={{ borderRadius: "2.5rem" }}
+              onClick={() => openModal("Institutional Demo")}
+            >
+              Contact Us
+            </Button>
+          </motion.div>
         </motion.div>
       </section>
       {/* <SectionReveal
@@ -1363,93 +1392,107 @@ const { openModal } = useContactModal();
       {/* // </SectionReveal> */}
 
       {/* 2) WHY ALGOARN */}
-      <SectionReveal className={`${SECTION_START} ${SECTION_END} space-y-12`}>
-        <FadeInUp className="text-center space-y-4">
-          <h2 className="text-3xl md:text-5xl font-bold">Why Algoarn?</h2>
+      <SectionReveal className={`relative ${SECTION_START} ${SECTION_END} px-4`}>
+        {/* Ambient blobs */}
+        <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
 
-          <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
-            We combine deep AI expertise with practical delivery to help your
-            institutions and businesses move from data to real-world impact.
-          </p>
-        </FadeInUp>
+        <div className={`${WRAP} relative z-10 space-y-12`}>
+          <FadeInUp className="text-center space-y-4">
+            <h2 className="text-3xl md:text-5xl font-bold">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Why Algoarn?
+              </span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+            <p className="text-xl leading-7 max-w-2xl mx-auto text-gray-600">
+              We combine deep AI expertise with practical delivery to help your
+              institutions and businesses move from data to real-world impact.
+            </p>
+          </FadeInUp>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              title: "AI Expertise Across Multiple Domains",
-              description:
-                "From education and finance to operations and analytics, we architect AI that fits your context.",
-              icon: "🚀",
-              gradient: "from-blue-500 to-cyan-500",
-            },
-            {
-              title: "Proven in Educational Analytics",
-              description:
-                "Trusted by institutions to surface insights on performance, risk, and learner journeys.",
-              icon: "📊",
-              gradient: "from-green-500 to-emerald-500",
-            },
-            {
-              title: "Fast Delivery & R&D Backed",
-              description:
-                "Rapid implementation with a strong research backbone and continuous innovation.",
-              icon: "⚡",
-              gradient: "from-yellow-500 to-orange-500",
-            },
-            {
-              title: "Affordable, Scalable Solutions",
-              description:
-                "Enterprise-grade AI that grows with you — without enterprise-grade complexity.",
-              icon: "💰",
-              gradient: "from-purple-500 to-pink-500",
-            },
-          ].map((item, index) => (
-            <FadeInUp key={item.title} delay={0.1 * index} className="flex justify-center">
-              <NeonCard
-                className="group hover:scale-[1.03] transition-all duration-500
-                h-[280px] w-full max-w-xs mx-auto px-6 py-6 flex flex-col"
-              >
-                <div className="space-y-4 text-center flex-1 flex flex-col justify-between">
-                  <div
-                    className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${item.gradient} mx-auto`}
-                  >
-                    <span className="text-2xl">{item.icon}</span>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-12">
+            {[
+              {
+                title: "AI Expertise Across Multiple Domains",
+                description:
+                  "From education and finance to operations and analytics, we architect AI that fits your context.",
+                icon: "🚀",
+                gradient: "from-blue-500 to-cyan-500",
+              },
+              {
+                title: "Proven in Educational Analytics",
+                description:
+                  "Trusted by institutions to surface insights on performance, risk, and learner journeys.",
+                icon: "📊",
+                gradient: "from-green-500 to-emerald-500",
+              },
+              {
+                title: "Fast Delivery & R&D Backed",
+                description:
+                  "Rapid implementation with a strong research backbone and continuous innovation.",
+                icon: "⚡",
+                gradient: "from-yellow-500 to-orange-500",
+              },
+              {
+                title: "Affordable, Scalable Solutions",
+                description:
+                  "Enterprise-grade AI that grows with you — without enterprise-grade complexity.",
+                icon: "💰",
+                gradient: "from-purple-500 to-pink-500",
+              },
+            ].map((item, index) => (
+              <FadeInUp key={item.title} delay={0.1 * index}>
+                <motion.div
+                  whileHover={{ y: -6, transition: { duration: 0.3, type: "spring" } }}
+                  className="relative group h-full"
+                >
+                  <div className="absolute -inset-3 rounded-[36px] bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative rounded-[32px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl p-8 h-full min-h-[280px] flex flex-col justify-center">
+                    <div className="absolute inset-0 opacity-5 rounded-[32px] overflow-hidden">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
+                    </div>
+                    <div className="relative z-10 space-y-4 text-center">
+                      <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${item.gradient} mx-auto`}>
+                        <span className="text-2xl">{item.icon}</span>
+                      </div>
+                      <h3 className="text-lg font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-gray-300 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-white group-hover:text-algoarnAqua transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-white leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </NeonCard>
-            </FadeInUp>
-          ))}
+                </motion.div>
+              </FadeInUp>
+            ))}
+          </div>
         </div>
       </SectionReveal>
 
       {/* 3) SUCA SECTION */}
       <SectionReveal
         className={`relative w-screen -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]
-        overflow-hidden bg-gradient-to-b from-slate-50 to-white border-y border-slate-200
+        overflow-hidden
         ${SECTION_START} ${SECTION_END}`}
       >
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 -left-40 w-[800px] h-[800px] bg-indigo-100/40 blur-3xl rounded-full" />
-          <div className="absolute bottom-1/4 -right-40 w-[800px] h-[800px] bg-sky-100/40 blur-3xl rounded-full" />
-        </div>
+        {/* Ambient blobs */}
+        <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-8 mt-[-62]">
           <div className="text-center mb-16 md:mb-20">
             <FadeInUp>
-              <h2 className="text-3xl md:text-5xl font-bold">AI Innovation</h2>
+              <h2 className="text-3xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  AI Innovation
+                </span>
+              </h2>
               <span className="inline-block px-4 py-2 mb-4 bg-indigo-50 border border-indigo-200 rounded-full text-sm font-semibold text-indigo-700 mt-8">
                 Meet Suca
               </span>
-              <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+              <p className="text-xl leading-7 max-w-2xl mx-auto text-gray-600">
                 AI-Powered Academic Intelligence Platform
               </p>
             </FadeInUp>
@@ -1458,43 +1501,47 @@ const { openModal } = useContactModal();
           <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-start">
             <FadeInUp className="space-y-8">
               <div className="space-y-6">
-                <div className="space-y-3 text-lg md:text-xl text-slate-600 leading-relaxed italic border-l-4 border-indigo-500 pl-6 bg-indigo-50/50 py-4 rounded-r-lg">
-                  <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+                {/* Italic quote block */}
+                <div className="space-y-3 text-lg md:text-xl leading-relaxed italic border-l-4 border-blue-500 pl-6 bg-white/5 py-4 rounded-r-lg">
+                  <p className="text-black">
                     Behind every mark lies a{" "}
                     <span className="font-bold text-black">pattern</span>.
                   </p>
-                  <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+                  <p className="text-black">
                     Behind every improvement lies{" "}
                     <span className="font-bold text-black">data</span>.
                   </p>
-                  <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+                  <p className="text-black">
                     Behind every success lies{" "}
                     <span className="font-bold text-black">guidance</span>.
                   </p>
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                <h3 className="text-2xl md:text-3xl font-bold text-black leading-tight">
                   Transform Education with Intelligent Insights
                 </h3>
 
-                <div className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed">
-                  <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+                <div className="space-y-4 text-base md:text-lg text-black leading-relaxed">
+                  <p className="text-xl leading-7 text-black">
                     SUCA turns invisible patterns into powerful academic intelligence.
                   </p>
-                  <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+                  <p className="text-xl leading-7 text-black">
                     Powered by advanced AI, SUCA{" "}
-                    <span className="font-semibold">reads between the marks</span>, uncovers
+                    <span className="font-semibold text-black">reads between the marks</span>, uncovers
                     learning behaviours, predicts outcomes, and helps institutions guide every
                     student with{" "}
                     <span className="font-semibold text-black">clarity and confidence</span>.
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-br from-indigo-50 via-sky-50 to-purple-50 rounded-2xl p-6 border-2 border-indigo-100 shadow-sm">
-                  <p className="text-base text-slate-700 mb-4 font-medium">
-                    <span className="font-bold text-slate-900">Not just analytics</span> — it&apos;s understanding.
+                <div className="relative rounded-[24px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 p-6">
+                  <div className="absolute inset-0 opacity-5 rounded-[24px] overflow-hidden">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
+                  </div>
+                  <p className="relative z-10 text-base text-gray-300 font-medium">
+                    <span className="font-bold text-white">Not just analytics</span> — it&apos;s understanding.
                     <br />
-                    <span className="font-bold text-slate-900">Not just an LMS</span> — it&apos;s education reimagined.
+                    <span className="font-bold text-white">Not just an LMS</span> — it&apos;s education reimagined.
                   </p>
                 </div>
 
@@ -1504,7 +1551,7 @@ const { openModal } = useContactModal();
                     <Link href="/suca" className="group">
                       <Button
                         size="lg"
-                        className="px-10 py-5 text-base md:text-lg font-semibold bg-gradient-to-r from-indigo-600 to-sky-600 text-white shadow-xl hover:shadow-2xl hover:from-indigo-700 hover:to-sky-700 transform hover:scale-105 transition-all"
+                        className="px-10 py-5 text-base md:text-lg font-semibold bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-2xl shadow-blue-500/30 transform hover:scale-105 transition-all"
                         style={{ borderRadius: "9999px" }}
                       >
                         <span className="flex items-center gap-2">Explore SUCA</span>
@@ -1522,13 +1569,13 @@ const { openModal } = useContactModal();
                       <span className="flex items-center gap-2">Request Demo</span>
                     </Button> */}
                     <Button
-  size="lg"
-  className="px-10 py-5 text-base md:text-lg font-semibold bg-white text-slate-900 border-2 border-indigo-200 shadow-md hover:shadow-lg hover:border-indigo-300 transform hover:scale-105 transition-all"
+                      size="lg"
+                      className="px-10 py-5 text-base md:text-lg font-semibold bg-white/10 border border-white/20 backdrop-blur-sm text-white hover:bg-white/20 transform hover:scale-105 transition-all"
                       style={{ borderRadius: "9999px" }}
-  onClick={() => openModal("AI Services")}
->
-  Request Demo
-</Button>
+                      onClick={() => openModal("AI Services")}
+                    >
+                      Request Demo
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -1536,64 +1583,72 @@ const { openModal } = useContactModal();
 
             {/* RIGHT */}
             <FadeInUp delay={0.2} className="space-y-8">
-              {/* keep your right side unchanged */}
-              <div className="space-y-3 text-lg md:text-xl text-slate-600 leading-relaxed italic border-l-4 border-indigo-500 pl-6 bg-indigo-50/50 py-4 rounded-r-lg">
-                <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+              <div className="space-y-3 text-lg md:text-xl leading-relaxed italic border-l-4 border-purple-500 pl-6 bg-white/5 py-4 rounded-r-lg">
+                <p className="text-black">
                   Every student learns{" "}
                   <span className="font-bold text-black">differently</span>.
                 </p>
-                <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+                <p className="text-black">
                   Every classroom hides untapped{" "}
                   <span className="font-bold text-black">potential</span>.
                 </p>
-                <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
+                <p className="text-black">
                   Every insight you don&apos;t see is a missed{" "}
-                  <span className="font-bold text-slate-900">opportunity</span>.
+                  <span className="font-bold text-black">opportunity</span>.
                 </p>
               </div>
 
               <div className="relative">
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-indigo-400 to-sky-400 rounded-full blur-2xl opacity-20" />
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-indigo-400 rounded-full blur-2xl opacity-20" />
                 <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-2xl opacity-20" />
 
-                <div className="relative bg-gradient-to-br from-white to-indigo-50 rounded-3xl border-2 border-indigo-200 p-8 md:p-10 shadow-2xl shadow-indigo-500/10 hover:shadow-indigo-500/20 transition-all duration-500">
-                  <div className="space-y-8 text-center">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-sky-500 rounded-full blur-xl opacity-30" />
-                      <div className="relative text-6xl md:text-7xl">🧠</div>
+                <motion.div
+                  whileHover={{ y: -6, transition: { duration: 0.3, type: "spring" } }}
+                  className="relative group"
+                >
+                  <div className="absolute -inset-4 rounded-[44px] bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative rounded-[40px] bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl p-8 md:p-10">
+                    <div className="absolute inset-0 opacity-5 rounded-[40px] overflow-hidden">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:40px_40px]" />
                     </div>
+                    <div className="relative z-10 space-y-8 text-center">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-30" />
+                        <div className="relative text-6xl md:text-7xl">🧠</div>
+                      </div>
 
-                    <div className="grid grid-cols-2 gap-4">
-                      {[
-                        { value: "99.9%", label: "Accuracy" },
-                        { value: "24/7", label: "Insights" },
-                        { value: "360°", label: "Coverage" },
-                        { value: "Real-time", label: "Analytics" },
-                      ].map((stat) => (
-                        <div
-                          key={stat.label}
-                          className="p-4 bg-white rounded-xl border border-indigo-100 shadow-md hover:shadow-lg transition-shadow"
-                        >
-                          <div className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-600">
-                            {stat.value}
+                      <div className="grid grid-cols-2 gap-4">
+                        {[
+                          { value: "99.9%", label: "Accuracy" },
+                          { value: "24/7", label: "Insights" },
+                          { value: "360°", label: "Coverage" },
+                          { value: "Real-time", label: "Analytics" },
+                        ].map((stat) => (
+                          <div
+                            key={stat.label}
+                            className="p-4 bg-white/5 rounded-xl border border-white/10 hover:border-white/20 transition-all"
+                          >
+                            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                              {stat.value}
+                            </div>
+                            <div className="text-xs text-gray-400 font-medium mt-1">
+                              {stat.label}
+                            </div>
                           </div>
-                          <div className="text-xs text-black font-medium mt-1">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                        ))}
+                      </div>
 
-                    <div className="space-y-2">
-                      <p className="text-lg font-bold text-black bg-clip-text bg-gradient-to-r from-indigo-700 to-sky-700">
-                        Academic Intelligence at a Glance
-                      </p>
-                      <p className="text-sm text-black max-w-xs mx-auto leading-relaxed">
-                        Track cohorts, identify at-risk students, and align interventions seamlessly.
-                      </p>
+                      <div className="space-y-2">
+                        <p className="text-lg font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                          Academic Intelligence at a Glance
+                        </p>
+                        <p className="text-sm text-gray-400 max-w-xs mx-auto leading-relaxed">
+                          Track cohorts, identify at-risk students, and align interventions seamlessly.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </FadeInUp>
           </div>
@@ -1601,51 +1656,68 @@ const { openModal } = useContactModal();
       </SectionReveal>
 
       {/* 4) AI SERVICES */}
-      <SectionReveal className={`${SECTION_START} ${SECTION_END} space-y-16`}>
-        <FadeInUp className="text-center space-y-4">
-          <h2 className="text-3xl md:text-5xl font-bold">AI Services</h2>
-        </FadeInUp>
+      <SectionReveal className={`relative ${SECTION_START} ${SECTION_END} px-4`}>
+        {/* Ambient blobs */}
+        <div className="absolute -top-44 -left-44 w-[700px] h-[700px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-44 -right-44 w-[700px] h-[700px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 place-items-center">
-          <FadeInUp delay={0.1}>
-            <div className="text-center space-y-6 max-w-xs">
-              <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
-                <img
-                  src="/computer vision.avif"
-                  alt="Computer Vision"
-                  className="w-full max-w-xs md:max-w-sm lg:max-w-md mx-auto"
-                />
-              </div>
-              <h3 className="text-xl font-bold">Computer Vision</h3>
-              <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
-                Turning visuals into valuable insights—let AI see, understand, and automate.
-              </p>
-            </div>
+        <div className={`${WRAP} relative z-10 space-y-16`}>
+          <FadeInUp className="text-center space-y-4">
+            <h2 className="text-3xl md:text-5xl font-bold">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                AI Services
+              </span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
           </FadeInUp>
 
-          <FadeInUp delay={0.2}>
-            <div className="text-center space-y-6 max-w-xs">
-              <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
-                <img src="/genai.avif" alt="Generative AI" className="w-72 mx-auto" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 place-items-center">
+            <FadeInUp delay={0.1}>
+              <div className="text-center space-y-6 max-w-xs">
+                <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
+                  <img
+                    src="/computer vision.avif"
+                    alt="Computer Vision"
+                    className="w-full max-w-xs md:max-w-sm lg:max-w-md mx-auto"
+                  />
+                </div>
+                <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Computer Vision
+                </h3>
+                <p className="text-lg leading-7 text-gray-600">
+                  Turning visuals into valuable insights—let AI see, understand, and automate.
+                </p>
               </div>
-              <h3 className="text-xl font-bold">Generative AI</h3>
-              <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
-                Unleashing creativity and efficiency—AI that crafts, creates, and innovates for you.
-              </p>
-            </div>
-          </FadeInUp>
+            </FadeInUp>
 
-          <FadeInUp delay={0.3}>
-            <div className="text-center space-y-6 max-w-xs">
-              <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
-                <img src="/predictive.png" alt="Predictive AI" className="w-72 mx-auto" />
+            <FadeInUp delay={0.2}>
+              <div className="text-center space-y-6 max-w-xs">
+                <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
+                  <img src="/genai.avif" alt="Generative AI" className="w-72 mx-auto" />
+                </div>
+                <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Generative AI
+                </h3>
+                <p className="text-lg leading-7 text-gray-600">
+                  Unleashing creativity and efficiency—AI that crafts, creates, and innovates for you.
+                </p>
               </div>
-              <h3 className="text-xl font-bold">Predictive AI</h3>
-              <p className="text-xl leading-7 max-w-2xl mx-auto text-black">
-                Stay ahead of the curve—AI that predicts trends and empowers smarter decisions.
-              </p>
-            </div>
-          </FadeInUp>
+            </FadeInUp>
+
+            <FadeInUp delay={0.3}>
+              <div className="text-center space-y-6 max-w-xs">
+                <div className="transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 hover:drop-shadow-xl">
+                  <img src="/predictive.png" alt="Predictive AI" className="w-72 mx-auto" />
+                </div>
+                <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Predictive AI
+                </h3>
+                <p className="text-lg leading-7 text-gray-600">
+                  Stay ahead of the curve—AI that predicts trends and empowers smarter decisions.
+                </p>
+              </div>
+            </FadeInUp>
+          </div>
         </div>
       </SectionReveal>
     </div>
